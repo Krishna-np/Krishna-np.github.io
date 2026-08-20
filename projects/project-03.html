@@ -1,0 +1,990 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Macy's Store Portfolio Strategy — Krishnendu Nandakumar Padmapriya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="../index.html" class="nav__mark"><span></span>KNP</a>
+  <div class="nav__links">
+    <a href="../index.html#work">Project</a>
+    <a href="../about.html">About</a>
+    <a href="../index.html#experience">Experience</a>
+    <a href="../index.html#education">Education</a>
+    <a href="../index.html#contact">Contact</a>
+  </div>
+  <div class="nav__actions">
+    <a href="../assets/documents/resume-placeholder.pdf" class="btn btn--secondary" download>Résumé</a>
+    <button class="btn btn--primary" data-open-drawer>Let's talk</button>
+  </div>
+</nav>
+
+<header class="case-hero wrap wrap--narrow">
+  <div class="eyebrow" data-reveal>03 · Selected Work</div>
+  <h1 data-reveal>Macy's Store Portfolio Strategy</h1>
+  <p class="summary" data-reveal>A public-data decision-support case study examining Macy's store portfolio evolution and the financial context behind portfolio decisions.</p>
+
+  <div class="case-meta-row" data-reveal>
+    <div class="case-meta-item"><div class="label">Tools</div><div class="value">Python | Power BI | DAX</div></div>
+    <div class="case-meta-item"><div class="label">Focus</div><div class="value">Retail Portfolio Strategy</div></div>
+    <div class="case-meta-item"><div class="label">Data</div><div class="value">Store Disclosures | SEC Filings</div></div>
+  </div>
+</header>
+
+<!-- ============================================================
+     FEATURED VISUALIZATION
+     ============================================================ -->
+<section class="case-featured wrap wrap--narrow">
+
+  <div class="case-featured__frame" data-reveal="mask">
+
+    <img
+      src="../assets/images/projects/project-03/home.png"
+      alt="Macy's Store Portfolio Strategy Power BI dashboard"
+    >
+
+  </div>
+
+</section>
+
+<!-- ============================================================
+     01 · BUSINESS PROBLEM
+     ============================================================ -->
+<section class="case-block wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">01</span>
+    <h2>Business Problem</h2>
+  </div>
+
+  <div class="case-block__body" data-reveal data-reveal-delay="1">
+
+    <p>
+      Macy's is reducing its store footprint while concentrating investment
+      on selected go-forward locations. The challenge is determining when
+      portfolio rationalization is appropriate and when intervention or
+      reinvestment may be the better strategic response.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- ============================================================
+     02 · BUSINESS QUESTION
+     ============================================================ -->
+<section class="case-block wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">02</span>
+    <h2>Business Question</h2>
+  </div>
+
+  <div class="case-block__body" data-reveal data-reveal-delay="1">
+
+    <p>
+      How can Macy's use portfolio and financial evidence to make more
+      selective decisions about store rationalization, intervention,
+      and reinvestment?
+    </p>
+
+  </div>
+
+</section>
+
+<!-- ============================================================
+     03 · CONTEXT & DECISION SUPPORTED
+     ============================================================ -->
+<section class="case-block case-context wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">03</span>
+    <h2>Context &amp; Decision Supported</h2>
+  </div>
+
+  <div class="case-block__body" data-reveal data-reveal-delay="1">
+
+    <p>
+      The analysis is designed for portfolio strategy and planning,
+      where store rationalization decisions need to balance footprint
+      reduction with opportunities for intervention and reinvestment.
+    </p>
+
+    <div class="case-context__rows">
+
+      <!-- PRIMARY USERS -->
+      <div class="case-context__row">
+
+        <span class="case-context__label">
+          Primary Users
+        </span>
+
+        <h3>
+          Retail Strategy &amp; Portfolio Planning
+        </h3>
+
+        <p>
+          Evaluate portfolio changes using store history, closure evidence,
+          financial performance, and reported strategic outcomes.
+        </p>
+
+      </div>
+
+
+      <!-- DECISION SUPPORTED -->
+      <div class="case-context__row">
+
+        <span class="case-context__label">
+          Decision Supported
+        </span>
+
+        <h3>
+          What action should a location receive?
+        </h3>
+
+        <p>
+          Structure future location decisions around four possible actions:
+          Invest, Transform, Monitor, or Exit.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============================================================
+     04 · DATA & WORKFLOW
+     ============================================================ -->
+<section class="case-block wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">04</span>
+    <h2>Data &amp; Workflow</h2>
+  </div>
+
+  <div class="case-block__body" data-reveal data-reveal-delay="1">
+
+    <p class="case-workflow__intro">
+      Public store disclosures, closure records, SEC filings, and annual
+      reports move through a structured workflow from collection and
+      validation to portfolio analysis and decision support.
+    </p>
+
+
+    <div class="case-workflow-chart">
+
+      <!-- 01 -->
+      <div class="case-workflow-node">
+        <span class="case-workflow-node__num">01</span>
+
+        <div class="case-workflow-node__content">
+          <h3>Collect</h3>
+          <p>
+            Quarterly Macy's store disclosures, announced closure records,
+            SEC filings, and annual reports are collected as the core
+            evidence base.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="case-workflow-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 3v14"/>
+          <path d="m7 13 5 5 5-5"/>
+        </svg>
+      </div>
+
+
+      <!-- 02 -->
+      <div class="case-workflow-node">
+        <span class="case-workflow-node__num">02</span>
+
+        <div class="case-workflow-node__content">
+          <h3>Prepare</h3>
+          <p>
+            Reporting periods, location identifiers, store records,
+            closure data, and financial fields are standardized and
+            validated before analysis.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="case-workflow-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 3v14"/>
+          <path d="m7 13 5 5 5-5"/>
+        </svg>
+      </div>
+
+
+      <!-- 03 -->
+      <div class="case-workflow-node">
+        <span class="case-workflow-node__num">03</span>
+
+        <div class="case-workflow-node__content">
+          <h3>Analyze</h3>
+          <p>
+            Store locations are tracked across reporting periods, portfolio
+            movements are classified, and announced closures are reconciled
+            against the historical portfolio.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="case-workflow-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 3v14"/>
+          <path d="m7 13 5 5 5-5"/>
+        </svg>
+      </div>
+
+
+      <!-- 04 -->
+      <div class="case-workflow-node">
+        <span class="case-workflow-node__num">04</span>
+
+        <div class="case-workflow-node__content">
+          <h3>Contextualize</h3>
+          <p>
+            Annual and quarterly financial results are combined with
+            reported strategy, portfolio actions, and Reimagine outcomes
+            to provide company-level context.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="case-workflow-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 3v14"/>
+          <path d="m7 13 5 5 5-5"/>
+        </svg>
+      </div>
+
+
+      <!-- 05 -->
+      <div class="case-workflow-node">
+        <span class="case-workflow-node__num">05</span>
+
+        <div class="case-workflow-node__content">
+          <h3>Decide</h3>
+          <p>
+            The combined evidence is brought into Power BI to support an
+           Invest, Transform, Monitor, or Exit framework for future portfolio decisions.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============================================================
+     05 · ANALYSIS & DASHBOARDS
+     ============================================================ -->
+<section class="case-block case-block--visuals">
+
+  <div class="wrap wrap--narrow">
+
+    <div class="case-block__head" data-reveal>
+      <span class="index">05</span>
+      <h2>Analysis &amp; Dashboards</h2>
+    </div>
+
+    <div class="case-block__body" data-reveal data-reveal-delay="1">
+      <p>
+        The analysis moves from portfolio contraction and closure
+        reconciliation to the financial and strategic evidence supporting
+        a more selective approach to future portfolio decisions.
+      </p>
+    </div>
+
+  </div>
+
+
+  <!-- ============================================================
+       VISUALIZATION GRID
+       ============================================================ -->
+  <div class="case-visual-grid wrap">
+
+
+    <!-- 01 · PORTFOLIO EVOLUTION -->
+    <article class="case-visual-card" data-reveal>
+
+      <button
+        class="case-visual-card__trigger"
+        type="button"
+        data-lightbox-group="portfolio-evolution"
+        aria-label="View Portfolio Evolution visualization">
+
+        <div class="case-visual-card__image">
+          <img
+            src="../assets/images/projects/project-03/portfolio-evolution.png"
+            alt="Portfolio Evolution showing Macy's location count and disappearance events across reporting periods">
+        </div>
+
+        <span class="case-visual-card__expand">
+          View larger ↗
+        </span>
+
+      </button>
+
+      <div class="case-visual-card__caption">
+        <span>01</span>
+
+        <div>
+          <h3>Portfolio Evolution</h3>
+
+          <p>
+            Tracks Macy's location footprint across 11 reporting periods
+            and highlights the concentrated contraction in late 2024.
+          </p>
+        </div>
+      </div>
+
+    </article>
+
+
+    <!-- 02 · CLOSURE ANALYSIS -->
+    <article
+      class="case-visual-card"
+      data-reveal
+      data-reveal-delay="1">
+
+      <button
+        class="case-visual-card__trigger"
+        type="button"
+        data-lightbox-group="closure-analysis"
+        aria-label="View Closure Analysis visualization">
+
+        <div class="case-visual-card__image">
+          <img
+            src="../assets/images/projects/project-03/closure-analysis.png"
+            alt="Announced Closure Analysis showing closure reconciliation to Macy's historical portfolio">
+        </div>
+
+        <span class="case-visual-card__expand">
+          View larger ↗
+        </span>
+
+      </button>
+
+      <div class="case-visual-card__caption">
+        <span>02</span>
+
+        <div>
+          <h3>Closure Analysis</h3>
+
+          <p>
+            Reconciles announced closures against the historical portfolio,
+            with 13 of 14 records matched to known locations.
+          </p>
+        </div>
+      </div>
+
+    </article>
+
+
+    <!-- 03 · RECOMMENDATION FRAMEWORK -->
+    <article
+      class="case-visual-card"
+      data-reveal
+      data-reveal-delay="2">
+
+      <button
+        class="case-visual-card__trigger"
+        type="button"
+        data-lightbox-group="recommendation-framework"
+        aria-label="View Recommendation and Decision Framework visualization">
+
+        <div class="case-visual-card__image">
+          <img
+            src="../assets/images/projects/project-03/recommendation-framework.png"
+            alt="Recommendation and Decision Framework showing Invest Transform Monitor Exit portfolio actions">
+        </div>
+
+        <span class="case-visual-card__expand">
+          View larger ↗
+        </span>
+
+      </button>
+
+      <div class="case-visual-card__caption">
+        <span>03</span>
+
+        <div>
+          <h3>Recommendation Framework</h3>
+
+          <p>
+            Translates the portfolio and financial evidence into four
+            possible actions: Invest, Transform, Monitor, or Exit.
+          </p>
+        </div>
+      </div>
+
+    </article>
+
+
+  </div>
+
+
+  <!-- ============================================================
+       LIGHTBOX IMAGE SOURCES
+       ============================================================ -->
+  <div class="case-lightbox-data" hidden>
+
+    <div data-lightbox-group="portfolio-evolution">
+      <img
+        src="../assets/images/projects/project-03/portfolio-evolution.png"
+        alt="Portfolio Evolution">
+    </div>
+
+    <div data-lightbox-group="closure-analysis">
+      <img
+        src="../assets/images/projects/project-03/closure-analysis.png"
+        alt="Closure Analysis">
+    </div>
+
+    <div data-lightbox-group="recommendation-framework">
+      <img
+        src="../assets/images/projects/project-03/recommendation-framework.png"
+        alt="Recommendation and Decision Framework">
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     VISUALIZATION LIGHTBOX
+     ============================================================ -->
+<div
+  class="case-lightbox"
+  id="caseLightbox"
+  aria-hidden="true">
+
+  <div
+    class="case-lightbox__backdrop"
+    data-lightbox-close>
+  </div>
+
+  <div
+    class="case-lightbox__panel"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Expanded project visualization">
+
+    <button
+      class="case-lightbox__close"
+      type="button"
+      data-lightbox-close
+      aria-label="Close visualization">
+      ×
+    </button>
+
+    <button
+      class="case-lightbox__prev"
+      type="button"
+      data-lightbox-prev
+      aria-label="Previous visualization">
+      ←
+    </button>
+
+    <div class="case-lightbox__content">
+      <img
+        id="caseLightboxImage"
+        src=""
+        alt="">
+    </div>
+
+    <button
+      class="case-lightbox__next"
+      type="button"
+      data-lightbox-next
+      aria-label="Next visualization">
+      →
+    </button>
+
+  </div>
+
+</div>
+
+<!-- ============================================================
+     06 · KEY FINDINGS
+     ============================================================ -->
+<section class="case-block case-findings wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">06</span>
+    <h2>Key Findings</h2>
+  </div>
+
+
+  <div class="case-findings__grid">
+
+<!-- 01 -->
+<article class="case-finding" data-reveal>
+
+  <span class="case-finding__mark">→</span>
+
+  <div>
+    <h3>Macy's store footprint fell by 16.4%</h3>
+
+    <p>
+      The portfolio moved from <strong>488</strong> location IDs at the
+      start of the analysis to <strong>408</strong> in the latest snapshot.
+    </p>
+  </div>
+
+</article>
+
+
+<!-- 02 -->
+<article class="case-finding" data-reveal data-reveal-delay="1">
+
+  <span class="case-finding__mark">→</span>
+
+  <div>
+    <h3>Most of the decline happened in late 2024</h3>
+
+    <p>
+      The largest change came between Q3 and Q4 2024, when
+      <strong>54 locations</strong> disappeared from the reported portfolio.
+    </p>
+  </div>
+
+</article>
+
+
+<!-- 03 -->
+<article class="case-finding" data-reveal>
+
+  <span class="case-finding__mark">→</span>
+
+  <div>
+    <h3>13 of 14 announced closures matched the portfolio</h3>
+
+    <p>
+      The closure reconciliation produced a <strong>92.9% match rate</strong>,
+      with one announced closure remaining unresolved.
+    </p>
+  </div>
+
+</article>
+
+
+<!-- 04 -->
+<article class="case-finding" data-reveal data-reveal-delay="1">
+
+  <span class="case-finding__mark">→</span>
+
+  <div>
+    <h3>A disappearance does not always mean a closure</h3>
+
+    <p>
+      Locations missing from a later store list were treated as portfolio
+      movements, not confirmed closures unless they could be matched to
+      Macy's announced closure records.
+    </p>
+  </div>
+
+</article>
+
+
+<!-- 05 -->
+<article class="case-finding" data-reveal>
+
+  <span class="case-finding__mark">→</span>
+
+  <div>
+    <h3>Some stores may be better candidates for reinvestment</h3>
+
+    <p>
+      Macy's reported stronger FY2025 performance from its
+      <strong>Reimagine 125</strong> locations, suggesting that reducing
+      the footprint is only part of the portfolio strategy.
+    </p>
+  </div>
+
+</article>
+
+
+<!-- 06 -->
+<article class="case-finding" data-reveal data-reveal-delay="1">
+
+  <span class="case-finding__mark">→</span>
+
+  <div>
+    <h3>Store decisions need more than a keep-or-close choice</h3>
+
+    <p>
+      The findings point to four practical options for future decisions:
+      <strong>Invest, Transform, Monitor, or Exit</strong>, depending on
+      the evidence available for each location.
+    </p>
+  </div>
+
+</article>
+
+
+  </div>
+
+</section>
+
+<!-- ============================================================
+     07 · RECOMMENDATIONS
+     ============================================================ -->
+<section class="case-block case-recommendations wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">07</span>
+    <h2>Recommendations</h2>
+  </div>
+
+
+  <div class="case-recommendations__list" data-reveal data-reveal-delay="1">
+
+    <!-- 01 -->
+<article class="case-recommendation">
+
+  <span class="case-recommendation__mark">→</span>
+
+  <div>
+    <h3>Evaluate stores individually before making closure decisions</h3>
+
+    <p>
+      Use the available evidence to separate locations that may benefit
+      from investment or improvement from those that are stronger candidates
+      for exit.
+    </p>
+  </div>
+
+</article>
+
+
+<!-- 02 -->
+<article class="case-recommendation">
+
+  <span class="case-recommendation__mark">→</span>
+
+  <div>
+    <h3>Consider reinvestment where there is evidence of potential</h3>
+
+    <p>
+      The reported performance of Reimagine 125 suggests that targeted
+      improvements can be worth testing before deciding to close a
+      viable location.
+    </p>
+  </div>
+
+</article>
+
+
+<!-- 03 -->
+<article class="case-recommendation">
+
+  <span class="case-recommendation__mark">→</span>
+
+  <div>
+    <h3>Add store-level performance data to future analysis</h3>
+
+    <p>
+      Sales, margins, traffic, lease costs, and customer measures would
+      provide a stronger basis for deciding whether a location should be
+      invested in, improved, monitored, or exited.
+    </p>
+  </div>
+
+</article>
+
+  </div>
+
+</section>
+
+<!-- ============================================================
+     08 · SCOPE & LIMITATIONS
+     ============================================================ -->
+<section class="case-block case-scope wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">08</span>
+    <h2>Scope &amp; Limitations</h2>
+  </div>
+
+  <div class="case-block__body" data-reveal data-reveal-delay="1">
+
+    <p>
+      The analysis uses publicly available data to understand how Macy's
+      store portfolio has changed over time. It does not attempt to predict
+      which individual stores will close.
+    </p>
+
+    <div class="case-scope__items">
+
+      <!-- 01 -->
+      <div class="case-scope__item">
+
+        <h3>Store-level performance is not available</h3>
+
+        <p>
+          Public data does not include sales, profit, traffic, lease costs,
+          or comparable-sales results for individual stores, limiting how
+          far each location can be evaluated.
+        </p>
+
+      </div>
+
+
+      <!-- 02 -->
+      <div class="case-scope__item">
+
+        <h3>Missing does not mean closed</h3>
+
+        <p>
+          When a location disappeared from a later store list, it was
+          recorded as a portfolio change unless there was separate evidence
+          confirming that the store had closed.
+        </p>
+
+      </div>
+
+
+      <!-- 03 -->
+      <div class="case-scope__item">
+
+        <h3>Individual store actions require more data</h3>
+
+        <p>
+          The analysis can help structure portfolio decisions, but deciding
+          whether a specific store should be invested in, improved, monitored,
+          or exited would require Macy's internal performance data.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============================================================
+     09 · TOOLS & METHODS
+     ============================================================ -->
+<section class="case-block case-tools wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">09</span>
+    <h2>Tools &amp; Methods</h2>
+  </div>
+
+  <div class="case-tools__grid" data-reveal data-reveal-delay="1">
+
+
+    <!-- DATA PREPARATION -->
+    <div class="case-tools__group">
+
+      <span class="case-tools__label">
+        Data Preparation
+      </span>
+
+      <div class="case-tools__items">
+        <span>Python</span>
+        <span>Pandas</span>
+        <span>Data Validation</span>
+      </div>
+
+    </div>
+
+
+    <!-- PORTFOLIO ANALYSIS -->
+    <div class="case-tools__group">
+
+      <span class="case-tools__label">
+        Portfolio Analysis
+      </span>
+
+      <div class="case-tools__items">
+        <span>Snapshot Analysis</span>
+        <span>Closure Reconciliation</span>
+        <span>Financial Analysis</span>
+      </div>
+
+    </div>
+
+
+    <!-- POWER BI -->
+    <div class="case-tools__group">
+
+      <span class="case-tools__label">
+        Power BI Modeling
+      </span>
+
+      <div class="case-tools__items">
+        <span>Power BI</span>
+        <span>Power Query</span>
+        <span>DAX</span>
+      </div>
+
+    </div>
+
+
+    <!-- DECISION SUPPORT -->
+    <div class="case-tools__group">
+
+      <span class="case-tools__label">
+        Decision Support
+      </span>
+
+      <div class="case-tools__items">
+        <span>Portfolio Tracking</span>
+        <span>Strategic Context</span>
+        <span>Decision Framework</span>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+<section class="case-block wrap wrap--narrow">
+  <div class="case-block__head" data-reveal><span class="index">10</span><h2>Project Link</h2></div>
+  <div class="case-block__body" data-reveal>
+    <a href="https://github.com/Krishna-np/macys-store-portfolio-optimization" target="_blank" rel="noopener" class="btn btn--secondary">
+      View on GitHub
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M9 7h8v8"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROJECT NAVIGATION
+     ============================================================ -->
+<section class="case-next wrap wrap--narrow">
+
+  <!-- PREVIOUS -->
+  <a
+    href="project-02.html"
+    class="case-next__item case-next__item--prev">
+
+    <span class="case-next__label">
+      PREVIOUS PROJECT
+    </span>
+
+    <h3>
+      M&A Target Screening & Valuation Intelligence
+    </h3>
+
+    <span class="case-next__arrow">
+      ←
+    </span>
+
+  </a>
+
+
+  <!-- NEXT -->
+  <a
+    href="project-04.html"
+    class="case-next__item case-next__item--next">
+
+    <span class="case-next__label">
+      NEXT PROJECT
+    </span>
+
+    <h3>
+      Retail Customer & Marketing Analytics
+    </h3>
+
+    <span class="case-next__arrow">
+      →
+    </span>
+
+  </a>
+
+</section>
+
+<footer class="footer wrap wrap--narrow">
+  <div>
+    <div class="footer__name">Krishnendu Nandakumar Padmapriya</div>
+    <div>Business &amp; Data Analyst</div>
+  </div>
+  <div class="footer__links">
+    <a href="https://www.linkedin.com/in/krishnendu-np/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/Krishna-np" target="_blank" rel="noopener">GitHub</a>
+    <a href="mailto:krishnendu.knp@gmail.com">Email</a>
+  </div>
+  <div id="year"></div>
+</footer>
+
+<div class="overlay" id="overlay" data-close-drawer></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="Contact panel">
+  <div class="drawer__top">
+    <h3>Get in touch</h3>
+    <button class="drawer__close" data-close-drawer aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+
+  <div class="drawer__row">
+    <div>
+      <div class="label">Email</div>
+      <div class="value">krishnendu.knp@gmail.com</div>
+    </div>
+    <button class="drawer__copy" id="copyEmail">Copy</button>
+  </div>
+
+  <div class="drawer__row">
+    <div>
+      <div class="label">LinkedIn</div>
+      <div class="value">krishnendu-np</div>
+    </div>
+    <a class="drawer__copy" href="https://www.linkedin.com/in/krishnendu-np/" target="_blank" rel="noopener">Open</a>
+  </div>
+
+  <div class="drawer__row">
+    <div>
+      <div class="label">GitHub</div>
+      <div class="value">Krishna-np</div>
+    </div>
+    <a class="drawer__copy" href="https://github.com/Krishna-np" target="_blank" rel="noopener">Open</a>
+  </div>
+
+  <div class="drawer__row">
+    <div>
+      <div class="label">Résumé</div>
+      <div class="value">PDF</div>
+    </div>
+    <a class="drawer__copy" href="../assets/documents/resume-placeholder.pdf" download>Download</a>
+  </div>
+
+  <div class="drawer__row" style="border-bottom:none;">
+    <div>
+      <div class="label">Location</div>
+      <div class="value">Open to opportunities across the U.S.</div>
+    </div>
+  </div>
+
+  <p class="drawer__note">Response within a few business days.</p>
+</aside>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

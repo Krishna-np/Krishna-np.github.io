@@ -1,0 +1,1059 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Institutional Transaction Cost Analysis — Krishnendu Nandakumar Padmapriya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="../index.html" class="nav__mark"><span></span>KNP</a>
+  <div class="nav__links">
+    <a href="../index.html#work">Project</a>
+    <a href="../about.html">About</a>
+    <a href="../index.html#experience">Experience</a>
+    <a href="../index.html#education">Education</a>
+    <a href="../index.html#contact">Contact</a>
+  </div>
+  <div class="nav__actions">
+    <a href="../assets/documents/resume-placeholder.pdf" class="btn btn--secondary" download>Résumé</a>
+    <button class="btn btn--primary" data-open-drawer>Let's talk</button>
+  </div>
+</nav>
+
+<header class="case-hero wrap wrap--narrow">
+ <div class="eyebrow" data-reveal>
+    05 · Selected Work
+  </div>
+
+  <h1 data-reveal>
+    Institutional Transaction Cost Analysis
+  </h1>
+
+  <p class="summary" data-reveal>
+    A Python-based study of institutional execution costs, comparing
+    trading strategies through market-impact modeling and Monte Carlo
+    simulation.
+  </p>
+
+  <div class="case-meta-row" data-reveal>
+
+    <div class="case-meta-item">
+      <div class="label">Tools</div>
+      <div class="value">
+        Python | Monte Carlo Simulation | Optimal Execution
+      </div>
+    </div>
+
+    <div class="case-meta-item">
+      <div class="label">Focus</div>
+      <div class="value">
+        Quantitative Finance | Execution Cost
+      </div>
+    </div>
+
+    <div class="case-meta-item">
+      <div class="label">Data</div>
+      <div class="value">
+        AAPL intraday market data
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<section class="case-featured wrap wrap--narrow">
+
+  <figure class="case-featured__visual" data-reveal>
+
+    <img
+      src="../assets/images/projects/project-05/featured_05.png"
+      alt="Solution architecture for the institutional transaction cost analysis workflow">
+
+  </figure>
+
+</section>
+
+<!-- ============================================================
+     01 · BUSINESS PROBLEM
+     ============================================================ -->
+<section class="case-block wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">01</span>
+    <h2>Business Problem</h2>
+  </div>
+
+  <div class="case-block__body" data-reveal data-reveal-delay="1">
+
+    <p>
+      Large institutional orders cannot always be executed at once without
+      affecting the market. Trading too quickly can increase market impact,
+      while trading too slowly leaves the order exposed to price movements.
+    </p>
+
+    <p>
+      The challenge is to choose an execution strategy that manages this
+      trade-off while keeping transaction costs and execution risk under control.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- ============================================================
+     02 · BUSINESS QUESTION
+     ============================================================ -->
+<section class="case-block wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">02</span>
+    <h2>Business Question</h2>
+  </div>
+
+  <div class="case-block__body" data-reveal data-reveal-delay="1">
+
+    <p>
+      Which execution strategy offers the best trade-off between
+      transaction cost and execution risk for a large institutional order?
+    </p>
+
+  </div>
+
+</section>
+
+<!-- ============================================================
+     03 · CONTEXT & DECISION SUPPORTED
+     ============================================================ -->
+<section class="case-block case-context wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">03</span>
+    <h2>Context &amp; Decision Supported</h2>
+  </div>
+
+  <div class="case-block__body" data-reveal data-reveal-delay="1">
+
+    <p>
+      Large orders are usually executed over time rather than all at once.
+      The analysis compares different ways of completing the order and
+      measures the cost and risk that come with each approach.
+    </p>
+
+
+    <div class="case-context__rows">
+
+      <!-- PRIMARY USERS -->
+      <div class="case-context__row">
+
+        <span class="case-context__label">
+          Primary Users
+        </span>
+
+        <h3>
+          Institutional Trading &amp; Execution
+        </h3>
+
+        <p>
+          Review how each strategy performs across execution cost,
+          market impact, timing risk, and implementation shortfall.
+        </p>
+
+      </div>
+
+
+      <!-- DECISION SUPPORTED -->
+      <div class="case-context__row">
+
+        <span class="case-context__label">
+          Decision Supported
+        </span>
+
+        <h3>
+          Which execution approach should be used?
+        </h3>
+
+        <p>
+          Compare TWAP, VWAP, POV, and IS-Optimal before choosing
+          how to execute the order.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============================================================
+     04 · DATA & WORKFLOW
+     ============================================================ -->
+<section class="case-block wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">04</span>
+    <h2>Data &amp; Workflow</h2>
+  </div>
+
+  <div class="case-block__body" data-reveal data-reveal-delay="1">
+
+    <p class="case-workflow__intro">
+      AAPL intraday data is used to build the market inputs for the
+      execution model, then four trading strategies are tested under
+      the same order and market assumptions.
+    </p>
+
+
+    <div class="case-workflow-chart">
+
+      <!-- 01 -->
+      <div class="case-workflow-node">
+        <span class="case-workflow-node__num">01</span>
+
+        <div class="case-workflow-node__content">
+          <h3>Prepare</h3>
+          <p>
+            One-minute AAPL price and volume data is collected and cleaned
+            before being used in the execution analysis.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="case-workflow-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 3v14"/>
+          <path d="m7 13 5 5 5-5"/>
+        </svg>
+      </div>
+
+
+      <!-- 02 -->
+      <div class="case-workflow-node">
+        <span class="case-workflow-node__num">02</span>
+
+        <div class="case-workflow-node__content">
+          <h3>Estimate</h3>
+          <p>
+            Intraday volume, volatility, spread, and liquidity measures
+            are estimated from the market data.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="case-workflow-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 3v14"/>
+          <path d="m7 13 5 5 5-5"/>
+        </svg>
+      </div>
+
+
+      <!-- 03 -->
+      <div class="case-workflow-node">
+        <span class="case-workflow-node__num">03</span>
+
+        <div class="case-workflow-node__content">
+          <h3>Build</h3>
+          <p>
+            TWAP, VWAP, POV, and Almgren–Chriss IS-Optimal execution
+            schedules are created for the same parent order.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="case-workflow-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 3v14"/>
+          <path d="m7 13 5 5 5-5"/>
+        </svg>
+      </div>
+
+
+      <!-- 04 -->
+      <div class="case-workflow-node">
+        <span class="case-workflow-node__num">04</span>
+
+        <div class="case-workflow-node__content">
+          <h3>Simulate</h3>
+          <p>
+            Monte Carlo paths are used to test implementation shortfall
+            and timing risk across the four strategies.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="case-workflow-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 3v14"/>
+          <path d="m7 13 5 5 5-5"/>
+        </svg>
+      </div>
+
+
+      <!-- 05 -->
+      <div class="case-workflow-node">
+        <span class="case-workflow-node__num">05</span>
+
+        <div class="case-workflow-node__content">
+          <h3>Compare</h3>
+          <p>
+            Execution cost, market impact, implementation shortfall,
+            and timing risk are compared across the strategies.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============================================================
+     05 · ANALYSIS & VISUALIZATIONS
+     ============================================================ -->
+<section class="case-block case-block--visuals">
+
+  <div class="wrap wrap--narrow">
+
+    <div class="case-block__head" data-reveal>
+      <span class="index">05</span>
+      <h2>Analysis &amp; Visualizations</h2>
+    </div>
+
+    <div class="case-block__body" data-reveal data-reveal-delay="1">
+      <p>
+        The analysis compares execution paths, simulated shortfall,
+        trading costs, and the cost-versus-risk trade-off across
+        the four execution strategies.
+      </p>
+    </div>
+
+  </div>
+
+
+  <!-- ============================================================
+       VISUALIZATION GRID
+       ============================================================ -->
+  <div class="case-visual-grid wrap">
+
+
+    <!-- 01 · EXECUTION TRAJECTORY -->
+    <article class="case-visual-card" data-reveal>
+
+      <button
+        class="case-visual-card__trigger"
+        type="button"
+        data-lightbox-group="trajectory"
+        aria-label="View Execution Trajectory Comparison visualization">
+
+        <div class="case-visual-card__image">
+          <img
+            src="../assets/images/projects/project-05/execution_trajectory.png"
+            alt="Execution Trajectory Comparison">
+        </div>
+
+        <span class="case-visual-card__expand">
+          View larger ↗
+        </span>
+
+      </button>
+
+      <div class="case-visual-card__caption">
+        <span>01</span>
+
+        <div>
+          <h3>Execution Trajectory</h3>
+
+          <p>
+            How TWAP, VWAP, POV, and IS-Optimal complete the same
+            parent order over the execution horizon.
+          </p>
+        </div>
+      </div>
+
+    </article>
+
+
+    <!-- 02 · IMPLEMENTATION SHORTFALL -->
+    <article
+      class="case-visual-card"
+      data-reveal
+      data-reveal-delay="1">
+
+      <button
+        class="case-visual-card__trigger"
+        type="button"
+        data-lightbox-group="shortfall"
+        aria-label="View Implementation Shortfall Distribution visualization">
+
+        <div class="case-visual-card__image">
+          <img
+            src="../assets/images/projects/project-05/slippage_distribution.png"
+            alt="Implementation Shortfall Distribution">
+        </div>
+
+        <span class="case-visual-card__expand">
+          View larger ↗
+        </span>
+
+      </button>
+
+      <div class="case-visual-card__caption">
+        <span>02</span>
+
+        <div>
+          <h3>Implementation Shortfall</h3>
+
+          <p>
+            Distribution of simulated implementation shortfall across
+            the four execution strategies.
+          </p>
+        </div>
+      </div>
+
+    </article>
+
+
+    <!-- 03 · EXECUTION COST DECOMPOSITION -->
+    <article class="case-visual-card" data-reveal>
+
+      <button
+        class="case-visual-card__trigger"
+        type="button"
+        data-lightbox-group="cost"
+        aria-label="View Execution Cost Decomposition visualization">
+
+        <div class="case-visual-card__image">
+          <img
+            src="../assets/images/projects/project-05/cost_decomposition.png"
+            alt="Execution Cost Decomposition">
+        </div>
+
+        <span class="case-visual-card__expand">
+          View larger ↗
+        </span>
+
+      </button>
+
+      <div class="case-visual-card__caption">
+        <span>03</span>
+
+        <div>
+          <h3>Execution Costs</h3>
+
+          <p>
+            Spread, temporary impact, permanent impact, and timing risk
+            across the four strategies.
+          </p>
+        </div>
+      </div>
+
+    </article>
+
+
+    <!-- 04 · COST VS RISK -->
+    <article
+      class="case-visual-card"
+      data-reveal
+      data-reveal-delay="1">
+
+      <button
+        class="case-visual-card__trigger"
+        type="button"
+        data-lightbox-group="frontier"
+        aria-label="View Cost versus Risk Frontier visualization">
+
+        <div class="case-visual-card__image">
+          <img
+            src="../assets/images/projects/project-05/cost_vs_risk_frontier.png"
+            alt="Cost vs. Risk Frontier">
+        </div>
+
+        <span class="case-visual-card__expand">
+          View larger ↗
+        </span>
+
+      </button>
+
+      <div class="case-visual-card__caption">
+        <span>04</span>
+
+        <div>
+          <h3>Cost–Risk Frontier</h3>
+
+          <p>
+            Mean implementation shortfall compared with execution risk
+            for each strategy.
+          </p>
+        </div>
+      </div>
+
+    </article>
+
+  </div>
+
+
+  <!-- ============================================================
+       LIGHTBOX IMAGE SOURCES
+       ============================================================ -->
+  <div class="case-lightbox-data" hidden>
+
+    <div data-lightbox-group="trajectory">
+      <img
+        src="../assets/images/projects/project-05/execution_trajectory.png"
+        alt="Execution Trajectory Comparison">
+    </div>
+
+    <div data-lightbox-group="shortfall">
+      <img
+        src="../assets/images/projects/project-05/slippage_distribution.png"
+        alt="Implementation Shortfall Distribution">
+    </div>
+
+    <div data-lightbox-group="cost">
+      <img
+        src="../assets/images/projects/project-05/cost_decomposition.png"
+        alt="Execution Cost Decomposition">
+    </div>
+
+    <div data-lightbox-group="frontier">
+      <img
+        src="../assets/images/projects/project-05/cost_vs_risk_frontier.png"
+        alt="Cost vs. Risk Frontier">
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     VISUALIZATION LIGHTBOX
+     ============================================================ -->
+<div
+  class="case-lightbox"
+  id="caseLightbox"
+  aria-hidden="true">
+
+  <div
+    class="case-lightbox__backdrop"
+    data-lightbox-close>
+  </div>
+
+  <div
+    class="case-lightbox__panel"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Expanded project visualization">
+
+    <!-- CLOSE -->
+    <button
+      class="case-lightbox__close"
+      type="button"
+      data-lightbox-close
+      aria-label="Close visualization">
+      ×
+    </button>
+
+    <!-- PREVIOUS -->
+    <button
+      class="case-lightbox__prev"
+      type="button"
+      data-lightbox-prev
+      aria-label="Previous visualization">
+      ←
+    </button>
+
+    <!-- IMAGE -->
+    <div class="case-lightbox__content">
+      <img
+        id="caseLightboxImage"
+        src=""
+        alt="">
+    </div>
+
+    <!-- NEXT -->
+    <button
+      class="case-lightbox__next"
+      type="button"
+      data-lightbox-next
+      aria-label="Next visualization">
+      →
+    </button>
+
+  </div>
+
+</div>
+
+<!-- ============================================================
+     06 · KEY FINDINGS
+     ============================================================ -->
+<section class="case-block case-findings wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">06</span>
+    <h2>Key Findings</h2>
+  </div>
+
+
+  <div class="case-findings__grid">
+
+
+    <!-- 01 -->
+<article class="case-finding" data-reveal>
+
+  <span class="case-finding__mark">→</span>
+
+  <div>
+    <h3>IS-Optimal delivered the lowest execution cost</h3>
+
+    <p>
+      Average cost was approximately <strong>1.9 bps</strong>, giving
+      IS-Optimal a small cost advantage over TWAP and VWAP.
+    </p>
+  </div>
+
+</article>
+
+
+<!-- 02 -->
+<article class="case-finding" data-reveal data-reveal-delay="1">
+
+  <span class="case-finding__mark">→</span>
+
+  <div>
+    <h3>POV paid a clear price for faster execution</h3>
+
+    <p>
+      Average cost increased to roughly <strong>8.3 bps</strong>, with
+      temporary market impact accounting for most of the increase.
+    </p>
+  </div>
+
+</article>
+
+
+<!-- 03 -->
+<article class="case-finding" data-reveal>
+
+  <span class="case-finding__mark">→</span>
+
+  <div>
+    <h3>Timing risk was concentrated in POV</h3>
+
+    <p>
+      POV reached roughly <strong>51 bps</strong> of timing risk, well above
+      the approximately <strong>14–16 bps</strong> range of the other strategies.
+    </p>
+  </div>
+
+</article>
+
+
+<!-- 04 -->
+<article class="case-finding" data-reveal data-reveal-delay="1">
+
+  <span class="case-finding__mark">→</span>
+
+  <div>
+    <h3>IS-Optimal showed the strongest cost–risk position</h3>
+
+    <p>
+      It recorded the lowest mean implementation shortfall at about
+      <strong>3.6 bps</strong> while remaining within a comparable risk range
+      to TWAP and VWAP.
+    </p>
+  </div>
+
+</article>
+
+
+<!-- 05 -->
+<article class="case-finding" data-reveal>
+
+  <span class="case-finding__mark">→</span>
+
+  <div>
+    <h3>Execution schedules materially changed the outcome</h3>
+
+    <p>
+      Front-loaded, volume-based, and evenly distributed schedules produced
+      different combinations of market impact, shortfall, and timing risk.
+    </p>
+  </div>
+
+</article>
+
+
+<!-- 06 -->
+<article class="case-finding" data-reveal data-reveal-delay="1">
+
+  <span class="case-finding__mark">→</span>
+
+  <div>
+    <h3>Strategy choice depends on the execution objective</h3>
+
+    <p>
+      The comparison shows why execution decisions need to consider both
+      trading cost and risk rather than optimizing either measure in isolation.
+    </p>
+  </div>
+
+</article>
+
+
+  </div>
+
+</section>
+
+<!-- ============================================================
+     07 · RECOMMENDATIONS
+     ============================================================ -->
+<section class="case-block case-recommendations wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">07</span>
+    <h2>Recommendations</h2>
+  </div>
+
+
+  <div class="case-recommendations__list">
+
+
+    <!-- 01 -->
+    <article class="case-recommendation" data-reveal>
+
+      <span class="case-recommendation__mark">→</span>
+
+      <div>
+        <h3>Test strategies with higher-resolution market data</h3>
+
+        <p>
+          Extend the analysis beyond one-minute data to capture shorter-term
+          changes in liquidity, spread, and market impact.
+        </p>
+      </div>
+
+    </article>
+
+
+    <!-- 02 -->
+    <article class="case-recommendation" data-reveal data-reveal-delay="1">
+
+      <span class="case-recommendation__mark">→</span>
+
+      <div>
+        <h3>Add limit order book dynamics</h3>
+
+        <p>
+          Use order book data to model available liquidity, queue depth,
+          and how execution decisions interact with the market.
+        </p>
+      </div>
+
+    </article>
+
+
+    <!-- 03 -->
+    <article class="case-recommendation" data-reveal>
+
+      <span class="case-recommendation__mark">→</span>
+
+      <div>
+        <h3>Extend the model across trading venues</h3>
+
+        <p>
+          Add multi-venue execution and smart order routing to compare
+          where and how an institutional order should be placed.
+        </p>
+      </div>
+
+    </article>
+
+
+    <!-- 04 -->
+    <article class="case-recommendation" data-reveal data-reveal-delay="1">
+
+      <span class="case-recommendation__mark">→</span>
+
+      <div>
+        <h3>Account for information leakage</h3>
+
+        <p>
+          Include adverse selection and information leakage to test how
+          larger orders may affect subsequent market behaviour.
+        </p>
+      </div>
+
+    </article>
+
+
+    <!-- 05 -->
+    <article class="case-recommendation" data-reveal>
+
+      <span class="case-recommendation__mark">→</span>
+
+      <div>
+        <h3>Explore adaptive execution policies</h3>
+
+        <p>
+          Test reinforcement learning or other adaptive approaches that can
+          adjust execution as market conditions change.
+        </p>
+      </div>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+<!-- ============================================================
+     08 · SCOPE & LIMITATIONS
+     ============================================================ -->
+<section class="case-block case-scope wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">08</span>
+    <h2>Scope &amp; Limitations</h2>
+  </div>
+
+  <div class="case-block__body" data-reveal data-reveal-delay="1">
+
+    <p>
+      The project is designed to compare execution strategies under a
+      controlled set of assumptions rather than reproduce a live trading environment.
+    </p>
+
+
+    <div class="case-scope__items">
+
+
+      <!-- 01 -->
+      <div class="case-scope__item">
+
+        <h3>Market data has limited granularity</h3>
+
+        <p>
+          The analysis uses one-minute AAPL data, which does not capture
+          order book depth, individual trades, or sub-minute market activity.
+        </p>
+
+      </div>
+
+
+      <!-- 02 -->
+      <div class="case-scope__item">
+
+        <h3>Execution costs are modeled</h3>
+
+        <p>
+          Spread and market-impact costs are estimated using model assumptions
+          rather than actual institutional order and fill data.
+        </p>
+
+      </div>
+
+
+      <!-- 03 -->
+      <div class="case-scope__item">
+
+        <h3>Simulation simplifies live execution</h3>
+
+        <p>
+          The Monte Carlo analysis does not include venue selection,
+          queue position, partial fills, or changing order book conditions.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============================================================
+     09 · TOOLS & METHODS
+     ============================================================ -->
+<section class="case-block case-tools wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">09</span>
+    <h2>Tools &amp; Methods</h2>
+  </div>
+
+  <div class="case-tools__grid" data-reveal data-reveal-delay="1">
+
+
+    <!-- DATA & COMPUTING -->
+    <div class="case-tools__group">
+
+      <span class="case-tools__label">
+        Data &amp; Computing
+      </span>
+
+      <div class="case-tools__items">
+        <span>Python</span>
+        <span>Pandas</span>
+        <span>NumPy</span>
+        <span>yfinance</span>
+      </div>
+
+    </div>
+
+
+    <!-- OPTIMIZATION & STATISTICS -->
+    <div class="case-tools__group">
+
+      <span class="case-tools__label">
+        Optimization &amp; Statistics
+      </span>
+
+      <div class="case-tools__items">
+        <span>SciPy</span>
+        <span>Statsmodels</span>
+        <span>Monte Carlo Simulation</span>
+      </div>
+
+    </div>
+
+
+    <!-- EXECUTION MODELING -->
+    <div class="case-tools__group">
+
+      <span class="case-tools__label">
+        Execution Modeling
+      </span>
+
+      <div class="case-tools__items">
+        <span>Almgren–Chriss</span>
+        <span>TWAP</span>
+        <span>VWAP</span>
+        <span>POV</span>
+        <span>Implementation Shortfall</span>
+      </div>
+
+    </div>
+
+
+    <!-- VISUALIZATION & ENVIRONMENT -->
+    <div class="case-tools__group">
+
+      <span class="case-tools__label">
+        Visualization &amp; Environment
+      </span>
+
+      <div class="case-tools__items">
+        <span>Plotly</span>
+        <span>Kaleido</span>
+        <span>Jupyter Notebook</span>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+<section class="case-block wrap wrap--narrow">
+  <div class="case-block__head" data-reveal><span class="index">10</span><h2>Project Link</h2></div>
+  <div class="case-block__body" data-reveal>
+    <a href="https://github.com/Krishna-np/Institutional-Transaction-Cost-Analysis" target="_blank" rel="noopener" class="btn btn--secondary">
+      View on GitHub
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M9 7h8v8"/></svg>
+    </a>
+  </div>
+</section>
+
+<div class="case-next wrap wrap--narrow">
+  <div>
+    <div class="label">Next project</div>
+    <h3>Enterprise Sales &amp; Commercial Analytics</h3>
+  </div>
+  <a href="project-01.html" class="btn btn--primary">Continue
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </a>
+</div>
+
+<footer class="footer wrap wrap--narrow">
+  <div>
+    <div class="footer__name">Krishnendu Nandakumar Padmapriya</div>
+    <div>Business &amp; Data Analyst</div>
+  </div>
+  <div class="footer__links">
+    <a href="https://www.linkedin.com/in/krishnendu-np/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/Krishna-np" target="_blank" rel="noopener">GitHub</a>
+    <a href="mailto:krishnendu.knp@gmail.com">Email</a>
+  </div>
+  <div id="year"></div>
+</footer>
+
+<div class="overlay" id="overlay" data-close-drawer></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="Contact panel">
+  <div class="drawer__top">
+    <h3>Get in touch</h3>
+    <button class="drawer__close" data-close-drawer aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+
+  <div class="drawer__row">
+    <div>
+      <div class="label">Email</div>
+      <div class="value">krishnendu.knp@gmail.com</div>
+    </div>
+    <button class="drawer__copy" id="copyEmail">Copy</button>
+  </div>
+
+  <div class="drawer__row">
+    <div>
+      <div class="label">LinkedIn</div>
+      <div class="value">krishnendu-np</div>
+    </div>
+    <a class="drawer__copy" href="https://www.linkedin.com/in/krishnendu-np/" target="_blank" rel="noopener">Open</a>
+  </div>
+
+  <div class="drawer__row">
+    <div>
+      <div class="label">GitHub</div>
+      <div class="value">Krishna-np</div>
+    </div>
+    <a class="drawer__copy" href="https://github.com/Krishna-np" target="_blank" rel="noopener">Open</a>
+  </div>
+
+  <div class="drawer__row">
+    <div>
+      <div class="label">Résumé</div>
+      <div class="value">PDF</div>
+    </div>
+    <a class="drawer__copy" href="../assets/documents/resume-placeholder.pdf" download>Download</a>
+  </div>
+
+  <div class="drawer__row" style="border-bottom:none;">
+    <div>
+      <div class="label">Location</div>
+      <div class="value">Open to opportunities across the U.S.</div>
+    </div>
+  </div>
+
+  <p class="drawer__note">Response within a few business days.</p>
+</aside>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

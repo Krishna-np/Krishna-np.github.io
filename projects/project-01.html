@@ -1,0 +1,966 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enterprise Sales &amp; Commercial Analytics — Krishnendu Nandakumar Padmapriya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="../index.html" class="nav__mark"><span></span>KNP</a>
+  <div class="nav__links">
+    <a href="../index.html#work">Project</a>
+    <a href="../about.html">About</a>
+    <a href="../index.html#experience">Experience</a>
+    <a href="../index.html#education">Education</a>
+    <a href="../index.html#contact">Contact</a>
+  </div>
+  <div class="nav__actions">
+    <a href="../assets/documents/resume-placeholder.pdf" class="btn btn--secondary" download>Résumé</a>
+    <button class="btn btn--primary" data-open-drawer>Let's talk</button>
+  </div>
+</nav>
+
+<header class="case-hero wrap wrap--narrow">
+
+  <div class="eyebrow" data-reveal>
+    01 · Selected Work
+  </div>
+
+  <h1 data-reveal data-reveal-delay="1">
+    Enterprise Sales &amp;<br>
+    Commercial Analytics Platform
+  </h1>
+
+  <p class="summary" data-reveal data-reveal-delay="2">
+    An end-to-end analytics platform that brings sales, finance, marketing,
+    inventory, and customer data into one reporting layer for commercial
+    performance analysis and decision support.
+  </p>
+
+  <div class="case-meta-row" data-reveal data-reveal-delay="3">
+
+    <div class="case-meta-item">
+      <div class="label">Core Stack</div>
+      <div class="value">SQL | Python | SQLite</div>
+    </div>
+
+    <div class="case-meta-item">
+      <div class="label">Analytics</div>
+      <div class="value">Customer Analytics | Forecasting | KPI Reporting</div>
+    </div>
+
+    <div class="case-meta-item">
+      <div class="label">Data</div>
+      <div class="value">Synthetic Enterprise Dataset</div>
+    </div>
+
+  </div>
+
+</header>
+
+<section class="case-featured wrap wrap--narrow">
+
+  <figure class="case-featured__visual" data-reveal="mask">
+
+    <img
+      src="../assets/images/projects/project-01/architecture.png"
+      alt="Architecture of the Enterprise Sales and Commercial Analytics Platform">
+
+    <figcaption>
+      From operational systems to governed analytics and executive decision support.
+    </figcaption>
+
+  </figure>
+
+</section>
+
+<section class="case-block wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">01</span>
+    <h2>Business Problem</h2>
+  </div>
+
+  <div class="case-block__body" data-reveal data-reveal-delay="1">
+
+   <p>
+    Commercial data often sits across separate systems for sales,
+    finance, marketing, inventory, and customer operations.
+   </p>
+
+    <p>
+      When each function calculates and reports metrics independently,
+      the same KPI can have different definitions, cross-functional
+      reporting requires manual reconciliation, and decision-makers are
+      left without a consistent view of business performance.
+    </p>
+
+    <p>
+      This project explores how those separate data sources can be brought
+      into a governed analytical structure that supports consistent
+      reporting across the business.
+    </p>
+
+  </div>
+
+</section>
+
+<section class="case-block wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">02</span>
+    <h2>Business Question</h2>
+  </div>
+
+  <div class="case-block__body" data-reveal data-reveal-delay="1">
+    <p>
+      How can commercial data across multiple business functions be brought
+      together to create a consistent view of performance, identify areas
+      that need attention, and support better business decisions?
+    </p>
+  </div>
+
+</section>
+
+<section class="case-block wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">03</span>
+    <h2>Decision Context</h2>
+  </div>
+
+  <div class="case-block__body" data-reveal data-reveal-delay="1">
+    <p>
+      The platform is designed to give commercial teams a shared view of
+      revenue, profitability, pipeline health, customer performance,
+      inventory risk, and demand.
+    </p>
+
+    <p>
+      Instead of reviewing each area separately, the reporting layer brings
+      these measures together so performance issues can be identified,
+      compared, and followed up from one consistent analytical view.
+    </p>
+  </div>
+
+</section>
+
+<section class="case-block wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">04</span>
+    <h2>Data &amp; Workflow</h2>
+  </div>
+
+  <div class="case-block__body">
+
+    <p data-reveal>
+      The project uses synthetically generated enterprise data structured
+      around the main commercial functions represented in the platform.
+      Before analysis, the data moves through a SQL-first ETL process that
+      checks quality, standardizes records, and loads validated data into
+      a star-schema warehouse.
+    </p>
+
+    <!-- WAREHOUSE SUMMARY -->
+    <div class="case-data-stats" data-reveal data-reveal-delay="1">
+
+      <div class="case-data-stat">
+        <strong>10</strong>
+        <span>Dimension Tables</span>
+      </div>
+
+      <div class="case-data-stat">
+        <strong>8</strong>
+        <span>Fact Tables</span>
+      </div>
+
+      <div class="case-data-stat">
+       <strong class="case-data-stat__text">SQL-first</strong>
+       <span>ETL Pipeline</span>
+      </div>
+
+    </div>
+
+
+    <!-- WORKFLOW -->
+    <div class="case-workflow" data-reveal data-reveal-delay="2">
+
+      <div class="case-workflow__step">
+  <span class="num">01</span>
+  <h3>Stage</h3>
+  <p>Bring source data into a controlled staging layer.</p>
+</div>
+
+<div class="case-workflow__step">
+  <span class="num">02</span>
+  <h3>Validate</h3>
+  <p>Check data quality and flag issues before loading.</p>
+</div>
+
+<div class="case-workflow__step">
+  <span class="num">03</span>
+  <h3>Load</h3>
+  <p>Move validated data into the star-schema warehouse.</p>
+</div>
+
+<div class="case-workflow__step">
+  <span class="num">04</span>
+  <h3>Audit</h3>
+  <p>Keep a record of validation results across each run.</p>
+</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============================================================
+     05 · ANALYSIS & VISUALIZATIONS
+     ============================================================ -->
+<section class="case-block case-block--visuals">
+
+  <div class="wrap wrap--narrow">
+
+    <div class="case-block__head" data-reveal>
+      <span class="index">05</span>
+      <h2>Analysis &amp; Visualizations</h2>
+    </div>
+
+    <div class="case-block__body" data-reveal data-reveal-delay="1">
+      <p>
+        The analysis moves from overall commercial performance and pipeline
+        health to territory performance, customer behaviour, revenue risk,
+        and demand planning.
+      </p>
+    </div>
+
+  </div>
+
+
+  <!-- ============================================================
+       VISUALIZATION GRID
+       ============================================================ -->
+  <div class="case-visual-grid wrap">
+
+
+    <!-- 01 · REVENUE & GROSS PROFIT -->
+    <article class="case-visual-card" data-reveal>
+
+      <button
+        class="case-visual-card__trigger"
+        type="button"
+        data-lightbox-group="revenue"
+        aria-label="View Revenue and Gross Profit visualization">
+
+        <div class="case-visual-card__image">
+          <img
+            src="../assets/images/projects/project-01/Revenue &amp; Gross Profit Trend.png"
+            alt="Revenue and Gross Profit Trend">
+        </div>
+
+        <span class="case-visual-card__expand">
+          View larger ↗
+        </span>
+
+      </button>
+
+      <div class="case-visual-card__caption">
+        <span>01</span>
+
+        <div>
+          <h3>Revenue &amp; Gross Profit</h3>
+          <p>
+            Monthly revenue and gross profit performance across the reporting period.
+          </p>
+        </div>
+      </div>
+
+    </article>
+
+
+    <!-- 02 · SALES PIPELINE -->
+    <article class="case-visual-card" data-reveal data-reveal-delay="1">
+
+      <button
+        class="case-visual-card__trigger"
+        type="button"
+        data-lightbox-group="pipeline"
+        aria-label="View Sales Pipeline visualization">
+
+        <div class="case-visual-card__image">
+          <img
+            src="../assets/images/projects/project-01/Pipeline by Stage.png"
+            alt="Pipeline by Stage">
+        </div>
+
+        <span class="case-visual-card__expand">
+          View larger ↗
+        </span>
+
+      </button>
+
+      <div class="case-visual-card__caption">
+        <span>02</span>
+
+        <div>
+          <h3>Sales Pipeline</h3>
+          <p>
+            Opportunity value across the different stages of the sales pipeline.
+          </p>
+        </div>
+      </div>
+
+    </article>
+
+
+    <!-- 03 · TERRITORY PERFORMANCE -->
+    <article class="case-visual-card" data-reveal data-reveal-delay="2">
+
+      <button
+        class="case-visual-card__trigger"
+        type="button"
+        data-lightbox-group="territory"
+        aria-label="View Territory Performance visualization">
+
+        <div class="case-visual-card__image">
+          <img
+            src="../assets/images/projects/project-01/Revenue by Territory.png"
+            alt="Revenue by Territory">
+        </div>
+
+        <span class="case-visual-card__expand">
+          View larger ↗
+        </span>
+
+      </button>
+
+      <div class="case-visual-card__caption">
+        <span>03</span>
+
+        <div>
+          <h3>Territory Performance</h3>
+          <p>
+            Revenue contribution across the enterprise sales territories.
+          </p>
+        </div>
+      </div>
+
+    </article>
+
+
+    <!-- 04 · CUSTOMER SEGMENTATION -->
+    <article class="case-visual-card" data-reveal>
+
+      <button
+        class="case-visual-card__trigger"
+        type="button"
+        data-lightbox-group="segmentation"
+        aria-label="View Customer Segmentation visualization">
+
+        <div class="case-visual-card__image">
+          <img
+            src="../assets/images/projects/project-01/Customer Segmentation.png"
+            alt="Customer Segmentation">
+        </div>
+
+        <span class="case-visual-card__expand">
+          View larger ↗
+        </span>
+
+      </button>
+
+      <div class="case-visual-card__caption">
+        <span>04</span>
+
+        <div>
+          <h3>Customer Segmentation</h3>
+          <p>
+            Customer groups based on purchasing behaviour and lifetime value.
+          </p>
+        </div>
+      </div>
+
+    </article>
+
+
+    <!-- 05 · REVENUE AT RISK -->
+    <article class="case-visual-card" data-reveal data-reveal-delay="1">
+
+      <button
+        class="case-visual-card__trigger"
+        type="button"
+        data-lightbox-group="risk"
+        aria-label="View Revenue at Risk visualization">
+
+        <div class="case-visual-card__image">
+          <img
+            src="../assets/images/projects/project-01/Revenue at Risk by Customer Segment.png"
+            alt="Revenue at Risk by Customer Segment">
+        </div>
+
+        <span class="case-visual-card__expand">
+          View larger ↗
+        </span>
+
+      </button>
+
+      <div class="case-visual-card__caption">
+        <span>05</span>
+
+        <div>
+          <h3>Revenue at Risk</h3>
+          <p>
+            Revenue exposure across customer segments and retention-risk levels.
+          </p>
+        </div>
+      </div>
+
+    </article>
+
+
+    <!-- 06 · DEMAND FORECAST -->
+    <article class="case-visual-card" data-reveal data-reveal-delay="2">
+
+      <button
+        class="case-visual-card__trigger"
+        type="button"
+        data-lightbox-group="forecast"
+        aria-label="View Demand Forecast visualization">
+
+        <div class="case-visual-card__image">
+          <img
+            src="../assets/images/projects/project-01/Demand Forecast.png"
+            alt="Demand Forecast">
+        </div>
+
+        <span class="case-visual-card__expand">
+          View larger ↗
+        </span>
+
+      </button>
+
+      <div class="case-visual-card__caption">
+        <span>06</span>
+
+        <div>
+          <h3>Demand Forecast</h3>
+          <p>
+            Historical demand compared with the Holt-Winters forecast.
+          </p>
+        </div>
+      </div>
+
+    </article>
+
+  </div>
+
+
+  <!-- ============================================================
+       LIGHTBOX IMAGE SOURCES
+       ============================================================ -->
+  <div class="case-lightbox-data" hidden>
+
+    <div data-lightbox-group="revenue">
+      <img
+        src="../assets/images/projects/project-01/Revenue &amp; Gross Profit Trend.png"
+        alt="Revenue and Gross Profit Trend">
+    </div>
+
+    <div data-lightbox-group="pipeline">
+      <img
+        src="../assets/images/projects/project-01/Pipeline by Stage.png"
+        alt="Pipeline by Stage">
+    </div>
+
+    <div data-lightbox-group="territory">
+      <img
+        src="../assets/images/projects/project-01/Revenue by Territory.png"
+        alt="Revenue by Territory">
+    </div>
+
+    <div data-lightbox-group="segmentation">
+      <img
+        src="../assets/images/projects/project-01/Customer Segmentation.png"
+        alt="Customer Segmentation">
+    </div>
+
+    <div data-lightbox-group="risk">
+      <img
+        src="../assets/images/projects/project-01/Revenue at Risk by Customer Segment.png"
+        alt="Revenue at Risk by Customer Segment">
+    </div>
+
+    <div data-lightbox-group="forecast">
+      <img
+        src="../assets/images/projects/project-01/Demand Forecast.png"
+        alt="Demand Forecast">
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     VISUALIZATION LIGHTBOX
+     ============================================================ -->
+<div
+  class="case-lightbox"
+  id="caseLightbox"
+  aria-hidden="true">
+
+  <div
+    class="case-lightbox__backdrop"
+    data-lightbox-close>
+  </div>
+
+  <div
+    class="case-lightbox__panel"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Expanded project visualization">
+
+    <!-- CLOSE -->
+    <button
+      class="case-lightbox__close"
+      type="button"
+      data-lightbox-close
+      aria-label="Close visualization">
+      ×
+    </button>
+
+    <!-- PREVIOUS -->
+    <button
+      class="case-lightbox__prev"
+      type="button"
+      data-lightbox-prev
+      aria-label="Previous visualization">
+      ←
+    </button>
+
+    <!-- IMAGE -->
+    <div class="case-lightbox__content">
+      <img
+        id="caseLightboxImage"
+        src=""
+        alt="">
+    </div>
+
+    <!-- NEXT -->
+    <button
+      class="case-lightbox__next"
+      type="button"
+      data-lightbox-next
+      aria-label="Next visualization">
+      →
+    </button>
+
+  </div>
+
+</div>
+
+<!-- ============================================================
+     06 · KEY FINDINGS
+     ============================================================ -->
+<section class="case-block case-findings wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">06</span>
+    <h2>Key Findings</h2>
+  </div>
+
+  <div class="case-findings__grid">
+
+
+    <!-- 01 -->
+    <article class="case-finding" data-reveal>
+
+      <span class="case-finding__mark">→</span>
+
+      <div>
+        <h3>Revenue continued to grow</h3>
+
+        <p>
+          Revenue increased from <strong>$298.8M</strong> in FY2022 to
+          <strong>$312.5M</strong> in FY2024, although the year-over-year
+          trend weakened in 2024.
+        </p>
+      </div>
+
+    </article>
+
+
+    <!-- 02 -->
+    <article class="case-finding" data-reveal data-reveal-delay="1">
+
+      <span class="case-finding__mark">→</span>
+
+      <div>
+        <h3>Pipeline coverage remains thin</h3>
+
+        <p>
+          Pipeline coverage stands at <strong>0.38×</strong>, making
+          stronger opportunity generation and conversion important for
+          supporting future revenue growth.
+        </p>
+      </div>
+
+    </article>
+
+
+    <!-- 03 -->
+    <article class="case-finding" data-reveal>
+
+      <span class="case-finding__mark">→</span>
+
+      <div>
+        <h3>Sales performance varies across the business</h3>
+
+        <p>
+          Results differ across representatives and territories, creating
+          opportunities for more targeted coaching and performance management.
+        </p>
+      </div>
+
+    </article>
+
+
+    <!-- 04 -->
+    <article class="case-finding" data-reveal data-reveal-delay="1">
+
+      <span class="case-finding__mark">→</span>
+
+      <div>
+        <h3>Four customer groups emerged</h3>
+
+        <p>
+          RFM analysis identified <strong>Champions, Loyal Customers,
+          Emerging Customers, and At-Risk Customers</strong>, providing
+          a clearer basis for differentiated customer strategies.
+        </p>
+      </div>
+
+    </article>
+
+
+    <!-- 05 -->
+    <article class="case-finding" data-reveal>
+
+      <span class="case-finding__mark">→</span>
+
+      <div>
+        <h3>SMB carries the largest revenue exposure</h3>
+
+        <p>
+          The SMB segment represents the largest share of potential revenue
+          at risk, making it the strongest priority for proactive retention.
+        </p>
+      </div>
+
+    </article>
+
+
+    <!-- 06 -->
+    <article class="case-finding" data-reveal data-reveal-delay="1">
+
+      <span class="case-finding__mark">→</span>
+
+      <div>
+        <h3>Short-term forecasting performed well</h3>
+
+        <p>
+          The Holt-Winters model achieved a <strong>1.06% holdout MAPE</strong>,
+          while the ERP forecasting process averaged
+          <strong>87.46% forecast accuracy</strong>.
+        </p>
+      </div>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+<!-- ============================================================
+     07 · RECOMMENDATIONS
+     ============================================================ -->
+<section class="case-block case-recommendations wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">07</span>
+    <h2>Recommendations</h2>
+  </div>
+
+  <div class="case-recommendations__list">
+
+  <article class="case-recommendation" data-reveal>
+    <span class="case-recommendation__mark">→</span>
+
+    <div>
+      <h3>Build more pipeline coverage</h3>
+      <p>
+        Increase qualified opportunity generation and focus on conversion
+        through the active pipeline to improve the current
+        <strong>0.38× coverage</strong>.
+      </p>
+    </div>
+  </article>
+
+
+  <article class="case-recommendation" data-reveal data-reveal-delay="1">
+    <span class="case-recommendation__mark">→</span>
+
+    <div>
+      <h3>Focus retention where revenue exposure is highest</h3>
+      <p>
+        Prioritize high-value and critical accounts, particularly within
+        the <strong>SMB segment</strong>, where the analysis shows the
+        largest potential revenue exposure.
+      </p>
+    </div>
+  </article>
+
+
+  <article class="case-recommendation" data-reveal>
+    <span class="case-recommendation__mark">→</span>
+
+    <div>
+      <h3>Look closer at sales performance gaps</h3>
+      <p>
+        Use differences across representatives and territories to identify
+        where coaching, resource allocation, or successful sales practices
+        could improve performance.
+      </p>
+    </div>
+  </article>
+
+
+  <article class="case-recommendation" data-reveal data-reveal-delay="1">
+    <span class="case-recommendation__mark">→</span>
+
+    <div>
+      <h3>Use customer segments differently</h3>
+      <p>
+        Treat Champions, Loyal, Emerging, and At-Risk customers differently
+        across sales, marketing, and customer-success activity rather than
+        applying the same approach to every account.
+      </p>
+    </div>
+  </article>
+
+
+  <article class="case-recommendation" data-reveal>
+    <span class="case-recommendation__mark">→</span>
+
+    <div>
+      <h3>Bring the forecast into inventory decisions</h3>
+      <p>
+        Use the short-term demand forecast alongside inventory and supplier
+        information to support replenishment planning and reduce stockout
+        exposure.
+      </p>
+    </div>
+  </article>
+
+</div>
+</section>
+
+<!-- ============================================================
+     08 · SCOPE & LIMITATIONS
+     ============================================================ -->
+<section class="case-block case-scope wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">08</span>
+    <h2>Scope &amp; Limitations</h2>
+  </div>
+
+  <div class="case-block__body" data-reveal data-reveal-delay="1">
+
+    <p>
+      The platform covers the full analytical workflow from data preparation
+      and warehousing through customer analytics, forecasting, and reporting.
+      The following boundaries should be considered when interpreting the results.
+    </p>
+
+    <div class="case-scope__items">
+
+      <div class="case-scope__item">
+        <h3>Synthetic dataset</h3>
+        <p>
+          The data was generated for the project, so the findings reflect
+          the analytical scenario rather than the performance of a real company.
+        </p>
+      </div>
+
+      <div class="case-scope__item">
+        <h3>SQLite environment</h3>
+        <p>
+          SQLite supports the warehouse and analysis used here, but a
+          production implementation would require a more scalable data platform.
+        </p>
+      </div>
+
+      <div class="case-scope__item">
+        <h3>Retention risk model</h3>
+        <p>
+          Customer risk is based on defined behavioural and service indicators
+          rather than a predictive model trained on historical churn outcomes.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============================================================
+     09 · TOOLS & METHODS
+     ============================================================ -->
+<section class="case-block case-tools wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">09</span>
+    <h2>Tools &amp; Methods</h2>
+  </div>
+
+  <div class="case-tools__grid" data-reveal data-reveal-delay="1">
+
+    <div class="case-tools__group">
+      <span class="case-tools__label">Warehouse &amp; Querying</span>
+      <div class="case-tools__items">
+        <span>SQLite</span>
+        <span>SQL</span>
+        <span>SQLAlchemy</span>
+      </div>
+    </div>
+
+    <div class="case-tools__group">
+      <span class="case-tools__label">Data &amp; Analytics</span>
+      <div class="case-tools__items">
+        <span>Python</span>
+        <span>Pandas</span>
+        <span>NumPy</span>
+      </div>
+    </div>
+
+    <div class="case-tools__group">
+      <span class="case-tools__label">Modeling</span>
+      <div class="case-tools__items">
+        <span>Scikit-learn</span>
+        <span>Statsmodels</span>
+        <span>RFM Analysis</span>
+        <span>K-Means</span>
+        <span>Holt-Winters</span>
+      </div>
+    </div>
+
+    <div class="case-tools__group">
+      <span class="case-tools__label">Visualization</span>
+      <div class="case-tools__items">
+        <span>Plotly</span>
+        <span>Matplotlib</span>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="case-block wrap wrap--narrow">
+  <div class="case-block__head" data-reveal><span class="index">10</span><h2>Project Link</h2></div>
+  <div class="case-block__body" data-reveal>
+    <a href="https://github.com/Krishna-np/Enterprise-Sales-Commercial-Analytics-Platform" target="_blank" rel="noopener" class="btn btn--secondary">
+      View on GitHub
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M9 7h8v8"/></svg>
+    </a>
+  </div>
+</section>
+
+<div class="case-next wrap wrap--narrow">
+  <div>
+    <div class="label">Next project</div>
+    <h3>M&amp;A Target Screening &amp; Valuation Intelligence</h3>
+  </div>
+  <a href="project-02.html" class="btn btn--primary">Continue
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </a>
+</div>
+
+<footer class="footer wrap wrap--narrow">
+  <div>
+    <div class="footer__name">Krishnendu Nandakumar Padmapriya</div>
+    <div>Business &amp; Data Analyst</div>
+  </div>
+  <div class="footer__links">
+    <a href="https://www.linkedin.com/in/krishnendu-np/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/Krishna-np" target="_blank" rel="noopener">GitHub</a>
+    <a href="mailto:krishnendu.knp@gmail.com">Email</a>
+  </div>
+  <div id="year"></div>
+</footer>
+
+<div class="overlay" id="overlay" data-close-drawer></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="Contact panel">
+  <div class="drawer__top">
+    <h3>Get in touch</h3>
+    <button class="drawer__close" data-close-drawer aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+
+  <div class="drawer__row">
+    <div>
+      <div class="label">Email</div>
+      <div class="value">krishnendu.knp@gmail.com</div>
+    </div>
+    <button class="drawer__copy" id="copyEmail">Copy</button>
+  </div>
+
+  <div class="drawer__row">
+    <div>
+      <div class="label">LinkedIn</div>
+      <div class="value">krishnendu-np</div>
+    </div>
+    <a class="drawer__copy" href="https://www.linkedin.com/in/krishnendu-np/" target="_blank" rel="noopener">Open</a>
+  </div>
+
+  <div class="drawer__row">
+    <div>
+      <div class="label">GitHub</div>
+      <div class="value">Krishna-np</div>
+    </div>
+    <a class="drawer__copy" href="https://github.com/Krishna-np" target="_blank" rel="noopener">Open</a>
+  </div>
+
+  <div class="drawer__row">
+    <div>
+      <div class="label">Résumé</div>
+      <div class="value">PDF</div>
+    </div>
+    <a class="drawer__copy" href="../assets/documents/resume-placeholder.pdf" download>Download</a>
+  </div>
+
+  <div class="drawer__row" style="border-bottom:none;">
+    <div>
+      <div class="label">Location</div>
+      <div class="value">Open to opportunities across the U.S.</div>
+    </div>
+  </div>
+
+  <p class="drawer__note">Response within a few business days.</p>
+</aside>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
