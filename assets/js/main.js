@@ -705,4 +705,40 @@ if (visualTriggers.length){
   );
 
 }
+document.querySelectorAll('.case-recommendation__trigger').forEach((trigger) => {
+  trigger.addEventListener('click', () => {
+
+    const item = trigger.closest('.case-recommendation');
+    const isOpen = item.classList.contains('is-open');
+
+    item.classList.toggle('is-open', !isOpen);
+    trigger.setAttribute('aria-expanded', String(!isOpen));
+
+  });
+});
+document.querySelectorAll('.case-tools__tab').forEach((tab) => {
+  tab.addEventListener('click', () => {
+
+    const target = tab.dataset.toolsTab;
+
+    document
+      .querySelectorAll('.case-tools__tab')
+      .forEach((item) => {
+        item.classList.toggle(
+          'is-active',
+          item === tab
+        );
+      });
+
+    document
+      .querySelectorAll('.case-tools__panel')
+      .forEach((panel) => {
+        panel.classList.toggle(
+          'is-active',
+          panel.dataset.toolsPanel === target
+        );
+      });
+
+  });
+});
 })();

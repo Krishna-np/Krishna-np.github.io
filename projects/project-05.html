@@ -14,7 +14,7 @@
 <nav class="nav" id="nav">
   <a href="../index.html" class="nav__mark"><span></span>KNP</a>
   <div class="nav__links">
-    <a href="../index.html#work">Project</a>
+    <a href="../index.html#work">Projects</a>
     <a href="../about.html">About</a>
     <a href="../index.html#experience">Experience</a>
     <a href="../index.html#education">Education</a>
@@ -42,13 +42,6 @@
   </p>
 
   <div class="case-meta-row" data-reveal>
-
-    <div class="case-meta-item">
-      <div class="label">Tools</div>
-      <div class="value">
-        Python | Monte Carlo Simulation | Optimal Execution
-      </div>
-    </div>
 
     <div class="case-meta-item">
       <div class="label">Focus</div>
@@ -80,26 +73,35 @@
 </section>
 
 <!-- ============================================================
-     01 · BUSINESS PROBLEM
+     01 · BUSINESS CONTEXT
      ============================================================ -->
 <section class="case-block wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
     <span class="index">01</span>
-    <h2>Business Problem</h2>
+    <h2>Business Context</h2>
   </div>
 
   <div class="case-block__body" data-reveal data-reveal-delay="1">
 
     <p>
-      Large institutional orders cannot always be executed at once without
-      affecting the market. Trading too quickly can increase market impact,
-      while trading too slowly leaves the order exposed to price movements.
+      Large institutional orders are usually spread out over time because
+      executing everything at once can move the market. The problem is that
+      waiting has a cost too — the longer an order stays open, the more time
+      there is for the price to move. I used 1-minute intraday data to look
+      at that trade-off.
+    </p>
+
+    <p class="case-business-question">
+      The question: Which execution strategy offers the best trade-off
+      between transaction cost and execution risk for a large institutional
+      order?
     </p>
 
     <p>
-      The challenge is to choose an execution strategy that manages this
-      trade-off while keeping transaction costs and execution risk under control.
+      I compared <strong>TWAP, VWAP, POV, and IS-Optimal</strong> using
+      implementation shortfall, market impact, and execution risk rather
+      than looking at execution cost by itself.
     </p>
 
   </div>
@@ -107,295 +109,59 @@
 </section>
 
 <!-- ============================================================
-     02 · BUSINESS QUESTION
+     02 · DATA & WORKFLOW
      ============================================================ -->
 <section class="case-block wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
     <span class="index">02</span>
-    <h2>Business Question</h2>
-  </div>
-
-  <div class="case-block__body" data-reveal data-reveal-delay="1">
-
-    <p>
-      Which execution strategy offers the best trade-off between
-      transaction cost and execution risk for a large institutional order?
-    </p>
-
-  </div>
-
-</section>
-
-<!-- ============================================================
-     03 · CONTEXT & DECISION SUPPORTED
-     ============================================================ -->
-<section class="case-block case-context wrap wrap--narrow">
-
-  <div class="case-block__head" data-reveal>
-    <span class="index">03</span>
-    <h2>Context &amp; Decision Supported</h2>
-  </div>
-
-  <div class="case-block__body" data-reveal data-reveal-delay="1">
-
-    <p>
-      Large orders are usually executed over time rather than all at once.
-      The analysis compares different ways of completing the order and
-      measures the cost and risk that come with each approach.
-    </p>
-
-
-    <div class="case-context__rows">
-
-      <!-- PRIMARY USERS -->
-      <div class="case-context__row">
-
-        <span class="case-context__label">
-          Primary Users
-        </span>
-
-        <h3>
-          Institutional Trading &amp; Execution
-        </h3>
-
-        <p>
-          Review how each strategy performs across execution cost,
-          market impact, timing risk, and implementation shortfall.
-        </p>
-
-      </div>
-
-
-      <!-- DECISION SUPPORTED -->
-      <div class="case-context__row">
-
-        <span class="case-context__label">
-          Decision Supported
-        </span>
-
-        <h3>
-          Which execution approach should be used?
-        </h3>
-
-        <p>
-          Compare TWAP, VWAP, POV, and IS-Optimal before choosing
-          how to execute the order.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ============================================================
-     04 · DATA & WORKFLOW
-     ============================================================ -->
-<section class="case-block wrap wrap--narrow">
-
-  <div class="case-block__head" data-reveal>
-    <span class="index">04</span>
     <h2>Data &amp; Workflow</h2>
   </div>
 
   <div class="case-block__body" data-reveal data-reveal-delay="1">
 
-    <p class="case-workflow__intro">
-      AAPL intraday data is used to build the market inputs for the
-      execution model, then four trading strategies are tested under
-      the same order and market assumptions.
+    <p>
+      I started with one-minute AAPL price and volume data and used the
+      intraday patterns to estimate volatility, liquidity, and bid-ask
+      spreads where quote data wasn't available. I used those estimates
+      in the market-impact model, built the execution schedules, and then
+      tested them across simulated price paths.
     </p>
-
-
-    <div class="case-workflow-chart">
-
-      <!-- 01 -->
-      <div class="case-workflow-node">
-        <span class="case-workflow-node__num">01</span>
-
-        <div class="case-workflow-node__content">
-          <h3>Prepare</h3>
-          <p>
-            One-minute AAPL price and volume data is collected and cleaned
-            before being used in the execution analysis.
-          </p>
-        </div>
-      </div>
-
-
-      <div class="case-workflow-arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M12 3v14"/>
-          <path d="m7 13 5 5 5-5"/>
-        </svg>
-      </div>
-
-
-      <!-- 02 -->
-      <div class="case-workflow-node">
-        <span class="case-workflow-node__num">02</span>
-
-        <div class="case-workflow-node__content">
-          <h3>Estimate</h3>
-          <p>
-            Intraday volume, volatility, spread, and liquidity measures
-            are estimated from the market data.
-          </p>
-        </div>
-      </div>
-
-
-      <div class="case-workflow-arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M12 3v14"/>
-          <path d="m7 13 5 5 5-5"/>
-        </svg>
-      </div>
-
-
-      <!-- 03 -->
-      <div class="case-workflow-node">
-        <span class="case-workflow-node__num">03</span>
-
-        <div class="case-workflow-node__content">
-          <h3>Build</h3>
-          <p>
-            TWAP, VWAP, POV, and Almgren–Chriss IS-Optimal execution
-            schedules are created for the same parent order.
-          </p>
-        </div>
-      </div>
-
-
-      <div class="case-workflow-arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M12 3v14"/>
-          <path d="m7 13 5 5 5-5"/>
-        </svg>
-      </div>
-
-
-      <!-- 04 -->
-      <div class="case-workflow-node">
-        <span class="case-workflow-node__num">04</span>
-
-        <div class="case-workflow-node__content">
-          <h3>Simulate</h3>
-          <p>
-            Monte Carlo paths are used to test implementation shortfall
-            and timing risk across the four strategies.
-          </p>
-        </div>
-      </div>
-
-
-      <div class="case-workflow-arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M12 3v14"/>
-          <path d="m7 13 5 5 5-5"/>
-        </svg>
-      </div>
-
-
-      <!-- 05 -->
-      <div class="case-workflow-node">
-        <span class="case-workflow-node__num">05</span>
-
-        <div class="case-workflow-node__content">
-          <h3>Compare</h3>
-          <p>
-            Execution cost, market impact, implementation shortfall,
-            and timing risk are compared across the strategies.
-          </p>
-        </div>
-      </div>
-
-    </div>
 
   </div>
 
 </section>
 
 <!-- ============================================================
-     05 · ANALYSIS & VISUALIZATIONS
+     03 · ANALYSIS & VISUALIZATIONS
      ============================================================ -->
-<section class="case-block case-block--visuals">
+<section class="case-block case-block--visuals wrap wrap--narrow">
 
-  <div class="wrap wrap--narrow">
+  <div class="case-block__head" data-reveal>
+    <span class="index">03</span>
+    <h2>Analysis &amp; Visualizations</h2>
+  </div>
 
-    <div class="case-block__head" data-reveal>
-      <span class="index">05</span>
-      <h2>Analysis &amp; Visualizations</h2>
-    </div>
-
-    <div class="case-block__body" data-reveal data-reveal-delay="1">
-      <p>
-        The analysis compares execution paths, simulated shortfall,
-        trading costs, and the cost-versus-risk trade-off across
-        the four execution strategies.
-      </p>
-    </div>
-
+  <div class="case-block__body" data-reveal data-reveal-delay="1">
+    <p>
+      I focused the final comparison on the distribution of implementation
+      shortfall, the sources of execution cost, and the trade-off between
+      expected cost and execution risk.
+    </p>
   </div>
 
 
-  <!-- ============================================================
-       VISUALIZATION GRID
-       ============================================================ -->
-  <div class="case-visual-grid wrap">
+  <div class="case-visual-grid">
 
 
-    <!-- 01 · EXECUTION TRAJECTORY -->
+    <!-- 01 · IMPLEMENTATION SHORTFALL -->
     <article class="case-visual-card" data-reveal>
 
       <button
         class="case-visual-card__trigger"
         type="button"
-        data-lightbox-group="trajectory"
-        aria-label="View Execution Trajectory Comparison visualization">
-
-        <div class="case-visual-card__image">
-          <img
-            src="../assets/images/projects/project-05/execution_trajectory.png"
-            alt="Execution Trajectory Comparison">
-        </div>
-
-        <span class="case-visual-card__expand">
-          View larger ↗
-        </span>
-
-      </button>
-
-      <div class="case-visual-card__caption">
-        <span>01</span>
-
-        <div>
-          <h3>Execution Trajectory</h3>
-
-          <p>
-            How TWAP, VWAP, POV, and IS-Optimal complete the same
-            parent order over the execution horizon.
-          </p>
-        </div>
-      </div>
-
-    </article>
-
-
-    <!-- 02 · IMPLEMENTATION SHORTFALL -->
-    <article
-      class="case-visual-card"
-      data-reveal
-      data-reveal-delay="1">
-
-      <button
-        class="case-visual-card__trigger"
-        type="button"
         data-lightbox-group="shortfall"
-        aria-label="View Implementation Shortfall Distribution visualization">
+        aria-label="View Implementation Shortfall visualization">
 
         <div class="case-visual-card__image">
           <img
@@ -410,14 +176,16 @@
       </button>
 
       <div class="case-visual-card__caption">
-        <span>02</span>
+        <span>01</span>
 
         <div>
           <h3>Implementation Shortfall</h3>
 
           <p>
-            Distribution of simulated implementation shortfall across
-            the four execution strategies.
+            I plotted the full distribution of simulated shortfall because
+            the average only tells part of the story. I wanted to see how
+            consistent each strategy was across different simulated price
+            paths.
           </p>
         </div>
       </div>
@@ -425,8 +193,11 @@
     </article>
 
 
-    <!-- 03 · EXECUTION COST DECOMPOSITION -->
-    <article class="case-visual-card" data-reveal>
+    <!-- 02 · EXECUTION COSTS -->
+    <article
+      class="case-visual-card"
+      data-reveal
+      data-reveal-delay="1">
 
       <button
         class="case-visual-card__trigger"
@@ -447,14 +218,16 @@
       </button>
 
       <div class="case-visual-card__caption">
-        <span>03</span>
+        <span>02</span>
 
         <div>
           <h3>Execution Costs</h3>
 
           <p>
-            Spread, temporary impact, permanent impact, and timing risk
-            across the four strategies.
+            I broke execution cost into spread, temporary impact, and
+            permanent impact, with timing risk shown separately. That made
+            it easier to trace where the differences between the strategies
+            were coming from.
           </p>
         </div>
       </div>
@@ -462,11 +235,11 @@
     </article>
 
 
-    <!-- 04 · COST VS RISK -->
+    <!-- 03 · COST–RISK FRONTIER -->
     <article
       class="case-visual-card"
       data-reveal
-      data-reveal-delay="1">
+      data-reveal-delay="2">
 
       <button
         class="case-visual-card__trigger"
@@ -477,7 +250,7 @@
         <div class="case-visual-card__image">
           <img
             src="../assets/images/projects/project-05/cost_vs_risk_frontier.png"
-            alt="Cost vs. Risk Frontier">
+            alt="Cost versus Risk Frontier">
         </div>
 
         <span class="case-visual-card__expand">
@@ -487,19 +260,22 @@
       </button>
 
       <div class="case-visual-card__caption">
-        <span>04</span>
+        <span>03</span>
 
         <div>
           <h3>Cost–Risk Frontier</h3>
 
           <p>
-            Mean implementation shortfall compared with execution risk
-            for each strategy.
+            I put mean implementation shortfall and execution risk on the
+            same chart to bring the two sides of the decision together.
+            It gave me a simple way to judge whether a lower expected cost
+            was coming with more or less risk.
           </p>
         </div>
       </div>
 
     </article>
+
 
   </div>
 
@@ -508,12 +284,6 @@
        LIGHTBOX IMAGE SOURCES
        ============================================================ -->
   <div class="case-lightbox-data" hidden>
-
-    <div data-lightbox-group="trajectory">
-      <img
-        src="../assets/images/projects/project-05/execution_trajectory.png"
-        alt="Execution Trajectory Comparison">
-    </div>
 
     <div data-lightbox-group="shortfall">
       <img
@@ -530,7 +300,7 @@
     <div data-lightbox-group="frontier">
       <img
         src="../assets/images/projects/project-05/cost_vs_risk_frontier.png"
-        alt="Cost vs. Risk Frontier">
+        alt="Cost versus Risk Frontier">
     </div>
 
   </div>
@@ -557,7 +327,6 @@
     aria-modal="true"
     aria-label="Expanded project visualization">
 
-    <!-- CLOSE -->
     <button
       class="case-lightbox__close"
       type="button"
@@ -566,7 +335,6 @@
       ×
     </button>
 
-    <!-- PREVIOUS -->
     <button
       class="case-lightbox__prev"
       type="button"
@@ -575,7 +343,6 @@
       ←
     </button>
 
-    <!-- IMAGE -->
     <div class="case-lightbox__content">
       <img
         id="caseLightboxImage"
@@ -583,7 +350,6 @@
         alt="">
     </div>
 
-    <!-- NEXT -->
     <button
       class="case-lightbox__next"
       type="button"
@@ -597,120 +363,147 @@
 </div>
 
 <!-- ============================================================
-     06 · KEY FINDINGS
+     04 · KEY FINDINGS
      ============================================================ -->
 <section class="case-block case-findings wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
-    <span class="index">06</span>
+    <span class="index">04</span>
     <h2>Key Findings</h2>
   </div>
 
 
-  <div class="case-findings__grid">
+  <div class="case-findings__list">
 
 
-    <!-- 01 -->
-<article class="case-finding" data-reveal>
+    <!-- ========================================================
+         01 · IS-OPTIMAL COST
+         ======================================================== -->
+    <article
+      class="case-finding case-finding--primary"
+      data-reveal>
 
-  <span class="case-finding__mark">→</span>
+      <div class="case-finding__stat">
+        <strong>1.9 bps</strong>
+        <span>IS-Optimal Avg. Cost</span>
+      </div>
 
-  <div>
-    <h3>IS-Optimal delivered the lowest execution cost</h3>
+      <div class="case-finding__content">
 
-    <p>
-      Average cost was approximately <strong>1.9 bps</strong>, giving
-      IS-Optimal a small cost advantage over TWAP and VWAP.
-    </p>
-  </div>
+        <span class="case-finding__num">01</span>
 
-</article>
+        <h3>
+          IS-Optimal delivered the lowest execution cost
+        </h3>
 
+        <p>
+          Average cost was approximately <strong>1.9 bps</strong>, giving
+          IS-Optimal a small advantage over TWAP and VWAP while avoiding the
+          much higher cost associated with POV.
+        </p>
 
-<!-- 02 -->
-<article class="case-finding" data-reveal data-reveal-delay="1">
+      </div>
 
-  <span class="case-finding__mark">→</span>
-
-  <div>
-    <h3>POV paid a clear price for faster execution</h3>
-
-    <p>
-      Average cost increased to roughly <strong>8.3 bps</strong>, with
-      temporary market impact accounting for most of the increase.
-    </p>
-  </div>
-
-</article>
+    </article>
 
 
-<!-- 03 -->
-<article class="case-finding" data-reveal>
+    <!-- ========================================================
+         02 · POV COST
+         ======================================================== -->
+    <article
+      class="case-finding"
+      data-reveal
+      data-reveal-delay="1">
 
-  <span class="case-finding__mark">→</span>
+      <div class="case-finding__stat">
+        <strong>8.3 bps</strong>
+        <span>POV Avg. Cost</span>
+      </div>
 
-  <div>
-    <h3>Timing risk was concentrated in POV</h3>
+      <div class="case-finding__content">
 
-    <p>
-      POV reached roughly <strong>51 bps</strong> of timing risk, well above
-      the approximately <strong>14–16 bps</strong> range of the other strategies.
-    </p>
-  </div>
+        <span class="case-finding__num">02</span>
 
-</article>
+        <h3>
+          POV's faster execution came at a much higher cost
+        </h3>
 
+        <p>
+          POV's average cost rose to roughly <strong>8.3 bps</strong>, with
+          temporary market impact accounting for most of the increase.
+          Trading more aggressively reduced exposure to price movements,
+          but it was expensive in the model.
+        </p>
 
-<!-- 04 -->
-<article class="case-finding" data-reveal data-reveal-delay="1">
+      </div>
 
-  <span class="case-finding__mark">→</span>
-
-  <div>
-    <h3>IS-Optimal showed the strongest cost–risk position</h3>
-
-    <p>
-      It recorded the lowest mean implementation shortfall at about
-      <strong>3.6 bps</strong> while remaining within a comparable risk range
-      to TWAP and VWAP.
-    </p>
-  </div>
-
-</article>
+    </article>
 
 
-<!-- 05 -->
-<article class="case-finding" data-reveal>
+    <!-- ========================================================
+         03 · COST–RISK TRADE-OFF
+         ======================================================== -->
+    <article
+      class="case-finding"
+      data-reveal
+      data-reveal-delay="2">
 
-  <span class="case-finding__mark">→</span>
+      <div class="case-finding__stat">
+        <strong>3.6 bps</strong>
+        <span>Lowest Mean Shortfall</span>
+      </div>
 
-  <div>
-    <h3>Execution schedules materially changed the outcome</h3>
+      <div class="case-finding__content">
 
-    <p>
-      Front-loaded, volume-based, and evenly distributed schedules produced
-      different combinations of market impact, shortfall, and timing risk.
-    </p>
-  </div>
+        <span class="case-finding__num">03</span>
 
-</article>
+        <h3>
+          The lowest-cost strategy was not the lowest-risk strategy
+        </h3>
+
+        <p>
+          IS-Optimal recorded the lowest mean implementation shortfall at
+          about <strong>3.6 bps</strong>, while POV sat at the lower-risk,
+          higher-cost end of the comparison. Cost alone wasn't enough to
+          decide which strategy performed better.
+        </p>
+
+      </div>
+
+    </article>
 
 
-<!-- 06 -->
-<article class="case-finding" data-reveal data-reveal-delay="1">
+    <!-- ========================================================
+         04 · EXECUTION SCHEDULE
+         ======================================================== -->
+    <article
+      class="case-finding"
+      data-reveal
+      data-reveal-delay="3">
 
-  <span class="case-finding__mark">→</span>
+      <div class="case-finding__stat">
+        <strong>4</strong>
+        <span>Execution Strategies</span>
+      </div>
 
-  <div>
-    <h3>Strategy choice depends on the execution objective</h3>
+      <div class="case-finding__content">
 
-    <p>
-      The comparison shows why execution decisions need to consider both
-      trading cost and risk rather than optimizing either measure in isolation.
-    </p>
-  </div>
+        <span class="case-finding__num">04</span>
 
-</article>
+        <h3>
+          Execution schedules materially changed the outcome
+        </h3>
+
+        <p>
+          All four strategies worked the same parent order, but the way they
+          paced the trades led to different levels of market impact, shortfall,
+          and timing exposure. The execution schedule itself made a meaningful
+          difference.
+        </p>
+
+      </div>
+
+    </article>
 
 
   </div>
@@ -718,12 +511,12 @@
 </section>
 
 <!-- ============================================================
-     07 · RECOMMENDATIONS
+     05 · RECOMMENDATIONS
      ============================================================ -->
 <section class="case-block case-recommendations wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
-    <span class="index">07</span>
+    <span class="index">05</span>
     <h2>Recommendations</h2>
   </div>
 
@@ -732,85 +525,115 @@
 
 
     <!-- 01 -->
-    <article class="case-recommendation" data-reveal>
+    <article
+      class="case-recommendation"
+      data-reveal>
 
-      <span class="case-recommendation__mark">→</span>
+      <button
+        class="case-recommendation__trigger"
+        type="button"
+        aria-expanded="false">
 
-      <div>
-        <h3>Test strategies with higher-resolution market data</h3>
+        <span class="case-recommendation__num">→</span>
+
+        <span class="case-recommendation__title">
+          Validate the results with higher-resolution market data
+        </span>
+
+        <span
+          class="case-recommendation__toggle"
+          aria-hidden="true">
+          +
+        </span>
+
+      </button>
+
+      <div class="case-recommendation__details">
 
         <p>
-          Extend the analysis beyond one-minute data to capture shorter-term
-          changes in liquidity, spread, and market impact.
+          I worked with one-minute OHLCV data and estimated spreads, so I'd
+          next check whether the same cost-risk patterns hold with actual
+          quote or order-book data.
         </p>
+
       </div>
 
     </article>
 
 
     <!-- 02 -->
-    <article class="case-recommendation" data-reveal data-reveal-delay="1">
+    <article
+      class="case-recommendation"
+      data-reveal
+      data-reveal-delay="1">
 
-      <span class="case-recommendation__mark">→</span>
+      <button
+        class="case-recommendation__trigger"
+        type="button"
+        aria-expanded="false">
 
-      <div>
-        <h3>Add limit order book dynamics</h3>
+        <span class="case-recommendation__num">→</span>
+
+        <span class="case-recommendation__title">
+          Model what happens inside the order book
+        </span>
+
+        <span
+          class="case-recommendation__toggle"
+          aria-hidden="true">
+          +
+        </span>
+
+      </button>
+
+      <div class="case-recommendation__details">
 
         <p>
-          Use order book data to model available liquidity, queue depth,
-          and how execution decisions interact with the market.
+          I'd add available liquidity, queue depth, and adverse selection to
+          get closer to what happens when an order actually interacts with
+          the market. That would also give me a better way to test the
+          market-impact assumptions in the current model.
         </p>
+
       </div>
 
     </article>
 
 
     <!-- 03 -->
-    <article class="case-recommendation" data-reveal>
+    <article
+      class="case-recommendation"
+      data-reveal
+      data-reveal-delay="2">
 
-      <span class="case-recommendation__mark">→</span>
+      <button
+        class="case-recommendation__trigger"
+        type="button"
+        aria-expanded="false">
 
-      <div>
-        <h3>Extend the model across trading venues</h3>
+        <span class="case-recommendation__num">→</span>
 
-        <p>
-          Add multi-venue execution and smart order routing to compare
-          where and how an institutional order should be placed.
-        </p>
-      </div>
+        <span class="case-recommendation__title">
+          Test the strategies across different market conditions
+        </span>
 
-    </article>
+        <span
+          class="case-recommendation__toggle"
+          aria-hidden="true">
+          +
+        </span>
 
+      </button>
 
-    <!-- 04 -->
-    <article class="case-recommendation" data-reveal data-reveal-delay="1">
-
-      <span class="case-recommendation__mark">→</span>
-
-      <div>
-        <h3>Account for information leakage</h3>
-
-        <p>
-          Include adverse selection and information leakage to test how
-          larger orders may affect subsequent market behaviour.
-        </p>
-      </div>
-
-    </article>
-
-
-    <!-- 05 -->
-    <article class="case-recommendation" data-reveal>
-
-      <span class="case-recommendation__mark">→</span>
-
-      <div>
-        <h3>Explore adaptive execution policies</h3>
+      <div class="case-recommendation__details">
 
         <p>
-          Test reinforcement learning or other adaptive approaches that can
-          adjust execution as market conditions change.
+          The current example is based on AAPL. I'd run the same analysis on
+          securities with different liquidity and volatility profiles, as
+          well as different order sizes, to see where the strategy rankings
+          start to change.
         </p>
+
       </div>
 
     </article>
@@ -821,157 +644,144 @@
 </section>
 
 <!-- ============================================================
-     08 · SCOPE & LIMITATIONS
+     06 · SCOPE & LIMITATIONS
      ============================================================ -->
 <section class="case-block case-scope wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
-    <span class="index">08</span>
+    <span class="index">06</span>
     <h2>Scope &amp; Limitations</h2>
   </div>
 
-  <div class="case-block__body" data-reveal data-reveal-delay="1">
+  <div
+    class="case-block__body case-scope__body"
+    data-reveal
+    data-reveal-delay="1">
 
     <p>
-      The project is designed to compare execution strategies under a
-      controlled set of assumptions rather than reproduce a live trading environment.
+      I used one-minute AAPL data, so I couldn't see the individual trades
+      or order-book activity behind each price move. I also had to estimate
+      spread and market-impact costs because I didn't have actual institutional
+      orders and fills. The simulation doesn't include queue position, partial
+      fills, or venue selection, so I see the results as a comparison of the
+      four strategies within the model — not as a recreation of live execution.
     </p>
-
-
-    <div class="case-scope__items">
-
-
-      <!-- 01 -->
-      <div class="case-scope__item">
-
-        <h3>Market data has limited granularity</h3>
-
-        <p>
-          The analysis uses one-minute AAPL data, which does not capture
-          order book depth, individual trades, or sub-minute market activity.
-        </p>
-
-      </div>
-
-
-      <!-- 02 -->
-      <div class="case-scope__item">
-
-        <h3>Execution costs are modeled</h3>
-
-        <p>
-          Spread and market-impact costs are estimated using model assumptions
-          rather than actual institutional order and fill data.
-        </p>
-
-      </div>
-
-
-      <!-- 03 -->
-      <div class="case-scope__item">
-
-        <h3>Simulation simplifies live execution</h3>
-
-        <p>
-          The Monte Carlo analysis does not include venue selection,
-          queue position, partial fills, or changing order book conditions.
-        </p>
-
-      </div>
-
-
-    </div>
 
   </div>
 
 </section>
-
 <!-- ============================================================
-     09 · TOOLS & METHODS
+     07 · TOOLS & METHODS
      ============================================================ -->
 <section class="case-block case-tools wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
-    <span class="index">09</span>
+    <span class="index">07</span>
     <h2>Tools &amp; Methods</h2>
   </div>
 
-  <div class="case-tools__grid" data-reveal data-reveal-delay="1">
+
+  <!-- CATEGORY TABS -->
+  <div
+    class="case-tools__tabs"
+    data-reveal
+    data-reveal-delay="1">
+
+    <button
+      class="case-tools__tab is-active"
+      type="button"
+      data-tools-tab="computing">
+      Data &amp; Computing
+    </button>
+
+    <button
+      class="case-tools__tab"
+      type="button"
+      data-tools-tab="simulation">
+      Modeling &amp; Simulation
+    </button>
+
+    <button
+      class="case-tools__tab"
+      type="button"
+      data-tools-tab="execution">
+      Execution Analysis
+    </button>
+
+    <button
+      class="case-tools__tab"
+      type="button"
+      data-tools-tab="environment">
+      Visualization &amp; Environment
+    </button>
+
+  </div>
 
 
-    <!-- DATA & COMPUTING -->
-    <div class="case-tools__group">
+  <!-- DATA & COMPUTING -->
+  <div
+    class="case-tools__panel is-active"
+    data-tools-panel="computing">
 
-      <span class="case-tools__label">
-        Data &amp; Computing
-      </span>
-
-      <div class="case-tools__items">
-        <span>Python</span>
-        <span>Pandas</span>
-        <span>NumPy</span>
-        <span>yfinance</span>
-      </div>
-
+    <div class="case-tools__items">
+      <span>Python</span>
+      <span>Pandas</span>
+      <span>NumPy</span>
+      <span>yfinance</span>
     </div>
 
+  </div>
 
-    <!-- OPTIMIZATION & STATISTICS -->
-    <div class="case-tools__group">
 
-      <span class="case-tools__label">
-        Optimization &amp; Statistics
-      </span>
+  <!-- MODELING & SIMULATION -->
+  <div
+    class="case-tools__panel"
+    data-tools-panel="simulation">
 
-      <div class="case-tools__items">
-        <span>SciPy</span>
-        <span>Statsmodels</span>
-        <span>Monte Carlo Simulation</span>
-      </div>
-
+    <div class="case-tools__items">
+      <span>Almgren–Chriss</span>
+      <span>Monte Carlo Simulation</span>
+      <span>SciPy</span>
+      <span>Statsmodels</span>
+      <span>Optimal Execution</span>
     </div>
 
+  </div>
 
-    <!-- EXECUTION MODELING -->
-    <div class="case-tools__group">
 
-      <span class="case-tools__label">
-        Execution Modeling
-      </span>
+  <!-- EXECUTION ANALYSIS -->
+  <div
+    class="case-tools__panel"
+    data-tools-panel="execution">
 
-      <div class="case-tools__items">
-        <span>Almgren–Chriss</span>
-        <span>TWAP</span>
-        <span>VWAP</span>
-        <span>POV</span>
-        <span>Implementation Shortfall</span>
-      </div>
-
+    <div class="case-tools__items">
+      <span>TWAP</span>
+      <span>VWAP</span>
+      <span>POV</span>
+      <span>Implementation Shortfall</span>
+      <span>Execution Cost</span>
     </div>
 
+  </div>
 
-    <!-- VISUALIZATION & ENVIRONMENT -->
-    <div class="case-tools__group">
 
-      <span class="case-tools__label">
-        Visualization &amp; Environment
-      </span>
+  <!-- VISUALIZATION & ENVIRONMENT -->
+  <div
+    class="case-tools__panel"
+    data-tools-panel="environment">
 
-      <div class="case-tools__items">
-        <span>Plotly</span>
-        <span>Kaleido</span>
-        <span>Jupyter Notebook</span>
-      </div>
-
+    <div class="case-tools__items">
+      <span>Plotly</span>
+      <span>Kaleido</span>
+      <span>Jupyter Notebook</span>
     </div>
-
 
   </div>
 
 </section>
 
 <section class="case-block wrap wrap--narrow">
-  <div class="case-block__head" data-reveal><span class="index">10</span><h2>Project Link</h2></div>
+  <div class="case-block__head" data-reveal><span class="index">08</span><h2>Project Link</h2></div>
   <div class="case-block__body" data-reveal>
     <a href="https://github.com/Krishna-np/Institutional-Transaction-Cost-Analysis" target="_blank" rel="noopener" class="btn btn--secondary">
       View on GitHub

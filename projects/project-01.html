@@ -14,7 +14,7 @@
 <nav class="nav" id="nav">
   <a href="../index.html" class="nav__mark"><span></span>KNP</a>
   <div class="nav__links">
-    <a href="../index.html#work">Project</a>
+    <a href="../index.html#work">Projects</a>
     <a href="../about.html">About</a>
     <a href="../index.html#experience">Experience</a>
     <a href="../index.html#education">Education</a>
@@ -45,10 +45,6 @@
 
   <div class="case-meta-row" data-reveal data-reveal-delay="3">
 
-    <div class="case-meta-item">
-      <div class="label">Core Stack</div>
-      <div class="value">SQL | Python | SQLite</div>
-    </div>
 
     <div class="case-meta-item">
       <div class="label">Analytics</div>
@@ -64,181 +60,87 @@
 
 </header>
 
-<section class="case-featured wrap wrap--narrow">
-
-  <figure class="case-featured__visual" data-reveal="mask">
-
-    <img
-      src="../assets/images/projects/project-01/architecture.png"
-      alt="Architecture of the Enterprise Sales and Commercial Analytics Platform">
-
-    <figcaption>
-      From operational systems to governed analytics and executive decision support.
-    </figcaption>
-
-  </figure>
-
-</section>
-
+<!-- ============================================================
+     01 · BUSINESS CONTEXT
+     ============================================================ -->
 <section class="case-block wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
     <span class="index">01</span>
-    <h2>Business Problem</h2>
+    <h2>Business Context</h2>
   </div>
 
   <div class="case-block__body" data-reveal data-reveal-delay="1">
 
-   <p>
-    Commercial data often sits across separate systems for sales,
-    finance, marketing, inventory, and customer operations.
-   </p>
-
     <p>
-      When each function calculates and reports metrics independently,
-      the same KPI can have different definitions, cross-functional
-      reporting requires manual reconciliation, and decision-makers are
-      left without a consistent view of business performance.
+      I was working with commercial data spread across sales, finance,
+      marketing, inventory, and customer operations, where independently
+      calculated KPIs made cross-functional reporting difficult to reconcile.
+      The challenge was turning data from separate systems into one consistent
+      view of business performance.
+    </p>
+
+    <p class="case-business-question">
+      The question: How can commercial data across multiple business
+      functions be brought together to create a consistent view of
+      performance, identify areas that need attention, and support better
+      business decisions?
     </p>
 
     <p>
-      This project explores how those separate data sources can be brought
-      into a governed analytical structure that supports consistent
-      reporting across the business.
+      Rather than analyzing each function separately, I brought the data into
+      a governed analytical structure and standardized the reporting measures.
+      This gave me a common view for evaluating revenue, profitability,
+      pipeline, customer performance, inventory risk, and demand.
     </p>
 
   </div>
 
+
 </section>
 
+<!-- ============================================================
+     02 · DATA & WORKFLOW
+     ============================================================ -->
 <section class="case-block wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
     <span class="index">02</span>
-    <h2>Business Question</h2>
-  </div>
-
-  <div class="case-block__body" data-reveal data-reveal-delay="1">
-    <p>
-      How can commercial data across multiple business functions be brought
-      together to create a consistent view of performance, identify areas
-      that need attention, and support better business decisions?
-    </p>
-  </div>
-
-</section>
-
-<section class="case-block wrap wrap--narrow">
-
-  <div class="case-block__head" data-reveal>
-    <span class="index">03</span>
-    <h2>Decision Context</h2>
-  </div>
-
-  <div class="case-block__body" data-reveal data-reveal-delay="1">
-    <p>
-      The platform is designed to give commercial teams a shared view of
-      revenue, profitability, pipeline health, customer performance,
-      inventory risk, and demand.
-    </p>
-
-    <p>
-      Instead of reviewing each area separately, the reporting layer brings
-      these measures together so performance issues can be identified,
-      compared, and followed up from one consistent analytical view.
-    </p>
-  </div>
-
-</section>
-
-<section class="case-block wrap wrap--narrow">
-
-  <div class="case-block__head" data-reveal>
-    <span class="index">04</span>
     <h2>Data &amp; Workflow</h2>
   </div>
 
-  <div class="case-block__body">
+  <div class="case-block__body" data-reveal data-reveal-delay="1">
 
-    <p data-reveal>
-      The project uses synthetically generated enterprise data structured
-      around the main commercial functions represented in the platform.
-      Before analysis, the data moves through a SQL-first ETL process that
-      checks quality, standardizes records, and loads validated data into
-      a star-schema warehouse.
+    <p>
+      I started by staging the synthetic source data so I could catch the
+      issues built into it, including duplicate customer keys, missing emails,
+      and orphaned opportunity records before they reached the warehouse.
+      I then resolved or excluded those records as appropriate, loaded the
+      validated data into a Star Schema with 10 dimensions and 8 fact tables,
+      and logged the validation results so each ETL run had a traceable
+      data-quality record.
     </p>
-
-    <!-- WAREHOUSE SUMMARY -->
-    <div class="case-data-stats" data-reveal data-reveal-delay="1">
-
-      <div class="case-data-stat">
-        <strong>10</strong>
-        <span>Dimension Tables</span>
-      </div>
-
-      <div class="case-data-stat">
-        <strong>8</strong>
-        <span>Fact Tables</span>
-      </div>
-
-      <div class="case-data-stat">
-       <strong class="case-data-stat__text">SQL-first</strong>
-       <span>ETL Pipeline</span>
-      </div>
-
-    </div>
-
-
-    <!-- WORKFLOW -->
-    <div class="case-workflow" data-reveal data-reveal-delay="2">
-
-      <div class="case-workflow__step">
-  <span class="num">01</span>
-  <h3>Stage</h3>
-  <p>Bring source data into a controlled staging layer.</p>
-</div>
-
-<div class="case-workflow__step">
-  <span class="num">02</span>
-  <h3>Validate</h3>
-  <p>Check data quality and flag issues before loading.</p>
-</div>
-
-<div class="case-workflow__step">
-  <span class="num">03</span>
-  <h3>Load</h3>
-  <p>Move validated data into the star-schema warehouse.</p>
-</div>
-
-<div class="case-workflow__step">
-  <span class="num">04</span>
-  <h3>Audit</h3>
-  <p>Keep a record of validation results across each run.</p>
-</div>
-
-    </div>
 
   </div>
 
 </section>
 
 <!-- ============================================================
-     05 · ANALYSIS & VISUALIZATIONS
+     03 · ANALYSIS & VISUALIZATIONS
      ============================================================ -->
 <section class="case-block case-block--visuals">
 
   <div class="wrap wrap--narrow">
 
     <div class="case-block__head" data-reveal>
-      <span class="index">05</span>
+      <span class="index">03</span>
       <h2>Analysis &amp; Visualizations</h2>
     </div>
 
     <div class="case-block__body" data-reveal data-reveal-delay="1">
       <p>
-        The analysis moves from overall commercial performance and pipeline
-        health to territory performance, customer behaviour, revenue risk,
-        and demand planning.
+        The analysis focuses on customer behavior, revenue exposure, and
+        short-term demand planning.
       </p>
     </div>
 
@@ -251,112 +153,7 @@
   <div class="case-visual-grid wrap">
 
 
-    <!-- 01 · REVENUE & GROSS PROFIT -->
-    <article class="case-visual-card" data-reveal>
-
-      <button
-        class="case-visual-card__trigger"
-        type="button"
-        data-lightbox-group="revenue"
-        aria-label="View Revenue and Gross Profit visualization">
-
-        <div class="case-visual-card__image">
-          <img
-            src="../assets/images/projects/project-01/Revenue &amp; Gross Profit Trend.png"
-            alt="Revenue and Gross Profit Trend">
-        </div>
-
-        <span class="case-visual-card__expand">
-          View larger ↗
-        </span>
-
-      </button>
-
-      <div class="case-visual-card__caption">
-        <span>01</span>
-
-        <div>
-          <h3>Revenue &amp; Gross Profit</h3>
-          <p>
-            Monthly revenue and gross profit performance across the reporting period.
-          </p>
-        </div>
-      </div>
-
-    </article>
-
-
-    <!-- 02 · SALES PIPELINE -->
-    <article class="case-visual-card" data-reveal data-reveal-delay="1">
-
-      <button
-        class="case-visual-card__trigger"
-        type="button"
-        data-lightbox-group="pipeline"
-        aria-label="View Sales Pipeline visualization">
-
-        <div class="case-visual-card__image">
-          <img
-            src="../assets/images/projects/project-01/Pipeline by Stage.png"
-            alt="Pipeline by Stage">
-        </div>
-
-        <span class="case-visual-card__expand">
-          View larger ↗
-        </span>
-
-      </button>
-
-      <div class="case-visual-card__caption">
-        <span>02</span>
-
-        <div>
-          <h3>Sales Pipeline</h3>
-          <p>
-            Opportunity value across the different stages of the sales pipeline.
-          </p>
-        </div>
-      </div>
-
-    </article>
-
-
-    <!-- 03 · TERRITORY PERFORMANCE -->
-    <article class="case-visual-card" data-reveal data-reveal-delay="2">
-
-      <button
-        class="case-visual-card__trigger"
-        type="button"
-        data-lightbox-group="territory"
-        aria-label="View Territory Performance visualization">
-
-        <div class="case-visual-card__image">
-          <img
-            src="../assets/images/projects/project-01/Revenue by Territory.png"
-            alt="Revenue by Territory">
-        </div>
-
-        <span class="case-visual-card__expand">
-          View larger ↗
-        </span>
-
-      </button>
-
-      <div class="case-visual-card__caption">
-        <span>03</span>
-
-        <div>
-          <h3>Territory Performance</h3>
-          <p>
-            Revenue contribution across the enterprise sales territories.
-          </p>
-        </div>
-      </div>
-
-    </article>
-
-
-    <!-- 04 · CUSTOMER SEGMENTATION -->
+    <!-- 01 · CUSTOMER SEGMENTATION -->
     <article class="case-visual-card" data-reveal>
 
       <button
@@ -378,12 +175,17 @@
       </button>
 
       <div class="case-visual-card__caption">
-        <span>04</span>
+        <span>01</span>
 
         <div>
           <h3>Customer Segmentation</h3>
+
           <p>
-            Customer groups based on purchasing behaviour and lifetime value.
+            I used RFM segmentation to examine how purchasing frequency,
+            lifetime value, and inactivity differed across the customer base.
+            The goal was to see whether retention and engagement decisions
+            should vary by customer behaviour rather than treating every
+            account the same way.
           </p>
         </div>
       </div>
@@ -391,8 +193,11 @@
     </article>
 
 
-    <!-- 05 · REVENUE AT RISK -->
-    <article class="case-visual-card" data-reveal data-reveal-delay="1">
+    <!-- 02 · REVENUE AT RISK -->
+    <article
+      class="case-visual-card"
+      data-reveal
+      data-reveal-delay="1">
 
       <button
         class="case-visual-card__trigger"
@@ -413,12 +218,17 @@
       </button>
 
       <div class="case-visual-card__caption">
-        <span>05</span>
+        <span>02</span>
 
         <div>
           <h3>Revenue at Risk</h3>
+
           <p>
-            Revenue exposure across customer segments and retention-risk levels.
+            I mapped retention risk against lifetime revenue so customer
+            health could be viewed alongside the commercial value attached
+            to each account. This let me assess prioritization using both
+            risk and financial exposure instead of relying on health or
+            satisfaction scores alone.
           </p>
         </div>
       </div>
@@ -426,8 +236,11 @@
     </article>
 
 
-    <!-- 06 · DEMAND FORECAST -->
-    <article class="case-visual-card" data-reveal data-reveal-delay="2">
+    <!-- 03 · DEMAND FORECAST -->
+    <article
+      class="case-visual-card"
+      data-reveal
+      data-reveal-delay="2">
 
       <button
         class="case-visual-card__trigger"
@@ -448,17 +261,23 @@
       </button>
 
       <div class="case-visual-card__caption">
-        <span>06</span>
+        <span>03</span>
 
         <div>
           <h3>Demand Forecast</h3>
+
           <p>
-            Historical demand compared with the Holt-Winters forecast.
+            I used a six-month Holt-Winters holdout forecast to test whether
+            historical demand contained enough structure to support short-term
+            planning. I kept the holdout period separate from model fitting
+            so I could evaluate the forecast against demand the model had not
+            already seen.
           </p>
         </div>
       </div>
 
     </article>
+
 
   </div>
 
@@ -467,24 +286,6 @@
        LIGHTBOX IMAGE SOURCES
        ============================================================ -->
   <div class="case-lightbox-data" hidden>
-
-    <div data-lightbox-group="revenue">
-      <img
-        src="../assets/images/projects/project-01/Revenue &amp; Gross Profit Trend.png"
-        alt="Revenue and Gross Profit Trend">
-    </div>
-
-    <div data-lightbox-group="pipeline">
-      <img
-        src="../assets/images/projects/project-01/Pipeline by Stage.png"
-        alt="Pipeline by Stage">
-    </div>
-
-    <div data-lightbox-group="territory">
-      <img
-        src="../assets/images/projects/project-01/Revenue by Territory.png"
-        alt="Revenue by Territory">
-    </div>
 
     <div data-lightbox-group="segmentation">
       <img
@@ -566,311 +367,443 @@
   </div>
 
 </div>
-
 <!-- ============================================================
-     06 · KEY FINDINGS
+     04 · KEY FINDINGS
      ============================================================ -->
 <section class="case-block case-findings wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
-    <span class="index">06</span>
+    <span class="index">04</span>
     <h2>Key Findings</h2>
   </div>
 
-  <div class="case-findings__grid">
+
+  <div class="case-findings__list">
 
 
-    <!-- 01 -->
-    <article class="case-finding" data-reveal>
+    <!-- ========================================================
+         01 · PRIMARY FINDING
+         ======================================================== -->
+    <article
+      class="case-finding case-finding--primary"
+      data-reveal>
 
-      <span class="case-finding__mark">→</span>
+      <div class="case-finding__stat">
+        <strong>0.38×</strong>
+        <span>Pipeline Coverage</span>
+      </div>
 
-      <div>
-        <h3>Revenue continued to grow</h3>
+      <div class="case-finding__content">
+
+        <span class="case-finding__num">
+          01
+        </span>
+
+        <h3>
+          Pipeline coverage remains thin
+        </h3>
+
+        <p>
+          Open pipeline covers only <strong>0.38×</strong> of the revenue
+          base, leaving relatively little opportunity value available to
+          support future growth. This made pipeline generation and conversion
+          a more immediate concern than the topline trend alone suggested.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- ========================================================
+         02 · REVENUE
+         ======================================================== -->
+    <article
+      class="case-finding"
+      data-reveal
+      data-reveal-delay="1">
+
+      <div class="case-finding__stat">
+        <strong>$312.5M</strong>
+        <span>FY2024 Revenue</span>
+      </div>
+
+      <div class="case-finding__content">
+
+        <span class="case-finding__num">
+          02
+        </span>
+
+        <h3>
+          Revenue growth lost momentum
+        </h3>
 
         <p>
           Revenue increased from <strong>$298.8M</strong> in FY2022 to
-          <strong>$312.5M</strong> in FY2024, although the year-over-year
-          trend weakened in 2024.
+          <strong>$312.5M</strong> in FY2024, but the year-over-year trend
+          weakened in 2024. The longer-term increase therefore masks a more
+          recent slowdown in commercial momentum.
         </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- ========================================================
+         03 · REVENUE EXPOSURE
+         ======================================================== -->
+    <article
+      class="case-finding"
+      data-reveal
+      data-reveal-delay="2">
+
+      <div class="case-finding__stat">
+        <strong>SMB</strong>
+        <span>Largest Revenue Exposure</span>
+      </div>
+
+      <div class="case-finding__content">
+
+        <span class="case-finding__num">
+          03
+        </span>
+
+        <h3>
+          Revenue exposure is concentrated in SMB
+        </h3>
+
+        <p>
+          The SMB segment carries the largest share of potential revenue at
+          risk. That concentration gave me a clearer retention priority:
+          the accounts requiring attention are not evenly distributed across
+          the customer base.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- ========================================================
+         04 · FORECASTING
+         ======================================================== -->
+    <article
+      class="case-finding"
+      data-reveal
+      data-reveal-delay="3">
+
+      <div class="case-finding__stat">
+        <strong>1.06%</strong>
+        <span>Holdout MAPE</span>
+      </div>
+
+      <div class="case-finding__content">
+
+        <span class="case-finding__num">
+          04
+        </span>
+
+        <h3>
+          Short-term demand was highly forecastable
+        </h3>
+
+        <p>
+          The Holt-Winters model achieved a <strong>1.06% holdout MAPE</strong>,
+          while the ERP forecasting process averaged
+          <strong>87.46% forecast accuracy</strong>. The low holdout error gave
+          me a practical reason to bring short-term demand forecasting into
+          inventory planning rather than treating it as a separate analytical
+          exercise.
+        </p>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+</section>
+<!-- ============================================================
+     05 · RECOMMENDATIONS
+     ============================================================ -->
+<section class="case-block case-recommendations wrap wrap--narrow">
+
+  <div class="case-block__head" data-reveal>
+    <span class="index">05</span>
+    <h2>Recommendations</h2>
+  </div>
+
+  <div class="case-recommendations__list">
+
+    <!-- 01 -->
+    <article class="case-recommendation" data-reveal>
+
+      <button
+        class="case-recommendation__trigger"
+        type="button"
+        aria-expanded="false">
+
+        <span class="case-recommendation__num">→</span>
+
+        <span class="case-recommendation__title">
+          Strengthen pipeline before the slowdown becomes harder to recover
+        </span>
+
+        <span class="case-recommendation__toggle" aria-hidden="true">
+          +
+        </span>
+
+      </button>
+
+      <div class="case-recommendation__details">
+
+        <p>
+          I'd prioritize qualified opportunity generation and examine where
+          conversion is weakening through the active pipeline. That would
+          address future revenue capacity directly rather than relying on
+          recent topline performance as an indicator of what comes next.
+        </p>
+
       </div>
 
     </article>
 
 
     <!-- 02 -->
-    <article class="case-finding" data-reveal data-reveal-delay="1">
+    <article
+      class="case-recommendation"
+      data-reveal
+      data-reveal-delay="1">
 
-      <span class="case-finding__mark">→</span>
+      <button
+        class="case-recommendation__trigger"
+        type="button"
+        aria-expanded="false">
 
-      <div>
-        <h3>Pipeline coverage remains thin</h3>
+        <span class="case-recommendation__num">→</span>
+
+        <span class="case-recommendation__title">
+          Prioritize retention where the financial exposure is highest
+        </span>
+
+        <span class="case-recommendation__toggle" aria-hidden="true">
+          +
+        </span>
+
+      </button>
+
+      <div class="case-recommendation__details">
 
         <p>
-          Pipeline coverage stands at <strong>0.38×</strong>, making
-          stronger opportunity generation and conversion important for
-          supporting future revenue growth.
+          I'd focus retention effort first on high-value and critical-risk
+          SMB accounts, using the combination of account value and retention
+          risk to determine where intervention deserves the most attention.
         </p>
+
       </div>
 
     </article>
 
 
     <!-- 03 -->
-    <article class="case-finding" data-reveal>
+    <article
+      class="case-recommendation"
+      data-reveal
+      data-reveal-delay="2">
 
-      <span class="case-finding__mark">→</span>
+      <button
+        class="case-recommendation__trigger"
+        type="button"
+        aria-expanded="false">
 
-      <div>
-        <h3>Sales performance varies across the business</h3>
+        <span class="case-recommendation__num">→</span>
+
+        <span class="case-recommendation__title">
+          Use the demand forecast to inform inventory decisions
+        </span>
+
+        <span class="case-recommendation__toggle" aria-hidden="true">
+          +
+        </span>
+
+      </button>
+
+      <div class="case-recommendation__details">
 
         <p>
-          Results differ across representatives and territories, creating
-          opportunities for more targeted coaching and performance management.
+          The next step would be to combine short-term demand forecasts with
+          stockout and supplier-performance data when making replenishment
+          decisions, especially for products already showing availability
+          risk.
         </p>
+
       </div>
 
     </article>
-
-
-    <!-- 04 -->
-    <article class="case-finding" data-reveal data-reveal-delay="1">
-
-      <span class="case-finding__mark">→</span>
-
-      <div>
-        <h3>Four customer groups emerged</h3>
-
-        <p>
-          RFM analysis identified <strong>Champions, Loyal Customers,
-          Emerging Customers, and At-Risk Customers</strong>, providing
-          a clearer basis for differentiated customer strategies.
-        </p>
-      </div>
-
-    </article>
-
-
-    <!-- 05 -->
-    <article class="case-finding" data-reveal>
-
-      <span class="case-finding__mark">→</span>
-
-      <div>
-        <h3>SMB carries the largest revenue exposure</h3>
-
-        <p>
-          The SMB segment represents the largest share of potential revenue
-          at risk, making it the strongest priority for proactive retention.
-        </p>
-      </div>
-
-    </article>
-
-
-    <!-- 06 -->
-    <article class="case-finding" data-reveal data-reveal-delay="1">
-
-      <span class="case-finding__mark">→</span>
-
-      <div>
-        <h3>Short-term forecasting performed well</h3>
-
-        <p>
-          The Holt-Winters model achieved a <strong>1.06% holdout MAPE</strong>,
-          while the ERP forecasting process averaged
-          <strong>87.46% forecast accuracy</strong>.
-        </p>
-      </div>
-
-    </article>
-
 
   </div>
 
 </section>
 
 <!-- ============================================================
-     07 · RECOMMENDATIONS
-     ============================================================ -->
-<section class="case-block case-recommendations wrap wrap--narrow">
-
-  <div class="case-block__head" data-reveal>
-    <span class="index">07</span>
-    <h2>Recommendations</h2>
-  </div>
-
-  <div class="case-recommendations__list">
-
-  <article class="case-recommendation" data-reveal>
-    <span class="case-recommendation__mark">→</span>
-
-    <div>
-      <h3>Build more pipeline coverage</h3>
-      <p>
-        Increase qualified opportunity generation and focus on conversion
-        through the active pipeline to improve the current
-        <strong>0.38× coverage</strong>.
-      </p>
-    </div>
-  </article>
-
-
-  <article class="case-recommendation" data-reveal data-reveal-delay="1">
-    <span class="case-recommendation__mark">→</span>
-
-    <div>
-      <h3>Focus retention where revenue exposure is highest</h3>
-      <p>
-        Prioritize high-value and critical accounts, particularly within
-        the <strong>SMB segment</strong>, where the analysis shows the
-        largest potential revenue exposure.
-      </p>
-    </div>
-  </article>
-
-
-  <article class="case-recommendation" data-reveal>
-    <span class="case-recommendation__mark">→</span>
-
-    <div>
-      <h3>Look closer at sales performance gaps</h3>
-      <p>
-        Use differences across representatives and territories to identify
-        where coaching, resource allocation, or successful sales practices
-        could improve performance.
-      </p>
-    </div>
-  </article>
-
-
-  <article class="case-recommendation" data-reveal data-reveal-delay="1">
-    <span class="case-recommendation__mark">→</span>
-
-    <div>
-      <h3>Use customer segments differently</h3>
-      <p>
-        Treat Champions, Loyal, Emerging, and At-Risk customers differently
-        across sales, marketing, and customer-success activity rather than
-        applying the same approach to every account.
-      </p>
-    </div>
-  </article>
-
-
-  <article class="case-recommendation" data-reveal>
-    <span class="case-recommendation__mark">→</span>
-
-    <div>
-      <h3>Bring the forecast into inventory decisions</h3>
-      <p>
-        Use the short-term demand forecast alongside inventory and supplier
-        information to support replenishment planning and reduce stockout
-        exposure.
-      </p>
-    </div>
-  </article>
-
-</div>
-</section>
-
-<!-- ============================================================
-     08 · SCOPE & LIMITATIONS
+     06 · SCOPE & LIMITATIONS
      ============================================================ -->
 <section class="case-block case-scope wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
-    <span class="index">08</span>
+    <span class="index">06</span>
     <h2>Scope &amp; Limitations</h2>
   </div>
 
-  <div class="case-block__body" data-reveal data-reveal-delay="1">
+  <div
+    class="case-block__body case-scope__body"
+    data-reveal
+    data-reveal-delay="1">
 
     <p>
-      The platform covers the full analytical workflow from data preparation
-      and warehousing through customer analytics, forecasting, and reporting.
-      The following boundaries should be considered when interpreting the results.
+      I generated the dataset specifically for this project, so the findings
+      demonstrate the analytical approach rather than the performance of a
+      real company. I also used SQLite to keep the warehouse self-contained;
+      in a production setting, I would move the same structure to a more
+      scalable database environment. Finally, I treated customer retention
+      as a rule-based risk problem because I did not have historical churn
+      outcomes to train against. With that data, I would test a predictive
+      model and validate whether it improves how at-risk accounts are
+      identified.
     </p>
-
-    <div class="case-scope__items">
-
-      <div class="case-scope__item">
-        <h3>Synthetic dataset</h3>
-        <p>
-          The data was generated for the project, so the findings reflect
-          the analytical scenario rather than the performance of a real company.
-        </p>
-      </div>
-
-      <div class="case-scope__item">
-        <h3>SQLite environment</h3>
-        <p>
-          SQLite supports the warehouse and analysis used here, but a
-          production implementation would require a more scalable data platform.
-        </p>
-      </div>
-
-      <div class="case-scope__item">
-        <h3>Retention risk model</h3>
-        <p>
-          Customer risk is based on defined behavioural and service indicators
-          rather than a predictive model trained on historical churn outcomes.
-        </p>
-      </div>
-
-    </div>
 
   </div>
 
 </section>
-
 <!-- ============================================================
-     09 · TOOLS & METHODS
+     07 · TOOLS & METHODS
      ============================================================ -->
 <section class="case-block case-tools wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
-    <span class="index">09</span>
+    <span class="index">07</span>
     <h2>Tools &amp; Methods</h2>
   </div>
 
-  <div class="case-tools__grid" data-reveal data-reveal-delay="1">
+  <!-- CATEGORY TABS -->
+  <div
+    class="case-tools__tabs"
+    data-reveal
+    data-reveal-delay="1">
 
-    <div class="case-tools__group">
-      <span class="case-tools__label">Warehouse &amp; Querying</span>
-      <div class="case-tools__items">
-        <span>SQLite</span>
-        <span>SQL</span>
-        <span>SQLAlchemy</span>
-      </div>
+    <button
+      class="case-tools__tab is-active"
+      type="button"
+      data-tools-tab="warehouse">
+      Warehouse &amp; Querying
+    </button>
+
+    <button
+      class="case-tools__tab"
+      type="button"
+      data-tools-tab="analytics">
+      Data &amp; Analytics
+    </button>
+
+    <button
+      class="case-tools__tab"
+      type="button"
+      data-tools-tab="customer">
+      Customer Analytics
+    </button>
+
+    <button
+      class="case-tools__tab"
+      type="button"
+      data-tools-tab="forecasting">
+      Forecasting
+    </button>
+
+    <button
+      class="case-tools__tab"
+      type="button"
+      data-tools-tab="visualization">
+      Visualization
+    </button>
+
+  </div>
+
+
+  <!-- WAREHOUSE -->
+  <div
+    class="case-tools__panel is-active"
+    data-tools-panel="warehouse">
+
+    <div class="case-tools__items">
+
+      <span>SQLite</span>
+      <span>SQL</span>
+      <span>SQLAlchemy</span>
+
     </div>
 
-    <div class="case-tools__group">
-      <span class="case-tools__label">Data &amp; Analytics</span>
-      <div class="case-tools__items">
-        <span>Python</span>
-        <span>Pandas</span>
-        <span>NumPy</span>
-      </div>
+  </div>
+
+
+  <!-- DATA & ANALYTICS -->
+  <div
+    class="case-tools__panel"
+    data-tools-panel="analytics">
+
+    <div class="case-tools__items">
+
+      <span>Python</span>
+      <span>Pandas</span>
+      <span>NumPy</span>
+
     </div>
 
-    <div class="case-tools__group">
-      <span class="case-tools__label">Modeling</span>
-      <div class="case-tools__items">
-        <span>Scikit-learn</span>
-        <span>Statsmodels</span>
-        <span>RFM Analysis</span>
-        <span>K-Means</span>
-        <span>Holt-Winters</span>
-      </div>
+  </div>
+
+
+  <!-- CUSTOMER ANALYTICS -->
+  <div
+    class="case-tools__panel"
+    data-tools-panel="customer">
+
+    <div class="case-tools__items">
+
+      <span>RFM Analysis</span>
+      <span>K-Means</span>
+      <span>Scikit-learn</span>
+
     </div>
 
-    <div class="case-tools__group">
-      <span class="case-tools__label">Visualization</span>
-      <div class="case-tools__items">
-        <span>Plotly</span>
-        <span>Matplotlib</span>
-      </div>
+  </div>
+
+
+  <!-- FORECASTING -->
+  <div
+    class="case-tools__panel"
+    data-tools-panel="forecasting">
+
+    <div class="case-tools__items">
+
+      <span>Holt-Winters</span>
+      <span>Statsmodels</span>
+
+    </div>
+
+  </div>
+
+
+  <!-- VISUALIZATION -->
+  <div
+    class="case-tools__panel"
+    data-tools-panel="visualization">
+
+    <div class="case-tools__items">
+
+      <span>Plotly</span>
+      <span>Matplotlib</span>
+
     </div>
 
   </div>
@@ -878,7 +811,7 @@
 </section>
 
 <section class="case-block wrap wrap--narrow">
-  <div class="case-block__head" data-reveal><span class="index">10</span><h2>Project Link</h2></div>
+  <div class="case-block__head" data-reveal><span class="index">08</span><h2>Project Link</h2></div>
   <div class="case-block__body" data-reveal>
     <a href="https://github.com/Krishna-np/Enterprise-Sales-Commercial-Analytics-Platform" target="_blank" rel="noopener" class="btn btn--secondary">
       View on GitHub

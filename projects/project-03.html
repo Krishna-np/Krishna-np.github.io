@@ -14,7 +14,7 @@
 <nav class="nav" id="nav">
   <a href="../index.html" class="nav__mark"><span></span>KNP</a>
   <div class="nav__links">
-    <a href="../index.html#work">Project</a>
+    <a href="../index.html#work">Projects</a>
     <a href="../about.html">About</a>
     <a href="../index.html#experience">Experience</a>
     <a href="../index.html#education">Education</a>
@@ -32,45 +32,46 @@
   <p class="summary" data-reveal>A public-data decision-support case study examining Macy's store portfolio evolution and the financial context behind portfolio decisions.</p>
 
   <div class="case-meta-row" data-reveal>
-    <div class="case-meta-item"><div class="label">Tools</div><div class="value">Python | Power BI | DAX</div></div>
     <div class="case-meta-item"><div class="label">Focus</div><div class="value">Retail Portfolio Strategy</div></div>
     <div class="case-meta-item"><div class="label">Data</div><div class="value">Store Disclosures | SEC Filings</div></div>
   </div>
 </header>
 
-<!-- ============================================================
-     FEATURED VISUALIZATION
-     ============================================================ -->
-<section class="case-featured wrap wrap--narrow">
-
-  <div class="case-featured__frame" data-reveal="mask">
-
-    <img
-      src="../assets/images/projects/project-03/home.png"
-      alt="Macy's Store Portfolio Strategy Power BI dashboard"
-    >
-
-  </div>
-
-</section>
 
 <!-- ============================================================
-     01 · BUSINESS PROBLEM
+     01 · BUSINESS CONTEXT
      ============================================================ -->
 <section class="case-block wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
     <span class="index">01</span>
-    <h2>Business Problem</h2>
+    <h2>Business Context</h2>
   </div>
 
   <div class="case-block__body" data-reveal data-reveal-delay="1">
 
     <p>
-      Macy's is reducing its store footprint while concentrating investment
-      on selected go-forward locations. The challenge is determining when
-      portfolio rationalization is appropriate and when intervention or
-      reinvestment may be the better strategic response.
+      Macy's is shrinking its store footprint while directing more investment
+      toward selected go-forward locations. What made this interesting to me
+      was that the public data shows <strong>where</strong> the portfolio is
+      changing, but not <strong>whether</strong> an individual store is
+      underperforming, Macy's doesn't disclose store-level profitability,
+      traffic, or comparable sales. That gap limited how far I could take the
+      analysis with public data alone.
+    </p>
+
+    <p class="case-business-question">
+      The question: How can Macy's use portfolio and financial evidence to
+      make more selective decisions about store rationalization, intervention,
+      and reinvestment?
+    </p>
+
+    <p>
+      Rather than trying to predict which specific store closes next, I used
+      store history, announced closures, company financials, and Macy's
+      reported strategy to consider when <strong>Invest</strong>,
+      <strong>Transform</strong>, <strong>Monitor</strong>, or
+      <strong>Exit</strong> might be the more defensible call.
     </p>
 
   </div>
@@ -78,250 +79,52 @@
 </section>
 
 <!-- ============================================================
-     02 · BUSINESS QUESTION
+     02 · DATA & WORKFLOW
      ============================================================ -->
 <section class="case-block wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
     <span class="index">02</span>
-    <h2>Business Question</h2>
-  </div>
-
-  <div class="case-block__body" data-reveal data-reveal-delay="1">
-
-    <p>
-      How can Macy's use portfolio and financial evidence to make more
-      selective decisions about store rationalization, intervention,
-      and reinvestment?
-    </p>
-
-  </div>
-
-</section>
-
-<!-- ============================================================
-     03 · CONTEXT & DECISION SUPPORTED
-     ============================================================ -->
-<section class="case-block case-context wrap wrap--narrow">
-
-  <div class="case-block__head" data-reveal>
-    <span class="index">03</span>
-    <h2>Context &amp; Decision Supported</h2>
-  </div>
-
-  <div class="case-block__body" data-reveal data-reveal-delay="1">
-
-    <p>
-      The analysis is designed for portfolio strategy and planning,
-      where store rationalization decisions need to balance footprint
-      reduction with opportunities for intervention and reinvestment.
-    </p>
-
-    <div class="case-context__rows">
-
-      <!-- PRIMARY USERS -->
-      <div class="case-context__row">
-
-        <span class="case-context__label">
-          Primary Users
-        </span>
-
-        <h3>
-          Retail Strategy &amp; Portfolio Planning
-        </h3>
-
-        <p>
-          Evaluate portfolio changes using store history, closure evidence,
-          financial performance, and reported strategic outcomes.
-        </p>
-
-      </div>
-
-
-      <!-- DECISION SUPPORTED -->
-      <div class="case-context__row">
-
-        <span class="case-context__label">
-          Decision Supported
-        </span>
-
-        <h3>
-          What action should a location receive?
-        </h3>
-
-        <p>
-          Structure future location decisions around four possible actions:
-          Invest, Transform, Monitor, or Exit.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ============================================================
-     04 · DATA & WORKFLOW
-     ============================================================ -->
-<section class="case-block wrap wrap--narrow">
-
-  <div class="case-block__head" data-reveal>
-    <span class="index">04</span>
     <h2>Data &amp; Workflow</h2>
   </div>
 
   <div class="case-block__body" data-reveal data-reveal-delay="1">
 
-    <p class="case-workflow__intro">
-      Public store disclosures, closure records, SEC filings, and annual
-      reports move through a structured workflow from collection and
-      validation to portfolio analysis and decision support.
+    <p>
+      I started by bringing Macy's quarterly store disclosures into a
+      consistent location history, then tracked which locations persisted
+      or disappeared and reconciled those changes against the announced
+      closure records. Once I knew what was happening to the footprint,
+      I added annual and quarterly financial results and Macy's reported
+      strategy to understand the business context, then brought the combined
+      evidence into Power BI for the <strong>Invest, Transform, Monitor,
+      or Exit</strong> framework.
     </p>
-
-
-    <div class="case-workflow-chart">
-
-      <!-- 01 -->
-      <div class="case-workflow-node">
-        <span class="case-workflow-node__num">01</span>
-
-        <div class="case-workflow-node__content">
-          <h3>Collect</h3>
-          <p>
-            Quarterly Macy's store disclosures, announced closure records,
-            SEC filings, and annual reports are collected as the core
-            evidence base.
-          </p>
-        </div>
-      </div>
-
-
-      <div class="case-workflow-arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M12 3v14"/>
-          <path d="m7 13 5 5 5-5"/>
-        </svg>
-      </div>
-
-
-      <!-- 02 -->
-      <div class="case-workflow-node">
-        <span class="case-workflow-node__num">02</span>
-
-        <div class="case-workflow-node__content">
-          <h3>Prepare</h3>
-          <p>
-            Reporting periods, location identifiers, store records,
-            closure data, and financial fields are standardized and
-            validated before analysis.
-          </p>
-        </div>
-      </div>
-
-
-      <div class="case-workflow-arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M12 3v14"/>
-          <path d="m7 13 5 5 5-5"/>
-        </svg>
-      </div>
-
-
-      <!-- 03 -->
-      <div class="case-workflow-node">
-        <span class="case-workflow-node__num">03</span>
-
-        <div class="case-workflow-node__content">
-          <h3>Analyze</h3>
-          <p>
-            Store locations are tracked across reporting periods, portfolio
-            movements are classified, and announced closures are reconciled
-            against the historical portfolio.
-          </p>
-        </div>
-      </div>
-
-
-      <div class="case-workflow-arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M12 3v14"/>
-          <path d="m7 13 5 5 5-5"/>
-        </svg>
-      </div>
-
-
-      <!-- 04 -->
-      <div class="case-workflow-node">
-        <span class="case-workflow-node__num">04</span>
-
-        <div class="case-workflow-node__content">
-          <h3>Contextualize</h3>
-          <p>
-            Annual and quarterly financial results are combined with
-            reported strategy, portfolio actions, and Reimagine outcomes
-            to provide company-level context.
-          </p>
-        </div>
-      </div>
-
-
-      <div class="case-workflow-arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M12 3v14"/>
-          <path d="m7 13 5 5 5-5"/>
-        </svg>
-      </div>
-
-
-      <!-- 05 -->
-      <div class="case-workflow-node">
-        <span class="case-workflow-node__num">05</span>
-
-        <div class="case-workflow-node__content">
-          <h3>Decide</h3>
-          <p>
-            The combined evidence is brought into Power BI to support an
-           Invest, Transform, Monitor, or Exit framework for future portfolio decisions.
-          </p>
-        </div>
-      </div>
-
-    </div>
 
   </div>
 
 </section>
 
 <!-- ============================================================
-     05 · ANALYSIS & DASHBOARDS
+     03 · ANALYSIS & DASHBOARDS
      ============================================================ -->
-<section class="case-block case-block--visuals">
+<section class="case-block case-block--visuals wrap wrap--narrow">
 
-  <div class="wrap wrap--narrow">
+  <div class="case-block__head" data-reveal>
+    <span class="index">03</span>
+    <h2>Analysis &amp; Dashboards</h2>
+  </div>
 
-    <div class="case-block__head" data-reveal>
-      <span class="index">05</span>
-      <h2>Analysis &amp; Dashboards</h2>
-    </div>
-
-    <div class="case-block__body" data-reveal data-reveal-delay="1">
-      <p>
-        The analysis moves from portfolio contraction and closure
-        reconciliation to the financial and strategic evidence supporting
-        a more selective approach to future portfolio decisions.
-      </p>
-    </div>
-
+  <div class="case-block__body" data-reveal data-reveal-delay="1">
+    <p>
+      I used the portfolio history to understand how Macy's footprint was
+      changing, then connected those movements with announced closures,
+      financial performance, and the company's reported strategy.
+    </p>
   </div>
 
 
-  <!-- ============================================================
-       VISUALIZATION GRID
-       ============================================================ -->
-  <div class="case-visual-grid wrap">
-
+  <div class="case-visual-grid">
 
     <!-- 01 · PORTFOLIO EVOLUTION -->
     <article class="case-visual-card" data-reveal>
@@ -351,8 +154,11 @@
           <h3>Portfolio Evolution</h3>
 
           <p>
-            Tracks Macy's location footprint across 11 reporting periods
-            and highlights the concentrated contraction in late 2024.
+            I built this view to follow locations from one reporting period
+            to the next rather than relying on a simple first-versus-last
+            comparison. Looking at the timing and regional distribution of
+            those movements helped me separate gradual portfolio change from
+            periods where the footprint shifted more sharply.
           </p>
         </div>
       </div>
@@ -391,8 +197,11 @@
           <h3>Closure Analysis</h3>
 
           <p>
-            Reconciles announced closures against the historical portfolio,
-            with 13 of 14 records matched to known locations.
+            I treated the announced closure list as a separate source and
+            reconciled it against the location history I had already built.
+            That gave me a way to check how closely Macy's disclosed closures
+            aligned with observed portfolio changes without using one dataset
+            as a substitute for the other.
           </p>
         </div>
       </div>
@@ -431,21 +240,23 @@
           <h3>Recommendation Framework</h3>
 
           <p>
-            Translates the portfolio and financial evidence into four
-            possible actions: Invest, Transform, Monitor, or Exit.
+            I brought the portfolio analysis together with Macy's financial
+            results and reported Reimagine strategy because contraction alone
+            didn't answer what should happen next. The final view turns that
+            evidence into four possible actions — <strong>Invest</strong>,
+            <strong>Transform</strong>, <strong>Monitor</strong>, or
+            <strong>Exit</strong> — while leaving individual store decisions
+            dependent on internal performance data.
           </p>
         </div>
       </div>
 
     </article>
 
-
   </div>
 
 
-  <!-- ============================================================
-       LIGHTBOX IMAGE SOURCES
-       ============================================================ -->
+  <!-- LIGHTBOX IMAGE SOURCES -->
   <div class="case-lightbox-data" hidden>
 
     <div data-lightbox-group="portfolio-evolution">
@@ -526,121 +337,149 @@
 </div>
 
 <!-- ============================================================
-     06 · KEY FINDINGS
+     04 · KEY FINDINGS
      ============================================================ -->
 <section class="case-block case-findings wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
-    <span class="index">06</span>
+    <span class="index">04</span>
     <h2>Key Findings</h2>
   </div>
 
 
-  <div class="case-findings__grid">
-
-<!-- 01 -->
-<article class="case-finding" data-reveal>
-
-  <span class="case-finding__mark">→</span>
-
-  <div>
-    <h3>Macy's store footprint fell by 16.4%</h3>
-
-    <p>
-      The portfolio moved from <strong>488</strong> location IDs at the
-      start of the analysis to <strong>408</strong> in the latest snapshot.
-    </p>
-  </div>
-
-</article>
+  <div class="case-findings__list">
 
 
-<!-- 02 -->
-<article class="case-finding" data-reveal data-reveal-delay="1">
+    <!-- ========================================================
+         01 · PORTFOLIO CONTRACTION
+         ======================================================== -->
+    <article
+      class="case-finding case-finding--primary"
+      data-reveal>
 
-  <span class="case-finding__mark">→</span>
+      <div class="case-finding__stat">
+        <strong>16.4%</strong>
+        <span>Footprint Reduction</span>
+      </div>
 
-  <div>
-    <h3>Most of the decline happened in late 2024</h3>
+      <div class="case-finding__content">
 
-    <p>
-      The largest change came between Q3 and Q4 2024, when
-      <strong>54 locations</strong> disappeared from the reported portfolio.
-    </p>
-  </div>
+        <span class="case-finding__num">01</span>
 
-</article>
+        <h3>
+          Macy's footprint contracted by 16.4%
+        </h3>
 
+        <p>
+          Across the 11 reporting periods, the portfolio moved from
+          <strong>488 location IDs to 408</strong>. The decline was
+          substantial enough that I wanted to understand when those locations
+          disappeared rather than treating the change as one continuous trend.
+        </p>
 
-<!-- 03 -->
-<article class="case-finding" data-reveal>
+      </div>
 
-  <span class="case-finding__mark">→</span>
-
-  <div>
-    <h3>13 of 14 announced closures matched the portfolio</h3>
-
-    <p>
-      The closure reconciliation produced a <strong>92.9% match rate</strong>,
-      with one announced closure remaining unresolved.
-    </p>
-  </div>
-
-</article>
+    </article>
 
 
-<!-- 04 -->
-<article class="case-finding" data-reveal data-reveal-delay="1">
+    <!-- ========================================================
+         02 · TIMING OF CONTRACTION
+         ======================================================== -->
+    <article
+      class="case-finding"
+      data-reveal
+      data-reveal-delay="1">
 
-  <span class="case-finding__mark">→</span>
+      <div class="case-finding__stat">
+        <strong>54</strong>
+        <span>Locations Disappeared</span>
+      </div>
 
-  <div>
-    <h3>A disappearance does not always mean a closure</h3>
+      <div class="case-finding__content">
 
-    <p>
-      Locations missing from a later store list were treated as portfolio
-      movements, not confirmed closures unless they could be matched to
-      Macy's announced closure records.
-    </p>
-  </div>
+        <span class="case-finding__num">02</span>
 
-</article>
+        <h3>
+          The contraction was concentrated in late 2024
+        </h3>
 
+        <p>
+          The biggest shift came between <strong>Q3 and Q4 2024, when
+          54 locations disappeared</strong> from the reported portfolio.
+          That concentration showed that much of the restructuring happened
+          in a distinct wave rather than gradually across the full period.
+        </p>
 
-<!-- 05 -->
-<article class="case-finding" data-reveal>
+      </div>
 
-  <span class="case-finding__mark">→</span>
-
-  <div>
-    <h3>Some stores may be better candidates for reinvestment</h3>
-
-    <p>
-      Macy's reported stronger FY2025 performance from its
-      <strong>Reimagine 125</strong> locations, suggesting that reducing
-      the footprint is only part of the portfolio strategy.
-    </p>
-  </div>
-
-</article>
+    </article>
 
 
-<!-- 06 -->
-<article class="case-finding" data-reveal data-reveal-delay="1">
+    <!-- ========================================================
+         03 · CLOSURE RECONCILIATION
+         ======================================================== -->
+    <article
+      class="case-finding"
+      data-reveal
+      data-reveal-delay="2">
 
-  <span class="case-finding__mark">→</span>
+      <div class="case-finding__stat">
+        <strong>92.9%</strong>
+        <span>Closure Match Rate</span>
+      </div>
 
-  <div>
-    <h3>Store decisions need more than a keep-or-close choice</h3>
+      <div class="case-finding__content">
 
-    <p>
-      The findings point to four practical options for future decisions:
-      <strong>Invest, Transform, Monitor, or Exit</strong>, depending on
-      the evidence available for each location.
-    </p>
-  </div>
+        <span class="case-finding__num">03</span>
 
-</article>
+        <h3>
+          13 of 14 announced closures matched the historical portfolio
+        </h3>
+
+        <p>
+          I was able to reconcile <strong>13 announced closures</strong> to
+          historical locations, a <strong>92.9% match rate</strong>, while
+          one remained unresolved. I kept those confirmed records separate
+          from other portfolio disappearances instead of assuming every
+          missing location represented a closure.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- ========================================================
+         04 · REINVESTMENT
+         ======================================================== -->
+    <article
+      class="case-finding"
+      data-reveal
+      data-reveal-delay="3">
+
+      <div class="case-finding__stat">
+        <strong>Reimagine 125</strong>
+        <span>Go-Forward Locations</span>
+      </div>
+
+      <div class="case-finding__content">
+
+        <span class="case-finding__num">04</span>
+
+        <h3>
+          Reinvestment was part of the story, not just contraction
+        </h3>
+
+        <p>
+          Macy's reported stronger FY2025 performance from its
+          <strong>Reimagine 125</strong> locations. That mattered for my
+          recommendation because it provided evidence that selected locations
+          may warrant intervention or reinvestment before exit.
+        </p>
+
+      </div>
+
+    </article>
 
 
   </div>
@@ -648,225 +487,282 @@
 </section>
 
 <!-- ============================================================
-     07 · RECOMMENDATIONS
+     05 · RECOMMENDATIONS
      ============================================================ -->
 <section class="case-block case-recommendations wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
-    <span class="index">07</span>
+    <span class="index">05</span>
     <h2>Recommendations</h2>
   </div>
 
 
-  <div class="case-recommendations__list" data-reveal data-reveal-delay="1">
+  <div class="case-recommendations__list">
+
 
     <!-- 01 -->
-<article class="case-recommendation">
+    <article
+      class="case-recommendation"
+      data-reveal>
 
-  <span class="case-recommendation__mark">→</span>
+      <button
+        class="case-recommendation__trigger"
+        type="button"
+        aria-expanded="false">
 
-  <div>
-    <h3>Evaluate stores individually before making closure decisions</h3>
+        <span class="case-recommendation__num">→</span>
 
-    <p>
-      Use the available evidence to separate locations that may benefit
-      from investment or improvement from those that are stronger candidates
-      for exit.
-    </p>
-  </div>
+        <span class="case-recommendation__title">
+          Evaluate locations before treating exit as the default
+        </span>
 
-</article>
+        <span
+          class="case-recommendation__toggle"
+          aria-hidden="true">
+          +
+        </span>
 
+      </button>
 
-<!-- 02 -->
-<article class="case-recommendation">
+      <div class="case-recommendation__details">
 
-  <span class="case-recommendation__mark">→</span>
+        <p>
+          Based on the mix of portfolio disappearances and confirmed closures,
+          I'd evaluate locations individually rather than treating footprint
+          reduction as the answer by default. The next action could be
+          <strong>Invest, Transform, Monitor, or Exit</strong>, depending on
+          the evidence for that location.
+        </p>
 
-  <div>
-    <h3>Consider reinvestment where there is evidence of potential</h3>
+      </div>
 
-    <p>
-      The reported performance of Reimagine 125 suggests that targeted
-      improvements can be worth testing before deciding to close a
-      viable location.
-    </p>
-  </div>
-
-</article>
+    </article>
 
 
-<!-- 03 -->
-<article class="case-recommendation">
+    <!-- 02 -->
+    <article
+      class="case-recommendation"
+      data-reveal
+      data-reveal-delay="1">
 
-  <span class="case-recommendation__mark">→</span>
+      <button
+        class="case-recommendation__trigger"
+        type="button"
+        aria-expanded="false">
 
-  <div>
-    <h3>Add store-level performance data to future analysis</h3>
+        <span class="case-recommendation__num">→</span>
 
-    <p>
-      Sales, margins, traffic, lease costs, and customer measures would
-      provide a stronger basis for deciding whether a location should be
-      invested in, improved, monitored, or exited.
-    </p>
-  </div>
+        <span class="case-recommendation__title">
+          Test reinvestment where a location still looks viable
+        </span>
 
-</article>
+        <span
+          class="case-recommendation__toggle"
+          aria-hidden="true">
+          +
+        </span>
+
+      </button>
+
+      <div class="case-recommendation__details">
+
+        <p>
+          Macy's reported performance from <strong>Reimagine 125</strong>
+          gives a reason to test targeted improvements before exiting every
+          underperforming location. I'd reserve closure for cases where
+          continued weakness and strategic relevance no longer justify
+          further investment.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- 03 -->
+    <article
+      class="case-recommendation"
+      data-reveal
+      data-reveal-delay="2">
+
+      <button
+        class="case-recommendation__trigger"
+        type="button"
+        aria-expanded="false">
+
+        <span class="case-recommendation__num">→</span>
+
+        <span class="case-recommendation__title">
+          Bring store-level economics into the next round of analysis
+        </span>
+
+        <span
+          class="case-recommendation__toggle"
+          aria-hidden="true">
+          +
+        </span>
+
+      </button>
+
+      <div class="case-recommendation__details">
+
+        <p>
+          The public data can show where the portfolio changed, but it cannot
+          determine the right action for an individual store. I'd add
+          <strong>sales, margins, traffic, lease costs, and customer
+          measures</strong> before using this framework for actual
+          location-level decisions.
+        </p>
+
+      </div>
+
+    </article>
+
 
   </div>
 
 </section>
 
 <!-- ============================================================
-     08 · SCOPE & LIMITATIONS
+     06 · SCOPE & LIMITATIONS
      ============================================================ -->
 <section class="case-block case-scope wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
-    <span class="index">08</span>
+    <span class="index">06</span>
     <h2>Scope &amp; Limitations</h2>
   </div>
 
-  <div class="case-block__body" data-reveal data-reveal-delay="1">
+  <div
+    class="case-block__body case-scope__body"
+    data-reveal
+    data-reveal-delay="1">
 
     <p>
-      The analysis uses publicly available data to understand how Macy's
-      store portfolio has changed over time. It does not attempt to predict
-      which individual stores will close.
+      I worked only with publicly available data, so the analysis can describe
+      Macy's portfolio changes but cannot measure the underlying performance
+      of individual stores. The closure disclosure also covers only announced
+      closures, which means it cannot explain every change observed across the
+      broader store history. Without store-level <strong>sales, profitability,
+      traffic, lease costs, and comparable sales</strong>, I couldn't assign
+      individual locations to <strong>Invest, Transform, Monitor, or Exit</strong>;
+      with access to those measures, I'd use the framework as the starting point
+      for actual store-level decisions.
     </p>
-
-    <div class="case-scope__items">
-
-      <!-- 01 -->
-      <div class="case-scope__item">
-
-        <h3>Store-level performance is not available</h3>
-
-        <p>
-          Public data does not include sales, profit, traffic, lease costs,
-          or comparable-sales results for individual stores, limiting how
-          far each location can be evaluated.
-        </p>
-
-      </div>
-
-
-      <!-- 02 -->
-      <div class="case-scope__item">
-
-        <h3>Missing does not mean closed</h3>
-
-        <p>
-          When a location disappeared from a later store list, it was
-          recorded as a portfolio change unless there was separate evidence
-          confirming that the store had closed.
-        </p>
-
-      </div>
-
-
-      <!-- 03 -->
-      <div class="case-scope__item">
-
-        <h3>Individual store actions require more data</h3>
-
-        <p>
-          The analysis can help structure portfolio decisions, but deciding
-          whether a specific store should be invested in, improved, monitored,
-          or exited would require Macy's internal performance data.
-        </p>
-
-      </div>
-
-    </div>
 
   </div>
 
 </section>
 
 <!-- ============================================================
-     09 · TOOLS & METHODS
+     07 · TOOLS & METHODS
      ============================================================ -->
 <section class="case-block case-tools wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
-    <span class="index">09</span>
+    <span class="index">07</span>
     <h2>Tools &amp; Methods</h2>
   </div>
 
-  <div class="case-tools__grid" data-reveal data-reveal-delay="1">
+
+  <!-- CATEGORY TABS -->
+  <div
+    class="case-tools__tabs"
+    data-reveal
+    data-reveal-delay="1">
+
+    <button
+      class="case-tools__tab is-active"
+      type="button"
+      data-tools-tab="preparation">
+      Data Preparation
+    </button>
+
+    <button
+      class="case-tools__tab"
+      type="button"
+      data-tools-tab="portfolio">
+      Portfolio &amp; Financial Analysis
+    </button>
+
+    <button
+      class="case-tools__tab"
+      type="button"
+      data-tools-tab="powerbi">
+      Power BI &amp; Data Modeling
+    </button>
+
+    <button
+      class="case-tools__tab"
+      type="button"
+      data-tools-tab="strategy">
+      Strategy &amp; Decision Framework
+    </button>
+
+  </div>
 
 
-    <!-- DATA PREPARATION -->
-    <div class="case-tools__group">
+  <!-- DATA PREPARATION -->
+  <div
+    class="case-tools__panel is-active"
+    data-tools-panel="preparation">
 
-      <span class="case-tools__label">
-        Data Preparation
-      </span>
-
-      <div class="case-tools__items">
-        <span>Python</span>
-        <span>Pandas</span>
-        <span>Data Validation</span>
-      </div>
-
+    <div class="case-tools__items">
+      <span>Python</span>
+      <span>Pandas</span>
+      <span>Data Validation</span>
     </div>
 
+  </div>
 
-    <!-- PORTFOLIO ANALYSIS -->
-    <div class="case-tools__group">
 
-      <span class="case-tools__label">
-        Portfolio Analysis
-      </span>
+  <!-- PORTFOLIO & FINANCIAL ANALYSIS -->
+  <div
+    class="case-tools__panel"
+    data-tools-panel="portfolio">
 
-      <div class="case-tools__items">
-        <span>Snapshot Analysis</span>
-        <span>Closure Reconciliation</span>
-        <span>Financial Analysis</span>
-      </div>
-
+    <div class="case-tools__items">
+      <span>Snapshot Analysis</span>
+      <span>Portfolio Tracking</span>
+      <span>Closure Reconciliation</span>
+      <span>Financial Analysis</span>
     </div>
 
+  </div>
 
-    <!-- POWER BI -->
-    <div class="case-tools__group">
 
-      <span class="case-tools__label">
-        Power BI Modeling
-      </span>
+  <!-- POWER BI & DATA MODELING -->
+  <div
+    class="case-tools__panel"
+    data-tools-panel="powerbi">
 
-      <div class="case-tools__items">
-        <span>Power BI</span>
-        <span>Power Query</span>
-        <span>DAX</span>
-      </div>
-
+    <div class="case-tools__items">
+      <span>Power BI</span>
+      <span>Power Query</span>
+      <span>DAX</span>
     </div>
 
+  </div>
 
-    <!-- DECISION SUPPORT -->
-    <div class="case-tools__group">
 
-      <span class="case-tools__label">
-        Decision Support
-      </span>
+  <!-- STRATEGY & DECISION FRAMEWORK -->
+  <div
+    class="case-tools__panel"
+    data-tools-panel="strategy">
 
-      <div class="case-tools__items">
-        <span>Portfolio Tracking</span>
-        <span>Strategic Context</span>
-        <span>Decision Framework</span>
-      </div>
-
+    <div class="case-tools__items">
+      <span>Strategic Context</span>
+      <span>Invest</span>
+      <span>Transform</span>
+      <span>Monitor</span>
+      <span>Exit</span>
     </div>
-
 
   </div>
 
 </section>
-
 <section class="case-block wrap wrap--narrow">
-  <div class="case-block__head" data-reveal><span class="index">10</span><h2>Project Link</h2></div>
+  <div class="case-block__head" data-reveal><span class="index">08</span><h2>Project Link</h2></div>
   <div class="case-block__body" data-reveal>
     <a href="https://github.com/Krishna-np/macys-store-portfolio-optimization" target="_blank" rel="noopener" class="btn btn--secondary">
       View on GitHub

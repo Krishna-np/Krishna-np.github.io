@@ -14,7 +14,7 @@
 <nav class="nav" id="nav">
   <a href="../index.html" class="nav__mark"><span></span>KNP</a>
   <div class="nav__links">
-    <a href="../index.html#work">Project</a>
+    <a href="../index.html#work">Projects</a>
     <a href="../about.html">About</a>
     <a href="../index.html#experience">Experience</a>
     <a href="../index.html#education">Education</a>
@@ -40,13 +40,6 @@
 <div class="case-meta-row" data-reveal>
 
   <div class="case-meta-item">
-    <div class="label">Tools</div>
-    <div class="value">
-      Python &nbsp;|&nbsp; Plotly &nbsp;|&nbsp; scikit-learn
-    </div>
-  </div>
-
-  <div class="case-meta-item">
     <div class="label">Focus</div>
     <div class="value">
       Customer &amp; Marketing Analytics
@@ -65,329 +58,96 @@
 </header>
 
 <!-- ============================================================
-     FEATURED VISUALIZATION
-     ============================================================ -->
-<section class="case-featured wrap wrap--narrow">
-
-  <div class="case-featured__frame" data-reveal>
-
-    <img
-      src="../assets/images/projects/project-04/executive_performance_scorecard.png"
-      alt="Executive Performance Scorecard showing retail revenue, households, baskets, customer engagement, retention, and model performance">
-
-  </div>
-</section>
-
-<!-- ============================================================
-     01 · BUSINESS PROBLEM
+     01 · BUSINESS CONTEXT
      ============================================================ -->
 <section class="case-block wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
     <span class="index">01</span>
-    <h2>Business Problem</h2>
-  </div>
-
-  <div class="case-block__body" data-reveal data-reveal-delay="1">
-
-    <p class="case-lead">
-      Retail performance is shaped by customer behaviour, campaign response,
-      product mix, and store activity, but these signals are spread across
-      multiple datasets and are difficult to evaluate together.
-    </p>
-
-    <p>
-      The project brings these data together to understand which customers
-      create the most value, how marketing activity relates to engagement,
-      where retention and cross-sell opportunities exist, and what factors
-      are associated with store-level sales performance.
-    </p>
-
-  </div>
-
-</section>
-
-<!-- ============================================================
-     02 · BUSINESS QUESTION
-     ============================================================ -->
-<section class="case-block case-question wrap wrap--narrow">
-
-  <div class="case-block__head" data-reveal>
-    <span class="index">02</span>
-    <h2>Business Question</h2>
-  </div>
-
-  <div class="case-question__main" data-reveal data-reveal-delay="1">
-
-    <p>
-      How can customer, transaction, product, and campaign data be used
-      together to improve customer targeting, retention, merchandising,
-      and commercial performance?
-    </p>
-
-  </div>
-
-
-  <div class="case-question__support" data-reveal data-reveal-delay="2">
-
-    <div>
-      <span>→</span>
-      <p>
-        Which customer groups contribute the most value and show the
-        strongest retention?
-      </p>
-    </div>
-
-    <div>
-      <span>→</span>
-      <p>
-        Which campaigns and promotions generate the strongest customer
-        engagement?
-      </p>
-    </div>
-
-    <div>
-      <span>→</span>
-      <p>
-        What customer, product, and store patterns can support better
-        merchandising and sales decisions?
-      </p>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ============================================================
-     03 · CONTEXT & DECISION SUPPORTED
-     ============================================================ -->
-<section class="case-block case-context wrap wrap--narrow">
-
-  <div class="case-block__head" data-reveal>
-    <span class="index">03</span>
-    <h2>Context &amp; Decision Supported</h2>
+    <h2>Business Context</h2>
   </div>
 
   <div class="case-block__body" data-reveal data-reveal-delay="1">
 
     <p>
-      The analysis is designed for retail teams looking to better understand
-      customer value, marketing engagement, and purchasing behaviour across
-      a large transaction and loyalty dataset.
+      Customer value, campaign engagement, product relationships, and store
+      performance each showed a different side of the retail business, but
+      looking at them separately would only tell part of the story. I wanted
+      to connect those views and see where the clearest customer and commercial
+      patterns emerged.
     </p>
 
+    <p class="case-business-question">
+      The question: How can I use customer, transaction, product, and campaign
+      data together to improve targeting, retention, merchandising, and
+      commercial performance?
+    </p>
 
-    <div class="case-context__rows">
-
-      <!-- PRIMARY USERS -->
-      <div class="case-context__row">
-
-        <span class="case-context__label">
-          Primary Users
-        </span>
-
-        <h3>
-          Customer Marketing &amp; Merchandising
-        </h3>
-
-        <p>
-          Understand customer segments, retention, campaign engagement,
-          product relationships, and differences in commercial performance.
-        </p>
-
-      </div>
-
-
-      <!-- DECISION SUPPORTED -->
-      <div class="case-context__row">
-
-        <span class="case-context__label">
-          Decision Supported
-        </span>
-
-        <h3>
-          Where should marketing effort be focused?
-        </h3>
-
-        <p>
-          Identify valuable customer groups, stronger campaign opportunities,
-          retention priorities, and cross-sell patterns that can guide
-          targeting and merchandising decisions.
-        </p>
-
-      </div>
-
-    </div>
+    <p>
+      I brought customer segmentation, retention, campaign, cross-sell, and
+      store performance analysis together so the findings could be evaluated
+      in the same business context.
+    </p>
 
   </div>
 
 </section>
 
 <!-- ============================================================
-     04 · DATA & WORKFLOW
+     02 · DATA & WORKFLOW
      ============================================================ -->
 <section class="case-block wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
-    <span class="index">04</span>
+    <span class="index">02</span>
     <h2>Data &amp; Workflow</h2>
   </div>
 
   <div class="case-block__body" data-reveal data-reveal-delay="1">
 
-    <p class="case-workflow__intro">
-      The project uses Dunnhumby retail data covering transactions,
-      households, products, campaigns, coupons, and promotions across
-      102 weeks.
+    <p>
+      I started with Dunnhumby transaction data covering households,
+      products, campaigns, coupons, and promotions, removing invalid sales
+      and quantity records before joining product information to the
+      purchases. From there, I built customer and commercial measures to
+      compare segments, retention, campaigns, stores, product categories,
+      and basket relationships, then used store-week data to compare
+      Linear Regression, Random Forest, and XGBoost sales models.
     </p>
-
-
-    <div class="case-workflow-chart">
-
-      <!-- 01 -->
-      <div class="case-workflow-node">
-        <span class="case-workflow-node__num">01</span>
-
-        <div class="case-workflow-node__content">
-          <h3>Prepare</h3>
-          <p>
-            Transaction data is cleaned, invalid sales and quantity records
-            are removed, and product information is joined to the purchases.
-          </p>
-        </div>
-      </div>
-
-
-      <div class="case-workflow-arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M12 3v14"/>
-          <path d="m7 13 5 5 5-5"/>
-        </svg>
-      </div>
-
-
-      <!-- 02 -->
-      <div class="case-workflow-node">
-        <span class="case-workflow-node__num">02</span>
-
-        <div class="case-workflow-node__content">
-          <h3>Measure</h3>
-          <p>
-             Core measures such as revenue, baskets, customer value,
-             retention, campaign reach, and coupon engagement are calculated.
-          </p>
-        </div>
-      </div>
-
-
-      <div class="case-workflow-arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M12 3v14"/>
-          <path d="m7 13 5 5 5-5"/>
-        </svg>
-      </div>
-
-
-      <!-- 03 -->
-      <div class="case-workflow-node">
-        <span class="case-workflow-node__num">03</span>
-
-        <div class="case-workflow-node__content">
-          <h3>Segment</h3>
-          <p>
-            RFM, customer value, retention, and clustering are used to
-            compare how different groups of customers shop over time.
-          </p>
-        </div>
-      </div>
-
-
-      <div class="case-workflow-arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M12 3v14"/>
-          <path d="m7 13 5 5 5-5"/>
-        </svg>
-      </div>
-
-
-      <!-- 04 -->
-      <div class="case-workflow-node">
-        <span class="case-workflow-node__num">04</span>
-
-        <div class="case-workflow-node__content">
-          <h3>Compare</h3>
-          <p>
-            Campaigns, coupons, promotions, stores, product categories,
-            and basket combinations are compared to see where performance differs.
-          </p>
-        </div>
-      </div>
-
-
-      <div class="case-workflow-arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M12 3v14"/>
-          <path d="m7 13 5 5 5-5"/>
-        </svg>
-      </div>
-
-
-      <!-- 05 -->
-      <div class="case-workflow-node">
-        <span class="case-workflow-node__num">05</span>
-
-        <div class="case-workflow-node__content">
-          <h3>Model</h3>
-          <p>
-             Linear Regression, Random Forest, and XGBoost are tested on
-             store-week sales, with the results summarized in the final visuals.
-          </p>
-        </div>
-      </div>
-
-    </div>
 
   </div>
 
 </section>
 
 <!-- ============================================================
-     05 · ANALYSIS & VISUALIZATIONS
+     03 · ANALYSIS & VISUALIZATIONS
      ============================================================ -->
-<section class="case-block case-block--visuals">
+<section class="case-block case-block--visuals wrap wrap--narrow">
 
-  <div class="wrap wrap--narrow">
+  <div class="case-block__head" data-reveal>
+    <span class="index">03</span>
+    <h2>Analysis &amp; Visualizations</h2>
+  </div>
 
-    <div class="case-block__head" data-reveal>
-      <span class="index">05</span>
-      <h2>Analysis &amp; Visualizations</h2>
-    </div>
-
-    <div class="case-block__body" data-reveal data-reveal-delay="1">
-      <p>
-        The analysis moves from customer value and retention to campaign
-        response, commercial performance, cross-sell opportunities, and
-        store-week sales modeling.
-      </p>
-    </div>
-
+  <div class="case-block__body" data-reveal data-reveal-delay="1">
+    <p>
+      I kept the final visuals focused on three parts of the analysis where
+      the choice of view helped me answer a different business question.
+    </p>
   </div>
 
 
-  <!-- ============================================================
-       VISUALIZATION GRID
-       ============================================================ -->
-  <div class="case-visual-grid wrap">
+  <div class="case-visual-grid">
 
 
-    <!-- 01 · CUSTOMER VALUE BY RFM SEGMENT -->
+    <!-- 01 · CUSTOMER VALUE -->
     <article class="case-visual-card" data-reveal>
 
       <button
         class="case-visual-card__trigger"
         type="button"
         data-lightbox-group="rfm"
-        aria-label="View Customer Value by RFM Segment visualization">
+        aria-label="View Customer Value visualization">
 
         <div class="case-visual-card__image">
           <img
@@ -406,9 +166,13 @@
 
         <div>
           <h3>Customer Value</h3>
+
           <p>
-            Customer value across RFM segments, highlighting differences
-            between Champions, Loyal, At Risk, and Lost households.
+            I used the RFM segment view to see whether customer value was
+            concentrated enough to justify treating customer groups
+            differently. Comparing the segments side by side gave me a
+            practical basis for thinking about retention and re-engagement
+            priorities.
           </p>
         </div>
       </div>
@@ -416,122 +180,17 @@
     </article>
 
 
-    <!-- 02 · COHORT RETENTION -->
-    <article class="case-visual-card" data-reveal data-reveal-delay="1">
-
-      <button
-        class="case-visual-card__trigger"
-        type="button"
-        data-lightbox-group="retention"
-        aria-label="View Customer Cohort Retention visualization">
-
-        <div class="case-visual-card__image">
-          <img
-            src="../assets/images/projects/project-04/cohort-retention.png"
-            alt="Customer Cohort Retention">
-        </div>
-
-        <span class="case-visual-card__expand">
-          View larger ↗
-        </span>
-
-      </button>
-
-      <div class="case-visual-card__caption">
-        <span>02</span>
-
-        <div>
-          <h3>Customer Retention</h3>
-          <p>
-            Cohort retention over the first 12 weeks following a customer's
-            first purchase.
-          </p>
-        </div>
-      </div>
-
-    </article>
-
-
-    <!-- 03 · CAMPAIGN TARGETING -->
-    <article class="case-visual-card" data-reveal data-reveal-delay="2">
-
-      <button
-        class="case-visual-card__trigger"
-        type="button"
-        data-lightbox-group="campaign"
-        aria-label="View Campaign Targeting Spend visualization">
-
-        <div class="case-visual-card__image">
-          <img
-            src="../assets/images/projects/project-04/campaign-targeting-spend.png"
-            alt="Average Customer Spend by Campaign Targeting Status">
-        </div>
-
-        <span class="case-visual-card__expand">
-          View larger ↗
-        </span>
-
-      </button>
-
-      <div class="case-visual-card__caption">
-        <span>03</span>
-
-        <div>
-          <h3>Campaign Engagement</h3>
-          <p>
-            Customer spend compared across households that were targeted
-            and those that were not.
-          </p>
-        </div>
-      </div>
-
-    </article>
-
-
-    <!-- 04 · COMMERCIAL PERFORMANCE -->
-    <article class="case-visual-card" data-reveal>
-
-      <button
-        class="case-visual-card__trigger"
-        type="button"
-        data-lightbox-group="commercial"
-        aria-label="View Commercial Performance visualization">
-
-        <div class="case-visual-card__image">
-          <img
-            src="../assets/images/projects/project-04/commercial-performance.png"
-            alt="Commercial Performance">
-        </div>
-
-        <span class="case-visual-card__expand">
-          View larger ↗
-        </span>
-
-      </button>
-
-      <div class="case-visual-card__caption">
-        <span>04</span>
-
-        <div>
-          <h3>Commercial Performance</h3>
-          <p>
-            Weekly revenue trends alongside the highest-revenue stores
-            in the dataset.
-          </p>
-        </div>
-      </div>
-
-    </article>
-
-
-    <!-- 05 · CROSS-SELL RULES -->
-    <article class="case-visual-card" data-reveal data-reveal-delay="1">
+    <!-- 02 · CROSS-SELL OPPORTUNITIES -->
+    <article
+      class="case-visual-card"
+      data-reveal
+      data-reveal-delay="1">
 
       <button
         class="case-visual-card__trigger"
         type="button"
         data-lightbox-group="crosssell"
-        aria-label="View Cross-Sell Rule Performance visualization">
+        aria-label="View Cross-Sell Opportunities visualization">
 
         <div class="case-visual-card__image">
           <img
@@ -546,13 +205,17 @@
       </button>
 
       <div class="case-visual-card__caption">
-        <span>05</span>
+        <span>02</span>
 
         <div>
           <h3>Cross-Sell Opportunities</h3>
+
           <p>
-            Product relationships identified through department-level
-            association rules using support, confidence, and lift.
+            For basket analysis, I compared support, confidence, and lift so
+            I could separate relationships that were simply common from those
+            that showed stronger cross-sell potential. This gave me a more
+            useful way to narrow the associations into candidates for
+            merchandising tests.
           </p>
         </div>
       </div>
@@ -560,14 +223,17 @@
     </article>
 
 
-    <!-- 06 · ACTUAL VS PREDICTED -->
-    <article class="case-visual-card" data-reveal data-reveal-delay="2">
+    <!-- 03 · STORE-WEEK SALES MODEL -->
+    <article
+      class="case-visual-card"
+      data-reveal
+      data-reveal-delay="2">
 
       <button
         class="case-visual-card__trigger"
         type="button"
         data-lightbox-group="salesmodel"
-        aria-label="View Actual vs Predicted Store-Week Sales visualization">
+        aria-label="View Store-Week Sales Model visualization">
 
         <div class="case-visual-card__image">
           <img
@@ -582,13 +248,16 @@
       </button>
 
       <div class="case-visual-card__caption">
-        <span>06</span>
+        <span>03</span>
 
         <div>
           <h3>Store-Week Sales Model</h3>
+
           <p>
-            Actual and predicted store-week sales from the final model
-            evaluation.
+            I plotted actual against predicted store-week sales to check how
+            closely the final model tracked observations across the sales
+            range and where prediction errors became more visible. This was
+            a model-evaluation view rather than a forecasting exercise.
           </p>
         </div>
       </div>
@@ -607,24 +276,6 @@
       <img
         src="../assets/images/projects/project-04/rfm-customer-value.png"
         alt="Customer Value by RFM Segment">
-    </div>
-
-    <div data-lightbox-group="retention">
-      <img
-        src="../assets/images/projects/project-04/cohort-retention.png"
-        alt="Customer Cohort Retention">
-    </div>
-
-    <div data-lightbox-group="campaign">
-      <img
-        src="../assets/images/projects/project-04/campaign-targeting-spend.png"
-        alt="Average Customer Spend by Campaign Targeting Status">
-    </div>
-
-    <div data-lightbox-group="commercial">
-      <img
-        src="../assets/images/projects/project-04/commercial-performance.png"
-        alt="Commercial Performance">
     </div>
 
     <div data-lightbox-group="crosssell">
@@ -663,7 +314,6 @@
     aria-modal="true"
     aria-label="Expanded project visualization">
 
-    <!-- CLOSE -->
     <button
       class="case-lightbox__close"
       type="button"
@@ -672,7 +322,6 @@
       ×
     </button>
 
-    <!-- PREVIOUS -->
     <button
       class="case-lightbox__prev"
       type="button"
@@ -681,7 +330,6 @@
       ←
     </button>
 
-    <!-- IMAGE -->
     <div class="case-lightbox__content">
       <img
         id="caseLightboxImage"
@@ -689,7 +337,6 @@
         alt="">
     </div>
 
-    <!-- NEXT -->
     <button
       class="case-lightbox__next"
       type="button"
@@ -703,126 +350,144 @@
 </div>
 
 <!-- ============================================================
-     06 · KEY FINDINGS
+     04 · KEY FINDINGS
      ============================================================ -->
 <section class="case-block case-findings wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
-    <span class="index">06</span>
+    <span class="index">04</span>
     <h2>Key Findings</h2>
   </div>
 
 
-  <div class="case-findings__grid">
+  <div class="case-findings__list">
 
 
-    <!-- 01 -->
-    <article class="case-finding" data-reveal>
+    <!-- ========================================================
+         01 · CUSTOMER VALUE
+         ======================================================== -->
+    <article
+      class="case-finding case-finding--primary"
+      data-reveal>
 
-      <span class="case-finding__mark">→</span>
+      <div class="case-finding__stat">
+        <strong>$7,360.93</strong>
+        <span>Champion Customer Value</span>
+      </div>
 
-      <div>
-        <h3>Customer value differs sharply by segment</h3>
+      <div class="case-finding__content">
 
-       <p>
-       Champions averaged <strong>$7,360.93</strong> in customer value,
-       while At Risk households averaged <strong>$896.22</strong>.
-      </p>
+        <span class="case-finding__num">01</span>
+
+        <h3>
+          Customer value is concentrated in the strongest segments
+        </h3>
+
+        <p>
+          Champions averaged <strong>$7,360.93</strong> in customer value,
+          compared with just <strong>$896.22</strong> for At Risk households,
+          making the value gap between active and disengaging customers
+          difficult to ignore.
+        </p>
+
       </div>
 
     </article>
 
 
-    <!-- 02 -->
-    <article class="case-finding" data-reveal data-reveal-delay="1">
+    <!-- ========================================================
+         02 · RETENTION
+         ======================================================== -->
+    <article
+      class="case-finding"
+      data-reveal
+      data-reveal-delay="1">
 
-      <span class="case-finding__mark">→</span>
+      <div class="case-finding__stat">
+        <strong>53.3%</strong>
+        <span>Week 4 Retention</span>
+      </div>
 
-      <div>
-        <h3>Early retention leaves room to improve</h3>
+      <div class="case-finding__content">
+
+        <span class="case-finding__num">02</span>
+
+        <h3>
+          Retention falls quickly after acquisition
+        </h3>
 
         <p>
-          <!-- 02 -->
-         <p>
           By Week 4, median retention across customer cohorts was
-          <strong>53.3%</strong>, showing a noticeable drop-off early in the
-          customer relationship.
-         </p>
+          <strong>53.3%</strong>, pointing to the early customer lifecycle
+          as an important window for retention efforts.
         </p>
+
       </div>
 
     </article>
 
 
-    <!-- 03 -->
-    <article class="case-finding" data-reveal>
+    <!-- ========================================================
+         03 · CAMPAIGN TARGETING
+         ======================================================== -->
+    <article
+      class="case-finding"
+      data-reveal
+      data-reveal-delay="2">
 
-      <span class="case-finding__mark">→</span>
+      <div class="case-finding__stat">
+        <strong>$4,491.98</strong>
+        <span>Targeted Household Spend</span>
+      </div>
 
-      <div>
-        <h3>Targeted households spent more</h3>
+      <div class="case-finding__content">
 
-        <!-- 03 -->
+        <span class="case-finding__num">03</span>
+
+        <h3>
+          Targeted households were already very different
+        </h3>
+
         <p>
-          Targeted households averaged <strong>$4,491.98</strong> in spend,
-          compared with <strong>$1,028.54</strong> for non-targeted households.
-          This shows an association, not the direct effect of the campaigns.
+          Targeted households averaged <strong>$4,491.98</strong> in spend
+          versus <strong>$1,028.54</strong> for non-targeted households,
+          showing a substantial difference in purchasing behaviour between
+          the two groups.
         </p>
+
       </div>
 
     </article>
 
 
-    <!-- 04 -->
-    <article class="case-finding" data-reveal data-reveal-delay="1">
+    <!-- ========================================================
+         04 · CROSS-SELL
+         ======================================================== -->
+    <article
+      class="case-finding"
+      data-reveal
+      data-reveal-delay="3">
 
-      <span class="case-finding__mark">→</span>
-
-      <div>
-        <h3>Some product combinations stand out</h3>
-
-       <!-- 04 -->
-        <p>
-          Basket analysis found recurring relationships between categories,
-          including <strong>Meat–Seafood (Packaged)</strong> and
-          <strong>Deli–Pastry</strong>.
-        </p>
+      <div class="case-finding__stat">
+        <strong>Meat–Seafood</strong>
+        <span>Cross-Sell Relationship</span>
       </div>
 
-    </article>
+      <div class="case-finding__content">
 
+        <span class="case-finding__num">04</span>
 
-    <!-- 05 -->
-    <article class="case-finding" data-reveal>
+        <h3>
+          Basket relationships surfaced practical cross-sell opportunities
+        </h3>
 
-      <span class="case-finding__mark">→</span>
-
-      <div>
-        <h3>Store performance varies across the network</h3>
-
-        <!-- 05 -->
         <p>
-          Revenue and customer reach varied across stores, showing that stores
-          do not perform or serve customers in the same way.
+          Recurring category relationships included
+          <strong>Meat–Seafood (Packaged)</strong> and
+          <strong>Deli–Pastry</strong>, providing specific combinations
+          that could be tested through merchandising or targeted offers.
         </p>
-      </div>
 
-    </article>
-
-
-    <!-- 06 -->
-    <article class="case-finding" data-reveal data-reveal-delay="1">
-
-      <span class="case-finding__mark">→</span>
-
-      <div>
-        <h3>Product breadth drives store-week sales</h3>
-
-        <!-- 06 -->
-        <p>
-          Product breadth accounted for <strong>90.5%</strong> of relative
-          feature importance in the store-week sales model.
-        </p>
       </div>
 
     </article>
@@ -833,12 +498,12 @@
 </section>
 
 <!-- ============================================================
-     07 · RECOMMENDATIONS
+     05 · RECOMMENDATIONS
      ============================================================ -->
 <section class="case-block case-recommendations wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
-    <span class="index">07</span>
+    <span class="index">05</span>
     <h2>Recommendations</h2>
   </div>
 
@@ -847,91 +512,113 @@
 
 
     <!-- 01 -->
-    <article class="case-recommendation" data-reveal>
+    <article
+      class="case-recommendation"
+      data-reveal>
 
-      <span class="case-recommendation__mark">→</span>
+      <button
+        class="case-recommendation__trigger"
+        type="button"
+        aria-expanded="false">
 
-      <div>
-        <h3>Focus retention on high-value customers</h3>
+        <span class="case-recommendation__num">→</span>
 
-       <!-- 01 -->
+        <span class="case-recommendation__title">
+          Prioritize retention where customer value is highest
+        </span>
+
+        <span
+          class="case-recommendation__toggle"
+          aria-hidden="true">
+          +
+        </span>
+
+      </button>
+
+      <div class="case-recommendation__details">
+
         <p>
-          Focus retention efforts on Champions and Loyal customers, while testing
-          re-engagement offers for At Risk households.
+          Based on the value and retention patterns, I'd protect
+          <strong>Champions and Loyal customers</strong> while testing
+          earlier re-engagement for At Risk households.
         </p>
+
       </div>
 
     </article>
 
 
     <!-- 02 -->
-    <article class="case-recommendation" data-reveal data-reveal-delay="1">
+    <article
+      class="case-recommendation"
+      data-reveal
+      data-reveal-delay="1">
 
-      <span class="case-recommendation__mark">→</span>
+      <button
+        class="case-recommendation__trigger"
+        type="button"
+        aria-expanded="false">
 
-      <div>
-        <h3>Measure whether campaigns actually add value</h3>
+        <span class="case-recommendation__num">→</span>
 
-      <!-- 02 -->
+        <span class="case-recommendation__title">
+          Test whether campaigns actually create incremental value
+        </span>
+
+        <span
+          class="case-recommendation__toggle"
+          aria-hidden="true">
+          +
+        </span>
+
+      </button>
+
+      <div class="case-recommendation__details">
+
         <p>
-          Use treatment and holdout groups to measure whether campaigns actually
-          change customer spending or engagement.
+          I'd use treatment and holdout groups to determine whether campaign
+          activity changes customer spending or engagement rather than
+          relying on differences between targeted and non-targeted households.
         </p>
+
       </div>
 
     </article>
 
 
     <!-- 03 -->
-    <article class="case-recommendation" data-reveal>
+    <article
+      class="case-recommendation"
+      data-reveal
+      data-reveal-delay="2">
 
-      <span class="case-recommendation__mark">→</span>
+      <button
+        class="case-recommendation__trigger"
+        type="button"
+        aria-expanded="false">
 
-      <div>
-        <h3>Test the strongest cross-sell relationships</h3>
+        <span class="case-recommendation__num">→</span>
 
-        <!-- 03 -->
+        <span class="case-recommendation__title">
+          Put the strongest cross-sell relationships into market tests
+        </span>
+
+        <span
+          class="case-recommendation__toggle"
+          aria-hidden="true">
+          +
+        </span>
+
+      </button>
+
+      <div class="case-recommendation__details">
+
         <p>
-          Test strong basket relationships such as <strong>Meat–Seafood
-          (Packaged)</strong> and <strong>Deli–Pastry</strong> through product
-          placement, bundles, or targeted offers.
+          I'd take the strongest basket associations into product-placement,
+          bundle, or targeted-offer tests and measure whether they change
+          basket behaviour.
         </p>
-      </div>
 
-    </article>
-
-
-    <!-- 04 -->
-    <article class="case-recommendation" data-reveal data-reveal-delay="1">
-
-      <span class="case-recommendation__mark">→</span>
-
-      <div>
-        <h3>Use store differences to guide local decisions</h3>
-
-        <!-- 04 -->
-        <p>
-          Adjust marketing and assortment decisions by store rather than using
-          the same approach across the entire network.
-        </p>
-      </div>
-
-    </article>
-
-
-    <!-- 05 -->
-    <article class="case-recommendation" data-reveal>
-
-      <span class="case-recommendation__mark">→</span>
-
-      <div>
-        <h3>Build a stronger sales forecasting model</h3>
-
-       <!-- 05 -->
-        <p>
-          Add prior sales, promotions, pricing, and calendar variables so the
-          store-week model can be extended toward forward-looking forecasting.
-        </p>
       </div>
 
     </article>
@@ -942,140 +629,144 @@
 </section>
 
 <!-- ============================================================
-     08 · SCOPE & LIMITATIONS
+     06 · SCOPE & LIMITATIONS
      ============================================================ -->
 <section class="case-block case-scope wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
-    <span class="index">08</span>
+    <span class="index">06</span>
     <h2>Scope &amp; Limitations</h2>
   </div>
 
-  <div class="case-block__body" data-reveal data-reveal-delay="1">
+  <div
+    class="case-block__body case-scope__body"
+    data-reveal
+    data-reveal-delay="1">
 
-   <p>
-  The analysis is based on the available Dunnhumby data and has a few
-  limitations that affect how the results can be used.
-</p>
-
-<div class="case-scope__items">
-
-  <div class="case-scope__item">
-    <h3>Marketing impact is not causal</h3>
     <p>
-      Campaign, coupon, display, and mailer comparisons are observational
-      and do not measure incremental causal impact.
+      I treated the campaign, coupon, display, and mailer results as
+      observational rather than causal, since the data does not show the
+      incremental impact of each marketing activity. Customer measures are
+      limited to the available <strong>102 weeks</strong>, while the store
+      analysis lacks geography, format, operating costs, and margin data that
+      would allow a deeper profitability view. I also treated the store-week
+      model as a performance model rather than a forecast because it uses
+      same-period features. With additional data, I would use controlled
+      campaign testing, richer store economics, and lagged features for
+      forward-looking sales forecasting.
     </p>
-  </div>
-
-
-  <div class="case-scope__item">
-    <h3>Customer &amp; store data is limited</h3>
-    <p>
-      Customer measures cover <strong>102 weeks</strong>, and the store
-      analysis does not include geography, store format, operating costs,
-      or margin data.
-    </p>
-  </div>
-
-
-  <div class="case-scope__item">
-    <h3>The model is not a forecast</h3>
-    <p>
-      The store-week model uses same-period features, while the basket
-      analysis is limited to departments rather than individual products.
-    </p>
-  </div>
-
-</div>
 
   </div>
 
 </section>
 
 <!-- ============================================================
-     09 · TOOLS & METHODS
+     07 · TOOLS & METHODS
      ============================================================ -->
 <section class="case-block case-tools wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
-    <span class="index">09</span>
+    <span class="index">07</span>
     <h2>Tools &amp; Methods</h2>
   </div>
 
-  <div class="case-tools__grid" data-reveal data-reveal-delay="1">
+
+  <!-- CATEGORY TABS -->
+  <div
+    class="case-tools__tabs"
+    data-reveal
+    data-reveal-delay="1">
+
+    <button
+      class="case-tools__tab is-active"
+      type="button"
+      data-tools-tab="analysis">
+      Data &amp; Analysis
+    </button>
+
+    <button
+      class="case-tools__tab"
+      type="button"
+      data-tools-tab="customer">
+      Customer Analytics
+    </button>
+
+    <button
+      class="case-tools__tab"
+      type="button"
+      data-tools-tab="modeling">
+      Modeling &amp; Cross-Sell
+    </button>
+
+    <button
+      class="case-tools__tab"
+      type="button"
+      data-tools-tab="environment">
+      Visualization &amp; Environment
+    </button>
+
+  </div>
 
 
-    <!-- DATA & ANALYSIS -->
-    <div class="case-tools__group">
+  <!-- DATA & ANALYSIS -->
+  <div
+    class="case-tools__panel is-active"
+    data-tools-panel="analysis">
 
-      <span class="case-tools__label">
-        Data &amp; Analysis
-      </span>
-
-      <div class="case-tools__items">
-        <span>Python</span>
-        <span>Pandas</span>
-        <span>NumPy</span>
-      </div>
-
+    <div class="case-tools__items">
+      <span>Python</span>
+      <span>Pandas</span>
+      <span>NumPy</span>
     </div>
 
+  </div>
 
-    <!-- CUSTOMER ANALYTICS -->
-    <div class="case-tools__group">
 
-      <span class="case-tools__label">
-        Customer Analytics
-      </span>
+  <!-- CUSTOMER ANALYTICS -->
+  <div
+    class="case-tools__panel"
+    data-tools-panel="customer">
 
-      <div class="case-tools__items">
-        <span>RFM Analysis</span>
-        <span>K-Means</span>
-        <span>Cohort Analysis</span>
-      </div>
-
+    <div class="case-tools__items">
+      <span>RFM Analysis</span>
+      <span>K-Means</span>
+      <span>Cohort Analysis</span>
     </div>
 
+  </div>
 
-    <!-- MODELING -->
-    <div class="case-tools__group">
 
-      <span class="case-tools__label">
-        Modeling
-      </span>
+  <!-- MODELING & CROSS-SELL -->
+  <div
+    class="case-tools__panel"
+    data-tools-panel="modeling">
 
-      <div class="case-tools__items">
-        <span>Scikit-learn</span>
-        <span>XGBoost</span>
-        <span>MLxtend</span>
-      </div>
-
+    <div class="case-tools__items">
+      <span>Scikit-learn</span>
+      <span>XGBoost</span>
+      <span>MLxtend</span>
     </div>
 
+  </div>
 
-    <!-- VISUALIZATION & ENVIRONMENT -->
-    <div class="case-tools__group">
 
-      <span class="case-tools__label">
-        Visualization &amp; Environment
-      </span>
+  <!-- VISUALIZATION & ENVIRONMENT -->
+  <div
+    class="case-tools__panel"
+    data-tools-panel="environment">
 
-      <div class="case-tools__items">
-        <span>Plotly</span>
-        <span>KaggleHub</span>
-        <span>Google Colab</span>
-      </div>
-
+    <div class="case-tools__items">
+      <span>Plotly</span>
+      <span>KaggleHub</span>
+      <span>Google Colab</span>
     </div>
-
 
   </div>
 
 </section>
 
 <section class="case-block wrap wrap--narrow">
-  <div class="case-block__head" data-reveal><span class="index">10</span><h2>Project Link</h2></div>
+  <div class="case-block__head" data-reveal><span class="index">08</span><h2>Project Link</h2></div>
   <div class="case-block__body" data-reveal>
     <a href="https://github.com/Krishna-np/dunnhumby-marketing-analytics" target="_blank" rel="noopener" class="btn btn--secondary">
       View on GitHub

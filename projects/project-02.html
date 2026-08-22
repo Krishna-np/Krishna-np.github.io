@@ -14,7 +14,7 @@
 <nav class="nav" id="nav">
   <a href="../index.html" class="nav__mark"><span></span>KNP</a>
   <div class="nav__links">
-    <a href="../index.html#work">Project</a>
+    <a href="../index.html#work">Projects</a>
     <a href="../about.html">About</a>
     <a href="../index.html#experience">Experience</a>
     <a href="../index.html#education">Education</a>
@@ -46,11 +46,6 @@
   <div class="case-meta-row" data-reveal data-reveal-delay="3">
 
     <div class="case-meta-item">
-      <div class="label">Core Stack</div>
-      <div class="value">Python | SQL | Power BI</div>
-    </div>
-
-    <div class="case-meta-item">
       <div class="label">Focus</div>
       <div class="value">M&amp;A Screening | Financial Analytics</div>
     </div>
@@ -64,50 +59,33 @@
 
 </header>
 
-<section class="case-featured wrap wrap--narrow">
-
-  <figure class="case-featured__visual" data-reveal="mask">
-
-    <img
-      src="../assets/images/projects/project-02/executive_overview.png"
-      alt="M&A Target Screening executive overview showing acquisition rankings, target classifications, and key performance indicators">
-
-    <figcaption>
-      Executive overview of acquisition rankings, target classification, and screening results.
-    </figcaption>
-
-  </figure>
-
 </section>
 
 <!-- ============================================================
-     01 · BUSINESS PROBLEM
+     01 · BUSINESS CONTEXT
      ============================================================ -->
 <section class="case-block wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
     <span class="index">01</span>
-    <h2>Business Problem</h2>
+    <h2>Business Context</h2>
   </div>
 
   <div class="case-block__body" data-reveal data-reveal-delay="1">
 
     <p>
-      Screening potential acquisition targets requires comparing companies
-      across valuation, growth, profitability, financial strength, cash
-      generation, and shareholder returns.
+      I wanted a consistent way to screen acquisition targets across valuation, growth, profitability, financial strength, cash generation, and returns. 
+      These measures did not always point in the same direction, a company could show strong growth while carrying a higher valuation or weaker financial profile. 
+      I treated the analysis as an early-stage screen rather than a substitute for deeper acquisition due diligence
+    </p>
+
+    <p class="case-business-question">
+      The question: Which companies represent the strongest acquisition candidates when these financial factors are evaluated together?
     </p>
 
     <p>
-      Looking at these measures independently can produce conflicting signals.
-      A fast-growing company may appear attractive on growth alone while carrying
-      a higher valuation or weaker financial profile.
-    </p>
-
-    <p>
-      The challenge is to bring these factors into a consistent screening
-      framework that makes companies easier to compare, rank, and prioritize
-      before deeper acquisition due diligence begins.
+      I combined the measures into a scoring framework rather than ranking companies on a single metric, 
+      giving me a consistent basis for comparing targets and identifying a shortlist for further review.
     </p>
 
   </div>
@@ -115,219 +93,48 @@
 </section>
 
 <!-- ============================================================
-     02 · BUSINESS QUESTION
+     02 · DATA & WORKFLOW
      ============================================================ -->
-<section class="case-block case-question wrap wrap--narrow">
+<section class="case-block wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
     <span class="index">02</span>
-    <h2>Business Question</h2>
-  </div>
-
-  <div class="case-question__main" data-reveal data-reveal-delay="1">
-    <p>
-      Which companies represent the strongest acquisition candidates
-      when valuation, growth, profitability, financial strength,
-      cash generation, and shareholder returns are evaluated together?
-    </p>
-  </div>
-
-</section>
-
-<!-- ============================================================
-     03 · CONTEXT & DECISION SUPPORTED
-     ============================================================ -->
-<section class="case-block case-context wrap wrap--narrow">
-
-  <div class="case-block__head" data-reveal>
-    <span class="index">03</span>
-    <h2>Context &amp; Decision Supported</h2>
+    <h2>Data &amp; Workflow</h2>
   </div>
 
   <div class="case-block__body" data-reveal data-reveal-delay="1">
 
     <p>
-      The analysis is designed for an early-stage acquisition screening
-      process, where a larger set of companies needs to be narrowed before
-      deeper strategic and financial diligence begins.
+      I collected market and financial statement data for the selected
+      technology companies through yfinance, then calculated the financial
+      metrics needed to compare companies across valuation, growth,
+      profitability, leverage, cash generation, and returns. I converted
+      those measures into peer-relative scores and combined them into
+      acquisition rankings, then stored the company and analytical data in
+      SQLite for SQL analysis before exporting the final results to Power BI
+      for screening and executive reporting.
     </p>
-
-   <div class="case-context__rows">
-
-  <div class="case-context__row">
-    <span class="case-context__label">
-      Primary Users
-    </span>
-
-    <h3>
-      Corporate Development &amp; Strategy
-    </h3>
-
-    <p>
-      Compare potential targets using a consistent financial framework
-      and identify companies that warrant further investigation.
-    </p>
-  </div>
-
-
-  <div class="case-context__row">
-    <span class="case-context__label">
-      Decision Supported
-    </span>
-
-    <h3>
-      Which targets move forward?
-    </h3>
-
-    <p>
-      Prioritize a shortlist for deeper valuation, strategic-fit,
-      operational, and due-diligence review.
-    </p>
-  </div>
-
-</div>
-
-  </div>
-
-</section>
-
-<section class="case-block wrap wrap--narrow">
-  <div class="case-block__head" data-reveal><span class="index">04</span><h2>Data &amp; Workflow</h2></div>
-  <div class="case-block__body" data-reveal data-reveal-delay="1">
-
-    <p class="case-workflow__intro">
-      Market and financial data moves through a structured analytical
-      workflow from collection to acquisition-screening reporting.
-    </p>
-
-
-    <div class="case-workflow-chart">
-
-      <!-- 01 -->
-      <div class="case-workflow-node">
-        <span class="case-workflow-node__num">01</span>
-
-        <div class="case-workflow-node__content">
-          <h3>Collect</h3>
-          <p>
-            Market and financial statement data is collected for the
-            selected technology companies through <strong>yfinance</strong>.
-          </p>
-        </div>
-      </div>
-
-
-      <div class="case-workflow-arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M12 3v14"/>
-          <path d="m7 13 5 5 5-5"/>
-        </svg>
-      </div>
-
-
-      <!-- 02 -->
-      <div class="case-workflow-node">
-        <span class="case-workflow-node__num">02</span>
-
-        <div class="case-workflow-node__content">
-          <h3>Prepare</h3>
-          <p>
-            Records are cleaned, missing values are handled, and the
-            financial metrics required for comparison are calculated.
-          </p>
-        </div>
-      </div>
-
-
-      <div class="case-workflow-arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M12 3v14"/>
-          <path d="m7 13 5 5 5-5"/>
-        </svg>
-      </div>
-
-
-      <!-- 03 -->
-      <div class="case-workflow-node">
-        <span class="case-workflow-node__num">03</span>
-
-        <div class="case-workflow-node__content">
-          <h3>Score</h3>
-          <p>
-            Companies are scored relative to peers across valuation,
-            growth, profitability, leverage, cash generation, and returns.
-          </p>
-        </div>
-      </div>
-
-
-      <div class="case-workflow-arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M12 3v14"/>
-          <path d="m7 13 5 5 5-5"/>
-        </svg>
-      </div>
-
-
-      <!-- 04 -->
-      <div class="case-workflow-node">
-        <span class="case-workflow-node__num">04</span>
-
-        <div class="case-workflow-node__content">
-          <h3>Store</h3>
-          <p>
-            Company attributes and analytical results are stored in the
-            dimensional <strong>SQLite</strong> warehouse for SQL analysis.
-          </p>
-        </div>
-      </div>
-
-
-      <div class="case-workflow-arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M12 3v14"/>
-          <path d="m7 13 5 5 5-5"/>
-        </svg>
-      </div>
-
-
-      <!-- 05 -->
-      <div class="case-workflow-node">
-        <span class="case-workflow-node__num">05</span>
-
-        <div class="case-workflow-node__content">
-          <h3>Report</h3>
-          <p>
-            Ranked targets and financial results are exported to
-            <strong>Power BI</strong> for screening and executive reporting.
-          </p>
-        </div>
-      </div>
-
-    </div>
 
   </div>
 
 </section>
 
 <!-- ============================================================
-     05 · ANALYSIS & DASHBOARDS
+     03 · ANALYSIS & DASHBOARDS
      ============================================================ -->
 <section class="case-block case-block--visuals wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
-    <span class="index">05</span>
+    <span class="index">03</span>
     <h2>Analysis &amp; Dashboards</h2>
   </div>
 
   <div class="case-block__body" data-reveal>
-
     <p>
-      The detailed analysis moves beyond the executive ranking to examine
-      acquisition attractiveness through growth, valuation, financial
-      performance, and sector context.
+      I used the scoring model as a starting point, then looked more closely
+      at the financial and sector characteristics behind each company's
+      acquisition ranking.
     </p>
-
   </div>
 
 
@@ -344,7 +151,6 @@
         aria-label="View larger Acquisition Analysis dashboard">
 
         <div class="case-visual-card__image">
-
           <img
             src="../assets/images/projects/project-02/acquisition_analysis.png"
             alt="Acquisition Analysis dashboard showing growth versus valuation and ranked acquisition targets">
@@ -352,24 +158,24 @@
           <span class="case-visual-card__expand">
             View larger ↗
           </span>
-
         </div>
 
       </button>
 
       <div class="case-visual-card__caption">
-
         <span>01</span>
 
         <div>
           <h3>Growth vs. Valuation</h3>
 
           <p>
-            Compares company growth and valuation alongside acquisition
-            scores and target classification.
+            I compared revenue growth with EV/Revenue to see which companies
+            combined stronger growth with more reasonable valuations. I then
+            viewed those positions alongside the acquisition scores to check
+            whether the highest-ranked targets were also financially
+            attractive on these two dimensions.
           </p>
         </div>
-
       </div>
 
     </article>
@@ -386,7 +192,6 @@
         aria-label="View larger Financial Performance dashboard">
 
         <div class="case-visual-card__image">
-
           <img
             src="../assets/images/projects/project-02/financial_performance.png"
             alt="Financial Performance dashboard showing profitability, leverage, ROE and free cash flow">
@@ -394,24 +199,24 @@
           <span class="case-visual-card__expand">
             View larger ↗
           </span>
-
         </div>
 
       </button>
 
       <div class="case-visual-card__caption">
-
         <span>02</span>
 
         <div>
           <h3>Financial Performance</h3>
 
           <p>
-            Evaluates profitability, leverage, cash generation, and
-            shareholder returns across potential targets.
+            I examined profitability, leverage, free cash flow, and return on
+            equity to understand the financial quality behind each target.
+            This helped separate companies that ranked well because of growth
+            from those supported by stronger operating and balance-sheet
+            characteristics.
           </p>
         </div>
-
       </div>
 
     </article>
@@ -428,7 +233,6 @@
         aria-label="View larger Sector Intelligence dashboard">
 
         <div class="case-visual-card__image">
-
           <img
             src="../assets/images/projects/project-02/sector_intelligence.png"
             alt="Sector Intelligence dashboard comparing acquisition attractiveness across technology sectors">
@@ -436,24 +240,24 @@
           <span class="case-visual-card__expand">
             View larger ↗
           </span>
-
         </div>
 
       </button>
 
       <div class="case-visual-card__caption">
-
         <span>03</span>
 
         <div>
           <h3>Sector Intelligence</h3>
 
           <p>
-            Compares acquisition attractiveness across Enterprise Software
-            and Cybersecurity while highlighting company-level differences.
+            I compared acquisition scores across Enterprise Software and
+            Cybersecurity to see whether attractiveness was concentrated in
+            one part of the target universe. I also used the company-level
+            view to make sure sector averages were not hiding stronger or
+            weaker individual targets.
           </p>
         </div>
-
       </div>
 
     </article>
@@ -464,127 +268,155 @@
 
 
   <!-- ============================================================
-     06 · KEY FINDINGS
+     04 · KEY FINDINGS
      ============================================================ -->
 <section class="case-block case-findings wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
-    <span class="index">06</span>
+    <span class="index">04</span>
     <h2>Key Findings</h2>
   </div>
 
 
-  <!-- The grid is intentionally OUTSIDE case-block__body
-       so it can use the full section width. -->
-
-  <div class="case-findings__grid" data-reveal data-reveal-delay="1">
+  <div class="case-findings__list">
 
 
-    <!-- 01 -->
-    <article class="case-finding">
+    <!-- ========================================================
+         01 · TOP CANDIDATES
+         ======================================================== -->
+    <article
+      class="case-finding case-finding--primary"
+      data-reveal>
 
-      <span class="case-finding__mark">→</span>
+      <div class="case-finding__stat">
+        <strong>72.1</strong>
+        <span>Top Acquisition Score</span>
+      </div>
 
-      <div>
-        <h3>Top acquisition candidates emerged clearly</h3>
+      <div class="case-finding__content">
+
+        <span class="case-finding__num">
+          01
+        </span>
+
+        <h3>
+          Top acquisition candidates separated from the broader universe
+        </h3>
 
         <p>
           Adobe <strong>(72.1)</strong>, Qualys <strong>(66.7)</strong>,
-          Intuit <strong>(65.2)</strong>, and Microsoft <strong>(64.9)</strong>
-          achieved the highest acquisition scores and were identified as
-          the strongest acquisition candidates.
+          Intuit <strong>(65.2)</strong>, and Microsoft
+          <strong>(64.9)</strong> produced the four highest acquisition
+          scores. Rather than one sector dominating the shortlist, the
+          results included strong candidates from both Enterprise Software
+          and Cybersecurity.
         </p>
+
       </div>
 
     </article>
 
 
-    <!-- 02 -->
-    <article class="case-finding">
+    <!-- ========================================================
+         02 · MULTI-FACTOR SCREEN
+         ======================================================== -->
+    <article
+      class="case-finding"
+      data-reveal
+      data-reveal-delay="1">
 
-      <span class="case-finding__mark">→</span>
+      <div class="case-finding__stat">
+        <strong>Multi-factor</strong>
+        <span>Acquisition Screen</span>
+      </div>
 
-      <div>
-        <h3>Enterprise Software led the sector comparison</h3>
+      <div class="case-finding__content">
+
+        <span class="case-finding__num">
+          02
+        </span>
+
+        <h3>
+          Growth alone was not enough
+        </h3>
 
         <p>
-          Enterprise Software recorded a higher average acquisition score
-          than Cybersecurity <strong>(57.7 vs. 47.3)</strong>, indicating
-          stronger overall acquisition potential within the selected
-          company universe.
+          Strong revenue growth did not consistently translate into a high
+          acquisition score. Companies such as CrowdStrike and SentinelOne
+          ranked lower once valuation and financial strength were considered
+          alongside growth, reinforcing the need for a multi-factor screen.
         </p>
+
       </div>
 
     </article>
 
 
-    <!-- 03 -->
-    <article class="case-finding">
+    <!-- ========================================================
+         03 · SECTOR COMPARISON
+         ======================================================== -->
+    <article
+      class="case-finding"
+      data-reveal
+      data-reveal-delay="2">
 
-      <span class="case-finding__mark">→</span>
+      <div class="case-finding__stat">
+        <strong>57.7</strong>
+        <span>Enterprise Software Avg.</span>
+      </div>
 
-      <div>
-        <h3>Growth alone did not determine acquisition attractiveness</h3>
+      <div class="case-finding__content">
+
+        <span class="case-finding__num">
+          03
+        </span>
+
+        <h3>
+          Enterprise Software led at the sector level
+        </h3>
 
         <p>
-          High revenue growth did not necessarily result in higher
-          acquisition scores. Companies such as CrowdStrike and SentinelOne
-          demonstrated strong growth but ranked lower after valuation and
-          financial strength were considered.
+          Enterprise Software recorded an average acquisition score of
+          <strong>57.7</strong>, compared with <strong>47.3</strong> for
+          Cybersecurity. Within the selected company universe, that gave
+          Enterprise Software the stronger overall quantitative profile.
         </p>
+
       </div>
 
     </article>
 
 
-    <!-- 04 -->
-    <article class="case-finding">
+    <!-- ========================================================
+         04 · COMPANY-LEVEL SCREENING
+         ======================================================== -->
+    <article
+      class="case-finding"
+      data-reveal
+      data-reveal-delay="3">
 
-      <span class="case-finding__mark">→</span>
-
-      <div>
-        <h3>Company performance differed from sector-level trends</h3>
-
-        <p>
-          Several Cybersecurity companies, including Qualys and Check Point,
-          outperformed the sector average, showing that individual company
-          performance can differ significantly from broader sector trends.
-        </p>
+      <div class="case-finding__stat">
+        <strong>Qualys</strong>
+        <span>Cybersecurity Standout</span>
       </div>
 
-    </article>
+      <div class="case-finding__content">
 
+        <span class="case-finding__num">
+          04
+        </span>
 
-    <!-- 05 -->
-    <article class="case-finding">
-
-      <span class="case-finding__mark">→</span>
-
-      <div>
-        <h3>Financial leverage materially affected the comparison</h3>
-
-        <p>
-          Debt-to-Equity ratios ranged from <strong>0.01</strong> to over
-          <strong>3.00</strong> across the company universe, making leverage
-          an important factor in the acquisition scoring model.
-        </p>
-      </div>
-
-    </article>
-
-
-    <!-- 06 -->
-    <article class="case-finding">
-
-      <span class="case-finding__mark">→</span>
-
-      <div>
-        <h3>Screening creates a clearer basis for deeper diligence</h3>
+        <h3>
+          Sector averages hid strong individual candidates
+        </h3>
 
         <p>
-          The combined scoring framework provides a consistent way to narrow
-          the company universe before deeper strategic and financial review.
+          The lower Cybersecurity average did not tell the whole story:
+          Qualys and Check Point still ranked among the stronger acquisition
+          candidates. That made company-level screening important even when
+          one sector appeared weaker overall.
         </p>
+
       </div>
 
     </article>
@@ -593,196 +425,279 @@
   </div>
 
 </section>
-
 <!-- ============================================================
-     07 · RECOMMENDATIONS
+     05 · RECOMMENDATIONS
      ============================================================ -->
 <section class="case-block case-recommendations wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
-    <span class="index">07</span>
+    <span class="index">05</span>
     <h2>Recommendations</h2>
   </div>
 
 
-  <div class="case-recommendations__list" data-reveal data-reveal-delay="1">
+  <div class="case-recommendations__list">
+
 
     <!-- 01 -->
-    <article class="case-recommendation">
+    <article
+      class="case-recommendation"
+      data-reveal>
 
-      <span class="case-recommendation__mark">→</span>
+      <button
+        class="case-recommendation__trigger"
+        type="button"
+        aria-expanded="false">
 
-      <div>
-        <h3>Expand the company universe</h3>
+        <span class="case-recommendation__num">→</span>
+
+        <span class="case-recommendation__title">
+          Broaden the screening universe
+        </span>
+
+        <span
+          class="case-recommendation__toggle"
+          aria-hidden="true">
+          +
+        </span>
+
+      </button>
+
+      <div class="case-recommendation__details">
 
         <p>
-          Extend the screening framework to additional technology sectors
-          and industries to broaden the set of potential acquisition targets.
+          I'd extend the analysis beyond the current Enterprise Software and
+          Cybersecurity groups before drawing broader conclusions about
+          technology acquisition opportunities. A larger peer universe would
+          also provide a stronger basis for the percentile rankings used in
+          the scoring model.
         </p>
+
       </div>
 
     </article>
 
 
     <!-- 02 -->
-    <article class="case-recommendation">
+    <article
+      class="case-recommendation"
+      data-reveal
+      data-reveal-delay="1">
 
-      <span class="case-recommendation__mark">→</span>
+      <button
+        class="case-recommendation__trigger"
+        type="button"
+        aria-expanded="false">
 
-      <div>
-        <h3>Incorporate qualitative acquisition factors</h3>
+        <span class="case-recommendation__num">→</span>
+
+        <span class="case-recommendation__title">
+          Add qualitative acquisition criteria
+        </span>
+
+        <span
+          class="case-recommendation__toggle"
+          aria-hidden="true">
+          +
+        </span>
+
+      </button>
+
+      <div class="case-recommendation__details">
 
         <p>
-          Add factors such as management quality, strategic fit, and market
-          sentiment to complement the existing quantitative scoring model.
+          The quantitative screen is useful for narrowing candidates, but I
+          would treat it as the starting point for deeper diligence. The next
+          stage should incorporate factors such as strategic fit, management
+          quality, competitive position, and integration considerations before
+          any target moves forward.
         </p>
+
       </div>
 
     </article>
 
 
     <!-- 03 -->
-    <article class="case-recommendation">
+    <article
+      class="case-recommendation"
+      data-reveal
+      data-reveal-delay="2">
 
-      <span class="case-recommendation__mark">→</span>
+      <button
+        class="case-recommendation__trigger"
+        type="button"
+        aria-expanded="false">
 
-      <div>
-        <h3>Automate data and dashboard refreshes</h3>
+        <span class="case-recommendation__num">→</span>
+
+        <span class="case-recommendation__title">
+          Test how sensitive the rankings are to scoring weights
+        </span>
+
+        <span
+          class="case-recommendation__toggle"
+          aria-hidden="true">
+          +
+        </span>
+
+      </button>
+
+      <div class="case-recommendation__details">
 
         <p>
-          Automate data collection and dashboard refreshes to keep the
-          screening analysis current with less manual intervention.
+          Because the final acquisition score depends on the weights assigned
+          to valuation, growth, profitability, financial strength, cash
+          generation, and returns, I'd test alternative weighting scenarios.
+          That would show which candidates remain strong across different
+          priorities and which rankings depend heavily on the current
+          assumptions.
         </p>
+
       </div>
 
     </article>
 
+
   </div>
 
 </section>
 
 <!-- ============================================================
-     08 · SCOPE & LIMITATIONS
+     06 · SCOPE & LIMITATIONS
      ============================================================ -->
 <section class="case-block case-scope wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
-    <span class="index">08</span>
+    <span class="index">06</span>
     <h2>Scope &amp; Limitations</h2>
   </div>
 
-  <div class="case-block__body" data-reveal data-reveal-delay="1">
+  <div
+    class="case-block__body case-scope__body"
+    data-reveal
+    data-reveal-delay="1">
 
     <p>
-      This project is designed as an early-stage acquisition screening
-      framework rather than a substitute for full strategic and financial
-      due diligence. The following boundaries should be considered when
-      interpreting the rankings.
+      I built this as an early-stage screening framework, so the acquisition
+      scores support prioritization rather than transaction valuation or an
+      acquisition recommendation. The model is based on financial and market
+      measures, which means factors outside the available quantitative data
+      are not reflected in the rankings. The scores are also relative to the
+      selected technology-company peer group, so they should be interpreted
+      within that defined universe rather than as absolute measures of
+      acquisition attractiveness.
     </p>
-
-    <div class="case-scope__items">
-
-      <div class="case-scope__item">
-        <h3>Screening, not valuation advice</h3>
-
-        <p>
-          Acquisition scores are intended to prioritize companies for
-          further review, not determine transaction value or recommend
-          an acquisition.
-        </p>
-      </div>
-
-      <div class="case-scope__item">
-        <h3>Quantitative factors only</h3>
-
-        <p>
-          The model focuses on financial and market metrics and does not
-          incorporate management quality, strategic fit, integration risk,
-          or other qualitative considerations.
-        </p>
-      </div>
-
-      <div class="case-scope__item">
-        <h3>Limited company universe</h3>
-
-        <p>
-          The analysis covers a selected set of technology companies, so
-          rankings and sector comparisons should be interpreted within
-          that defined universe.
-        </p>
-      </div>
-
-    </div>
 
   </div>
 
 </section>
 
 <!-- ============================================================
-     09 · TOOLS & METHODS
+     07 · TOOLS & METHODS
      ============================================================ -->
 <section class="case-block case-tools wrap wrap--narrow">
 
   <div class="case-block__head" data-reveal>
-    <span class="index">09</span>
+    <span class="index">07</span>
     <h2>Tools &amp; Methods</h2>
   </div>
 
-  <div class="case-tools__grid" data-reveal data-reveal-delay="1">
+
+  <!-- CATEGORY TABS -->
+  <div
+    class="case-tools__tabs"
+    data-reveal
+    data-reveal-delay="1">
+
+    <button
+      class="case-tools__tab is-active"
+      type="button"
+      data-tools-tab="collection">
+      Data Collection
+    </button>
+
+    <button
+      class="case-tools__tab"
+      type="button"
+      data-tools-tab="modeling">
+      Analysis &amp; Modeling
+    </button>
+
+    <button
+      class="case-tools__tab"
+      type="button"
+      data-tools-tab="warehouse">
+      Warehouse &amp; Querying
+    </button>
+
+    <button
+      class="case-tools__tab"
+      type="button"
+      data-tools-tab="reporting">
+      Reporting &amp; Development
+    </button>
+
+  </div>
 
 
-    <!-- DATA COLLECTION -->
-    <div class="case-tools__group">
-      <span class="case-tools__label">Data Collection</span>
+  <!-- DATA COLLECTION -->
+  <div
+    class="case-tools__panel is-active"
+    data-tools-panel="collection">
 
-      <div class="case-tools__items">
-        <span>yfinance</span>
-        <span>Financial Statements</span>
-        <span>Market Data</span>
-      </div>
+    <div class="case-tools__items">
+      <span>yfinance</span>
+      <span>Market Data</span>
+      <span>Financial Statements</span>
     </div>
 
+  </div>
 
-    <!-- DATA & ANALYTICS -->
-    <div class="case-tools__group">
-      <span class="case-tools__label">Data &amp; Analytics</span>
 
-      <div class="case-tools__items">
-        <span>Python</span>
-        <span>Pandas</span>
-        <span>NumPy</span>
-      </div>
+  <!-- ANALYSIS & MODELING -->
+  <div
+    class="case-tools__panel"
+    data-tools-panel="modeling">
+
+    <div class="case-tools__items">
+      <span>Python</span>
+      <span>Pandas</span>
+      <span>NumPy</span>
     </div>
 
+  </div>
 
-    <!-- WAREHOUSE & QUERYING -->
-    <div class="case-tools__group">
-      <span class="case-tools__label">Warehouse &amp; Querying</span>
 
-      <div class="case-tools__items">
-        <span>SQLite</span>
-        <span>SQL</span>
-      </div>
+  <!-- WAREHOUSE & QUERYING -->
+  <div
+    class="case-tools__panel"
+    data-tools-panel="warehouse">
+
+    <div class="case-tools__items">
+      <span>SQLite</span>
+      <span>SQL</span>
     </div>
 
+  </div>
 
-    <!-- REPORTING -->
-    <div class="case-tools__group">
-      <span class="case-tools__label">Reporting &amp; Visualization</span>
 
-      <div class="case-tools__items">
-        <span>Power BI</span>
-        <span>Visual Studio Code</span>
-      </div>
+  <!-- REPORTING & DEVELOPMENT -->
+  <div
+    class="case-tools__panel"
+    data-tools-panel="reporting">
+
+    <div class="case-tools__items">
+      <span>Power BI</span>
+      <span>Visual Studio Code</span>
     </div>
-
 
   </div>
 
 </section>
 
 <section class="case-block wrap wrap--narrow">
-  <div class="case-block__head" data-reveal><span class="index">10</span><h2>Project Link</h2></div>
+  <div class="case-block__head" data-reveal><span class="index">08</span><h2>Project Link</h2></div>
   <div class="case-block__body" data-reveal>
     <a href="https://github.com/Krishna-np/MA-Target-Screening-Valuation-Platform" target="_blank" rel="noopener" class="btn btn--secondary">
       View on GitHub
