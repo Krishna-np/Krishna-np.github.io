@@ -4325,3 +4325,14 @@ body:has(.about-hero) .approach-simple {
     white-space: normal;
   }
 }
+
+
+/* HERO — SPECIALIZATION TEXT */
+
+@media (min-width: 1000px) {
+  .hero__sub {
+    font-size: 21px;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+  }
+}
